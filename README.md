@@ -1,23 +1,24 @@
-# TÍTULO DO PROJETO
+# CONTROLE FINANCEIRO PARA JOVENS ENTRE 16 E 25 ANOS
 
-`CURSO`
+`CURSO - ANALISE E DESENVOLVIMENTO DE SISTEMAS`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de uma Aplicação Interativa`
 
-`SEMESTRE`
+`2º SEMESTRE`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Gabriel de Souza Ferreira 
+* Marcellus Vinicius Pinheiro Soares 
+* Nicolas Patrick Teixeira da Silva
+* Pedro de Souza Ferreira 
+* Ricardo José Teixeira da Silva Junior
 
 ## Orientador
 
-* Nome completo do professor 1
+* Carlos Alberto Marques Pietrobon
 
 ## Instruções de utilização
 
