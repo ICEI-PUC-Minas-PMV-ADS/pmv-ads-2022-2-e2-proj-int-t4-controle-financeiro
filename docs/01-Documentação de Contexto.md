@@ -23,4 +23,4 @@ O que impulsionou a realização deste projeto foi perceber a dificuldade de se 
 
 ## Público-Alvo
 
-Estabeleceu-se como público-alvo dessa solução homens e mulheres entre 18 e 25 anos (Geração Z), que se encontram economicamente ativas. Via de regra esse público está entrando / entrou no mercado de trabalho recentemente. 
+Estabeleceu-se como público-alvo dessa solução homens e mulheres entre 18 e 25 anos (Geração Z), que se encontram economicamente ativas. Via de regra esse público está entrando/entrou no mercado de trabalho recentemente. 
