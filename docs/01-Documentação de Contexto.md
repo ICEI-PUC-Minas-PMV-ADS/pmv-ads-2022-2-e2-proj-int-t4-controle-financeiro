@@ -9,7 +9,7 @@ Visto que atualmente na grade curricular do ensino público federal, não está 
 É importante destacar, que é de suma importância de que os jovens, principalmente aqueles que estão iniciando no mercado de trabalho tenham conhecimentos da educação financeira o quanto antes tendo acesso ao tema e ferramentas pois serão o futuro da sociedade.
 
 ## Problema
-A maioria da população, incluindo os jovens, não realiza nenhum tipo de controle financeiro.  
+A maioria da população, incluindo os jovens, não realizam nenhum tipo de controle financeiro.  
 
 Como criar uma ferramenta simples e eficiente para que os jovens possam sentir interesse em controlar suas finanças?
 
