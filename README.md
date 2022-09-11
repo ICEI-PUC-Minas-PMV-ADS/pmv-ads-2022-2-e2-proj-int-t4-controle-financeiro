@@ -54,4 +54,5 @@ O link e o usuário/senha descritos acima são apenas exemplos de como tais info
 
 # Apresentação
 
-<li><a href="presentation/README.md"> Apresentação da solução</a></li>
+https://user-images.githubusercontent.com/103547399/175780934-3ef5122c-d607-41ea-9891-f1ba32c50b5c.mp4
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/blob/main/docs/videos/Grupo%20Controle%20Financeiro.mp4
