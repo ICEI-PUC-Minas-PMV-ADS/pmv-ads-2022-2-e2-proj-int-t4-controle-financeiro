@@ -54,5 +54,9 @@ O link e o usuário/senha descritos acima são apenas exemplos de como tais info
 
 # Apresentação
 
-https://user-images.githubusercontent.com/103547399/175780934-3ef5122c-d607-41ea-9891-f1ba32c50b5c.mp4
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/blob/main/docs/videos/Grupo%20Controle%20Financeiro.mp4
+
+[Grupo Controle Financeiro - ORIGINAL.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/files/9541624/Grupo.Controle.Financeiro.-.ORIGINAL.pdf)
+
+
+https://user-images.githubusercontent.com/100804876/189508117-ceb51179-94e7-464d-a818-213e9d27dfef.mp4
+
