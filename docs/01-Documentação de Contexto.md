@@ -13,14 +13,14 @@ A maioria da população, incluindo os jovens, não realizam nenhum tipo de cont
 
 Como criar uma ferramenta simples e eficiente para que os jovens possam sentir interesse em controlar suas finanças?
 
-## Objetivos
+## Objetivo
 
-O objetivo desse projeto é o desenvolvimento de uma aplicação interativa apresentando conceitos, definições e ferramentas necessárias fomentando uma educação financeira para jovens com base nos princípios de contabilidade voltados às estratégias ligadas diretamente a gestão pessoal. 
+O objetivo desse projeto é o desenvolvimento de uma aplicação interativa apresentando conceitos, definições e ferramentas necessárias para fomentar a educação financeira aos jovens com base nos princípios de contabilidade e estratégias ligadas a gestão pessoal.
 
 ## Justificativa
 
-O que impulsionou a realização deste projeto foi perceber a dificuldade de se ter um controle financeiro no cenário econômico do nosso país. 
+O que impulsionou a realização deste projeto é perceber que a maioria dos adultos do país não possuem controle financeiro adequado por falta de acesso a este tipo de informação e ferramentas práticas, principalmente quando mais novos.
 
 ## Público-Alvo
 
-Estabeleceu-se como público-alvo dessa solução homens e mulheres entre 18 e 25 anos (Geração Z), que se encontram economicamente ativas. Via de regra esse público está entrando/entrou no mercado de trabalho recentemente. 
+Estabeleceu-se como público-alvo dessa solução homens e mulheres entre 18 e 25 anos (Geração Z), que se encontram economicamente ativas e está entrando / entrou no mercado de trabalho recentemente.
