@@ -1,17 +1,17 @@
 # Introdução
 
-No Brasil é comum ver que grande parte dos cidadãos não tem o correto controle financeiro de suas despesas, sejam pessoais, familiar ou dos negócios.  
+No Brasil, é comum ver que grande parte dos cidadãos não tem o correto controle financeiro de suas despesas, sejam pessoais, familiar ou dos negócios.  
 
-A última pesquisa realizada pelo Serviço de Proteção ao Crédito (SPC Brasil) e pela Confederação Nacional de Dirigentes Lojistas (CNDL) aponta que oito a cada dez brasileiros não sabem controlar as próprias despesas, onde 39% dos entrevistados cita a falta de disciplina como a maior dificuldade na hora de planejar os gastos e somente 18% afirma ter conhecimento total sobre o fluxo de receitas e despesas do seu orçamento pessoal. Nesta pesquisa, também mostra que somente 25% dos jovens da geração Z (18 a 25 anos) realizam algum tipo de controle financeiro e a maior parte dos entrevistados (19%), diz que não controla as finanças por não saber fazer um controle das finanças. 
+A última pesquisa realizada pelo Serviço de Proteção ao Crédito (SPC Brasil) e pela Confederação Nacional de Dirigentes Lojistas (CNDL) aponta que oito a cada dez brasileiros não sabem controlar as próprias despesas, onde 39% dos entrevistados cita a falta de disciplina como a maior dificuldade na hora de planejar os gastos e somente 18% afirma ter conhecimento total sobre o fluxo de receitas e despesas do seu orçamento pessoal. Esta pesquisa também mostra que somente 25% dos jovens da geração Z (18 a 25 anos) realizam algum tipo de controle financeiro e a maior parte dos entrevistados diz que não controla as finanças por não saber como fazê-lo. 
 
-Visto que atualmente na grade curricular do ensino público federal, não está incluso a matéria ou ensinos técnicos relacionados a educação financeira, grande parte da população segue sem ciência do assunto, o que pode ser considerado como uma das variáveis para a situação atual do país em relação ao tema. 
+Visto que, atualmente, na grade curricular do ensino público federal, não está incluso a matéria ou ensinos técnicos relacionados a educação financeira, grande parte da população segue sem ciência do assunto, o que pode ser considerado como uma das variáveis para a situação atual do país em relação ao tema. 
 
-É importante destacar, que é de suma importância de que os jovens, principalmente aqueles que estão iniciando no mercado de trabalho tenham conhecimentos da educação financeira o quanto antes tendo acesso ao tema e ferramentas pois serão o futuro da sociedade.
+É importante destacar que é de suma importância que os jovens, principalmente aqueles que estão iniciando no mercado de trabalho, tenham conhecimentos de educação financeira o quanto antes, tendo acesso a informações e ferramentas, pois serão o futuro da sociedade.
 
 ## Problema
-A maioria da população, incluindo os jovens, não realizam nenhum tipo de controle financeiro.  
+A maioria da população, incluindo os jovens, não realiza nenhum tipo de controle financeiro.  
 
-Como criar uma ferramenta simples e eficiente para que os jovens possam sentir interesse em controlar suas finanças?
+Como criar uma ferramenta simples e eficiente para que os jovens possam ter interesse em controlar suas finanças?
 
 ## Objetivo
 
