@@ -43,19 +43,19 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| O sistema permite separar gastos por seções (categorias)  | ALTA | 
-|RF-002| O sistema permite separar de valores a pagar por seção (categoria)   | ALTA |
+|RF-001| O sistema permite agrupar valores por seções (categorias)  | ALTA | 
+|RF-002| O sistema permite agrupar valores por subseções (subcategoria)   | ALTA |
 |RF-003| O sistema permite o lançamento de débitos  | ALTA |
 |RF-004| O sistema permite o lançamento de crédito | ALTA |
 |RF-005| O sistema permite a conciliação dos gastos do cartão de crédito  | MÉDIA |
-|RF-006| O sistema permite filtrar os lançamentos conciliado e os não conciliados  | MÉDIA |
-|RF-007| O sistema permite de datar/programar lançamentos (exemplo: pagamentos ou recebimentos futuros)  | ALTA |
-|RF-008| O sistema permite terá uma área com conteúdo (curadoria?) voltados para educação financeira | ALTA |
-|RF-009| O sistema permite a visualização de entradas, saídas, ativos e débitos por mês, trimestre e ano em uma única tela  | ALTA |
-|RF-0010| O sistema deve permitir a definição e simulação (com manipulação) do atingimento da meta estabelecida  | ALTA |
-|RF-0011| O sistema informa as contas a vencer  | ALTA |
-|RF-0012| O sistema emitirá relatórios comparativos entre períodos determinados pelo usuário (relatório de evolução do atingimento da meta)  | MÉDIA |
-|RF-0013| O sistema terá tela de Login e senha | ALTA |
+|RF-006| O sistema permite filtrar os lançamentos conciliados e os não conciliados  | MÉDIA |
+|RF-007| O sistema permite datar/programar lançamentos (exemplo: pagamentos ou recebimentos futuros)  | ALTA |
+|RF-008| O sistema terá uma área com conteúdo (curadoria?) voltados para educação financeira | ALTA |
+|RF-009| O sistema permite a visualização de entradas, saídas, ativos e passivos por mês, trimestre e ano em uma única tela  | ALTA |
+|RF-010| O sistema permite a definição e simulação (com manipulação) do atingimento da meta estabelecida  | ALTA |
+|RF-011| O sistema informa as contas a vencer  | ALTA |
+|RF-012| O sistema emitirá relatórios comparativos entre períodos determinados pelo usuário (relatório de evolução do atingimento da meta)  | MÉDIA |
+|RF-013| O sistema terá tela de Login e senha | ALTA |
 
 ### Requisitos não Funcionais
 
