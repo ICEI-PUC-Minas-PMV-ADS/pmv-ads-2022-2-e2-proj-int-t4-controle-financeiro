@@ -53,9 +53,9 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 
 ●	TRANCADA: Quando alguma coisa impede a conclusão da tarefa, ela é movida para esta lista juntamente com um comentário sobre o que está travando a tarefa.
 
-O quadro kanban do grupo no GitHub pode ser visualizado no link https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-pequenos-negocios/projects/1 e é apresentado, no estado atual, na Figura abaixo:
+O quadro kanban do grupo no GitHub pode ser visualizado no link https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/123 e é apresentado, no estado atual, na Figura abaixo:
 
-![2022-09-26_07:38h_01]
+![2022-09-26_19:23h_01] (https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/blob/2ff7c5c5452e30ff4ee445ee6c481fc13c70afd4/docs/img/Captura%20de%20tela%202022-09-26%20073730.png?raw=true)
 
 
 ### Divisão de Papéis

@@ -55,7 +55,8 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-010| O sistema permite a definição e simulação (com manipulação) do atingimento da meta estabelecida  | ALTA |
 |RF-011| O sistema informa as contas a vencer  | ALTA |
 |RF-012| O sistema emitirá relatórios comparativos entre períodos determinados pelo usuário (relatório de evolução do atingimento da meta)  | MÉDIA |
-|RF-013| O sistema terá tela de Login e senha | ALTA |
+|RF-013| O sistema terá tela inicial (home/institucional) |ALTA|
+|RF-014| O sistema terá tela de Login e senha | ALTA |
 
 ### Requisitos não Funcionais
 
