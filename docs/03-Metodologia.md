@@ -3,39 +3,60 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+## Relação de Ambientes de Trabalho 
 
-## Controle de Versão
+Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue. 
 
-A ferramenta de controle de versão adotada no projeto foi o
-[Git](https://git-scm.com/), sendo que o [Github](https://github.com)
-foi utilizado para hospedagem do repositório.
+`Ambiente`       `Plataforma`        `Link de Acesso`
 
-O projeto segue a seguinte convenção para o nome de branches:
+Repositório de código fonte | GitHub | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/teams/controle-financeiro
 
-- `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
+Documentos do projeto | OneDrive | https://sgapucminasbr-my.sharepoint.com/personal/1243077_sga_pucminas_br/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F1243077%5Fsga%5Fpucminas%5Fbr%2FDocuments%2FZCaixa%20%2D%20Controle%20Financeiro
 
-Quanto à gerência de issues, o projeto adota a seguinte convenção para
-etiquetas:
+Projeto de Interface e Wireframes | MarvelApp | https://marvelapp.com/prototype/81dga60
 
-- `documentation`: melhorias ou acréscimos à documentação
-- `bug`: uma funcionalidade encontra-se com problemas
-- `enhancement`: uma funcionalidade precisa ser melhorada
-- `feature`: uma nova funcionalidade precisa ser introduzida
+Gerenciamento do Projeto | GitHub | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/123
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
+## Gestão de Código Fonte 
 
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
+A gestão do código fonte do projeto é baseada no conteúdo proporcionado na orientação do projeto, que se dá pela opção commit no GitHub sendo atualizado os requisitos implementados ou ajustados no código fonte, ao mesmo tempo em que se atualiza os cards de sprints apresentados no quadro de tarefas.
 
 ## Gerenciamento de Projeto
+
+A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento.
+
+A equipe está organizada da seguinte forma: 
+
+**Scrum Master**: Pedro Ferreira
+
+**Product Owner**: Marcellus Soares
+
+**Equipe de Desenvolvimento**
+
+- Nicolas Silva
+
+- Ricardo Junior 
+
+**Equipe de Design**
+
+- Gabriel Ferreira
+
+Para organização e distribuição das tarefas do projeto, a equipe está utilizando o quadro de tarefas do GitHub KANBAN estruturado com as seguintes listas: 
+
+●	A FAZER: Esta lista mantém cartões de tarefas a serem realizadas (seja uma funcionalidade ou artefato) pelos integrantes do grupo. Cada cartão contém o título da tarefa, a descrição (contendo links) e o(os) responsável(eis);
+
+●	FAZENDO: Recebe os cartões de tarefas que estão sendo desenvolvidas
+
+●	REVISAR: Esta demonstra cartões que foram executados, mas que devem ser avaliados e discutido pela equipe para determinar a atualização da tarefa para FEITO.
+
+●	FEITO: Esta lista representa os cartões que já foram executados, avaliados e dados como feito.
+
+●	TRANCADA: Quando alguma coisa impede a conclusão da tarefa, ela é movida para esta lista juntamente com um comentário sobre o que está travando a tarefa.
+
+O quadro kanban do grupo no GitHub pode ser visualizado no link https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-pequenos-negocios/projects/1 e é apresentado, no estado atual, na Figura abaixo:
+
+![2022-09-26_07:38h_01]
+
 
 ### Divisão de Papéis
 
