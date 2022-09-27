@@ -58,41 +58,17 @@ O quadro kanban do grupo no GitHub pode ser visualizado no link https://github.c
 ![2022-09-26_19:23h_01](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/blob/2ff7c5c5452e30ff4ee445ee6c481fc13c70afd4/docs/img/Captura%20de%20tela%202022-09-26%20073730.png?raw=true)
 
 
-### Divisão de Papéis
-
-Apresente a divisão de papéis entre os membros do grupo.
-
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-
 ### Processo
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
+Ao realizar reuniões para continuidade do projeto, é definidos os cards de tarefas com seus respectivos responsáveis. Ao inicar uma tarefa, deve ser movido o card para a lista "Fazendo", após sua execução, é movida para a lista "Revisar" o qual haverá uma avaliação por todos integrantes do grupo para concluir que o card deve ser atualizado para a lista "Finalizado".
  
-> **Links Úteis**:
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
 
 ### Ferramentas
 
 As ferramentas empregadas no projeto são:
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (_wireframing_)
+- Editor de código : Visual Studio CODE.
+- Ferramentas de comunicação: Whatsapp, Teams.
+- Ferramentas de desenho de tela (_wireframing_): MarvelAPP
 
-O editor de código foi escolhido porque ele possui uma integração com o
-sistema de versão. As ferramentas de comunicação utilizadas possuem
-integração semelhante e por isso foram selecionadas. Por fim, para criar
-diagramas utilizamos essa ferramenta por melhor captar as
-necessidades da nossa solução.
-
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
+O editor de código foi escolhido pelo grupo pois é o mais prático e acessível para os integrantes. Tem um bom dicionário de erros no código e permite acompanhar alterações em tempo real através do navegador.
