@@ -1,15 +1,12 @@
 # Plano de Testes de Usabilidade
 
-Os testes de usabilidade permitem avaliar a qualidade da interface com o usuário da aplicação interativa.
+**Modelo de teste: Descoberta de problemas**
 
-Um plano de teste de usabilidade deverá conter: o detalhamento dos objetivos (em função dos requisitos levantados/implementados), dos critérios que serão utilizados para a seleção dos participantes, dos procedimentos a serem adotados pelos condutores de teste (por exemplo: os testes serão presenciais ou remotos? o método será observação direta, medição ou avaliação?), das tarefas a serem executadas, dos dados a serem coletados (quantidade de cliques, número de erros, tempo etc.), a ordem de execução das tarefas e das etapas da sessão de teste, recursos demandados, métricas coletadas etc.
+`Objetivos do teste` - Identificar e corrigir eventuais problemas existentes na plataforma além de mensurar a qualidade de navegação e satisfação do usuário. 
 
-Para cada voluntário do teste, é fundamental coletar e apresentar todos os dados/métricas previamente definidos, mas não se esqueça: atendendo à LGPD (Lei Geral de Proteção de Dados), nenhum dado sensível, que permita identificar o voluntário, deverá ser apresentado).
+`Tarefa de teste` - Será atribuído um valor simbólico ao usuário no total de R$ 500.00 e solicitado que seja feito a distribuição do valor em um total de 6 lançamentos com pelo menos 1 categoria para cada lançamento. Após os lançamentos o usuário deve agrupar lançamentos de acordo com os tipos de categorias (Ex:  crédito + débito + passivo) e definir uma meta para fazer uma simulação de um futuro lançamento para obter possíveis cenários de atingimento da meta. **O teste terá um tempo pré-determinado de 5 minutos para ser realizado**
 
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
+`Critérios de seleção dos participantes` - Será feito um questionário com perguntas relacionadas a vida financeira do participante. Serão escolhidos participantes ativos financeiramente que ganham até 1 salário-mínimo e meio com perfil próximo ao das personas do projeto. 
 
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+ `Procedimentos a serem adotados pelo condutor` - O condutor observará o teste de maneira remota e não moderado utilizando o método de avaliação coletando dados como quantidades de cliques e o tempo de cumprimento do teste.
+
