@@ -23,7 +23,7 @@ A referência abaixo irá auxiliá-lo na geração do artefato “Modelo ER”.
 
 ## Projeto da Base de Dados
 
-![Projeto da base de dados](img/Modelo_Logico_banco_de_dados.png)
+![Projeto da base de dados](img/Modelo_Logico_Banco_de_Dados.png)
 
 ## Tecnologias Utilizadas
 
