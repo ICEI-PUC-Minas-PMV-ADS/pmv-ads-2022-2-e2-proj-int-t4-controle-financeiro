@@ -10,11 +10,6 @@ Importante destacar que  o projeto foi elaborado de forma a atender os requisito
 
 ![Diagrama de Fluxo](img/Diagrama_de_Fluxo.png)
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas de Fluxo”.
-
-> **Links Úteis**:
-> - [Fluxograma online: seis sites para fazer gráfico sem instalar nada | Produtividade | TechTudo](https://www.techtudo.com.br/listas/2019/03/fluxograma-online-seis-sites-para-fazer-grafico-sem-instalar-nada.ghtml)
-
 ## Wireframes
 
 ![Exemplo de Wireframe](img/wireframe-example.png)
