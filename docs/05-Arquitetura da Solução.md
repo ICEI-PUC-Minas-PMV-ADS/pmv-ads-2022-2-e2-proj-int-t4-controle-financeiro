@@ -14,7 +14,7 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Projeto da Base de Dados
 
-![Projeto da base de dados](img/Modelo_Logico_Banco_de_Dados.png)
+![Projeto da base de dados](img/Projeto_Logico_Banco_de_Dados.png)
 
 ## Tecnologias Utilizadas
 
