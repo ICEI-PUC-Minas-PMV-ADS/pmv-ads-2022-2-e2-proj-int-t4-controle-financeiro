@@ -67,10 +67,10 @@ Já a página de recuperação de senha é utilizada quando o usuário da plataf
 
 **A plataforma interativa**
 
-Uma vez cadsatrado, o usuário terá acesso a página da aplicação. 
-O conceito desta página foi elaborado buscando um visual simples, objetivo e eficaz. Onde apresentará todas as informações necessárias para utilização do sistema por qualquer tipo de usuário.
-Na barra superior contém a logomarca "Zcaixa", botões de atualizar e incluir lançamentos, a barra de progresso da meta cadastrada e local de opções do usuário.
-Na barra lateral esquerda, terá campós que exibem os saldos dos grupos e categorias de acordo com os lançamentos do usuário, e botoes a área de simulação e gerencia de metas.
-No campo Central se encontra a GRID de lançamentos com seus respectivos títulos dos detalhes dos lançamentos, e na parte inferior contém o botão para a geração de relatórios ou gráficos dos lançamentos.
+Uma vez cadastrado, o usuário terá acesso a página da aplicação. 
+O conceito desta página foi elaborado buscando um visual simples, objetivo e eficaz, onde apresentará todas as informações necessárias para utilização do sistema por qualquer tipo de usuário.
+Na barra superior contém a logomarca "ZCaixa", botões de atualizar e incluir lançamentos, a barra de progresso da meta cadastrada e local de opções do usuário.
+Na barra lateral esquerda, terá campos que exibem os saldos dos grupos e categorias de acordo com os lançamentos do usuário, e botões para a área de simulação e gerenciamento de metas.
+No campo Central se encontra a GRID de lançamentos com seus respectivos títulos e na parte inferior contém o botão para a geração de relatórios ou gráficos.
 
 ![Página Plataforma Interativa](img/Wire-Plataforma.png)
