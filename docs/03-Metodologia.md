@@ -57,12 +57,12 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 
 O quadro kanban do grupo no GitHub pode ser visualizado no link https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/123 e é apresentado, no estado atual, na Figura abaixo:
 
-![2022-09-26_19:23h_01](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/blob/2ff7c5c5452e30ff4ee445ee6c481fc13c70afd4/docs/img/Captura%20de%20tela%202022-09-26%20073730.png?raw=true)
+![Kanban](img/Kanban.png)
 
 
 ### Processo
 
-Ao realizar reuniões para continuidade do projeto, é definidos os cards de tarefas com seus respectivos responsáveis. Ao inicar uma tarefa, deve ser movido o card para a lista "Fazendo", após sua execução, é movida para a lista "Revisar" o qual haverá uma avaliação por todos integrantes do grupo para concluir que o card deve ser atualizado para a lista "Finalizado".
+Ao realizar reuniões para continuidade do projeto, são definidos os cards de tarefas com seus respectivos responsáveis. Ao inicar uma tarefa, deve ser movido o card para a lista "Fazendo", após sua execução, é movida para a lista "Revisar" o qual haverá uma avaliação por todos integrantes do grupo para concluir que o card deve ser atualizado para a lista "Finalizado".
  
 
 ### Ferramentas
@@ -71,6 +71,7 @@ As ferramentas empregadas no projeto são:
 
 - Editor de código : Visual Studio CODE.
 - Ferramentas de comunicação: Whatsapp, Teams.
-- Ferramentas de desenho de tela (_wireframing_): MarvelAPP
+- Ferramentas de desenho de tela (_wireframing_): MarvelAPP, Heflo
+- Ferramentas para diagramas (conceitual e lógico): Diagrams.net, Astah, Lucid Charts, BRMW
 
 O editor de código foi escolhido pelo grupo pois é o mais prático e acessível para os integrantes. Tem um bom dicionário de erros no código e permite acompanhar alterações em tempo real através do navegador.
