@@ -50,13 +50,13 @@ A página de termos terá o conteúdo sobre quais dados serão coletados e como 
 
 A página de login já não contempla o cabeçalho e rodapé das demais páginas, pois assim como a página da plataforma interativa não são partes ligadas as páginas instituicionais. O objetivo é que não haja alternação de páginas enquanto é feito a sua utilização. Na página de login é possível prosseguir para a plataforma (se já houver o cadastro), prosseguir para a página de cadastro ou recuperação de senha.
 
-![Página de Login](img/Wire-Login.png)
+![Página de Login](img/Wire-Login2.png)
 
 **Página de Cadastro**
 
 Na página de cadastro serão solicitados os dados necessários conforme a imagem abaixo para que possa criar uma autenticação para acesso à plataforma interativa.
 
-![Página de Cadastro](img/Wire-Cadastro.png)
+![Página de Cadastro](img/Wire-Cadastro2.png)
 
 **Página de Recuperação de senha**
 
