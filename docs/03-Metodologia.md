@@ -17,6 +17,8 @@ Projeto de Interface e Wireframes | MarvelApp | https://marvelapp.com/prototype/
 
 Gerenciamento do Projeto | GitHub | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/123
 
+Gerenciamento do Projeto | Sprints / Diagrama de Gantt | https://sgapucminasbr.sharepoint.com/:x:/r/sites/team_sga_2418_2022_2_4909104/_layouts/15/Doc.aspx?action=edit&sourcedoc=%7B4fb9d770-efa6-4a75-ba1f-aa6dea217969%7D&wdOrigin=TEAMS-ELECTRON.teamsSdk.openFilePreview&wdExp=TEAMS-CONTROL
+
 ## Gestão de Código Fonte 
 
 A gestão do código fonte do projeto é baseada no conteúdo proporcionado na orientação do projeto, que se dá pela opção commit no GitHub sendo atualizado os requisitos implementados ou ajustados no código fonte, ao mesmo tempo em que se atualiza os cards de sprints apresentados no quadro de tarefas.
