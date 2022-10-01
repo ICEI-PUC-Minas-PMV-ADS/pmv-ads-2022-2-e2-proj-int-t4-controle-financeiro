@@ -11,7 +11,7 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 
 Repositório de código fonte | GitHub | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/teams/controle-financeiro
 
-Documentos do projeto | OneDrive | https://sgapucminasbr-my.sharepoint.com/personal/1243077_sga_pucminas_br/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F1243077%5Fsga%5Fpucminas%5Fbr%2FDocuments%2FZCaixa%20%2D%20Controle%20Financeiro
+Documentos do projeto | GitHub | (https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/tree/main/docs)
 
 Projeto de Interface e Wireframes | MarvelApp | https://marvelapp.com/prototype/81dga60
 
