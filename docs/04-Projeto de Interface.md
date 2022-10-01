@@ -8,7 +8,7 @@ Importante destacar que  o projeto foi elaborado de forma a atender os requisito
 
 ## Diagrama de Fluxo
 
-![Diagrama de Fluxo](img/Diagrama_de_Fluxo.png)
+![Diagrama de Fluxo](img/DiagramaFluxo.png)
 
 ## Wireframes
 
