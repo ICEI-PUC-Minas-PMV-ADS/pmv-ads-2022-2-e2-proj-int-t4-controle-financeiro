@@ -1,9 +1,9 @@
 
 # Projeto de Interface
 
-Estamos estabelecendo foco em questões como acessibilidade, agilidade e usabilidade. O projeto tem identidade visual padronizada (menu e footer) em todas as telas e todas as telas são projetadas para funcionamento em desktops e dispositivos móveis (Modelo Ipad e Iphone X).
+Estamos estabelecendo foco em questões como acessibilidade, agilidade e usabilidade. O projeto tem identidade visual padronizada em todas as telas e são projetadas para funcionamento nos principais navegadores desktop do mercado (Google Chrome, Firefox, Microsoft Edge).
 
-Importante destacar que  o projeto foi elaborado de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados na <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/blob/9cfc29228317e3ac74c535ec5ab7e9d08bdfcb05/docs/02-Especifica%C3%A7%C3%A3o%20do%20Projeto.md"> Documentação de Especificação </a>.
+Importante destacar que  o projeto foi elaborado de forma a atender os requisitos funcionais, não funcionais e histórias de usuários abordados na <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/blob/9cfc29228317e3ac74c535ec5ab7e9d08bdfcb05/docs/02-Especifica%C3%A7%C3%A3o%20do%20Projeto.md"> Documentação de Especificação </a>.
 
 
 ## Diagrama de Fluxo
@@ -13,7 +13,7 @@ Importante destacar que  o projeto foi elaborado de forma a atender os requisito
 ## Wireframes
 
 O Wireframe interativo da solução foi projetada no Marvel APP, e pode ser acessado por <a href="https://marvelapp.com/prototype/81dga60"> Este link. </a>.
-O site da aplicação será composto por uma área "institucional" onde haverá uma página de apresentação (homepage), uma página detalhando detalhes da aplicação (Sobre), Uma página com conteúdos para desenvovlimento da educação financeira do usuário e também a página de termos, login, cadastro, recuperação de senha e da Plataforma interativa. 
+O site da aplicação será composto por uma área "institucional" onde haverá uma página de apresentação (homepage), uma página apresentando os detalhes da aplicação (Sobre), Uma página com conteúdos para desenvovlimento da educação financeira do usuário e também a página de termos, login, cadastro, recuperação de senha e da Plataforma interativa. 
 
 **Cabeçalho e Rodapé**
 
