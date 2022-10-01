@@ -30,7 +30,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |Samuel Vieira         | Desejo ter acesso a conteúdo sobre educação financeira                 | Fomentar meus conhecimentos a fim de ter um melhor controle dos meus gastos  |
 |Samuel Vieira         | Ter a possibilidade de visualizar as minhas receitas e débitos do mês                 | Afim de controlar e mensurar meus gastos mês a mês  |
 |Beatriz Sampaio         | Ver todos os meus gastos em uma mesma tela com um total                 | Saber o que posso e o que eu não posso gastar  |
-|Beatriz Sampaio         | Criar metas de gastos                  | Ser informada periodicamente sobre a situação das metas |
+|Beatriz Sampaio         | Criar e planejar metas                  | Ser informada periodicamente sobre a situação das metas |
 |João Nascimento        | Ser lembrado que tenho despesas que irão vencer                 | Para não esquecer e efetuar o pagamento em dia |
 |João Nascimento        | Saber se meus gastos aumentaram ou diminuíram em relação a períodos anteriores                 | Tentar verificar se estou economizando ou não |
 |João Nascimento        | Ter meu próprio usuário para utilizar o sistema                 | Que outras pessoas não vejam meus lançamentos  |
@@ -44,13 +44,13 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 |RF-001| O sistema permite agrupar valores por seções (categorias)  | ALTA | 
-|RF-002| O sistema permite agrupar valores por subseções (subcategoria)   | ALTA |
+|RF-002| O sistema permite agrupar categorias   | ALTA |
 |RF-003| O sistema permite o lançamento de débitos  | ALTA |
 |RF-004| O sistema permite o lançamento de crédito | ALTA |
 |RF-005| O sistema permite a conciliação dos gastos do cartão de crédito  | MÉDIA |
 |RF-006| O sistema permite filtrar os lançamentos conciliados e os não conciliados  | MÉDIA |
 |RF-007| O sistema permite datar/programar lançamentos (exemplo: pagamentos ou recebimentos futuros)  | ALTA |
-|RF-008| O sistema terá uma área com conteúdo (curadoria?) voltados para educação financeira | ALTA |
+|RF-008| O sistema terá uma área com conteúdo (curadoria) voltados para educação financeira | ALTA |
 |RF-009| O sistema permite a visualização de entradas, saídas, ativos e passivos por mês, trimestre e ano em uma única tela  | ALTA |
 |RF-010| O sistema permite a definição e simulação (com manipulação) do atingimento da meta estabelecida  | ALTA |
 |RF-011| O sistema informa as contas a vencer  | ALTA |
