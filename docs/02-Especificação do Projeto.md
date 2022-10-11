@@ -55,8 +55,6 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-010| O sistema permite a definição e simulação (com manipulação) do atingimento da meta estabelecida  | ALTA |
 |RF-011| O sistema informa as contas a vencer  | ALTA |
 |RF-012| O sistema emitirá relatórios comparativos entre períodos determinados pelo usuário (relatório de evolução do atingimento da meta)  | MÉDIA |
-|RF-013| O sistema terá tela inicial (home/institucional) |ALTA|
-|RF-014| O sistema terá tela de Login e senha | ALTA |
 
 ### Requisitos não Funcionais
 
@@ -67,6 +65,13 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RNF-003| O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge)  |  ALTA | 
 |RNF-004| O site será modelado usando UML 2.3  |  ALTA |
 |RNF-005| O site deve ter interface gráfica amigável  |  ALTA |
+|RNF-006| O sistema deve ter tela inicial (home/institucional) |ALTA|
+|RNF-007| A plataforma interativa deve permitir o acesso apenas de usuários cadastrados |ALTA|
+
+### Regras de negócio
+|ID     | Descrição da regra  |Prioridade |
+|-------|-------------------------|----|
+|RN-001| O sistema deve ser utilizado por pessoas econômicamente ativas maiores de 16 anos | ALTA | 
 
 ## Restrições
 
@@ -77,7 +82,9 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |01| O projeto deverá ser entregue no final do semestre letivo, não podendo extrapolar a data de 11/12/2022 |
 |02| O aplicativo deve se restringir às tecnologias básicas da Web no Frontend, Back End e banco de dados        |
 |03| A equipe não pode subcontratar o desenvolvimento do trabalho        |
-|04| A equipe usará o Kanban para o gerenciamento do projeto        |
+|04| A equipe usará o modelo Kanban para o gerenciamento do projeto      |
+|05| O sistema permitirá o cadastro de pessoas maiores de 16 anos        |
+
 
 
 ## Diagrama de Casos de Uso
