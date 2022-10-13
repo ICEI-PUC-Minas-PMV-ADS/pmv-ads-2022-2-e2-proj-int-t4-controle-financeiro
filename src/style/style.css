@@ -1,0 +1,173 @@
+/*----------------RESET CSS---------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ /* -------------------------------------------------------*/
+
+
+/* -------------- Variaveis ------------- */
+:root{
+--fonte-primaria: 'Noto Sans KR', sans-serif;
+--cor-primaria: #1e1e1e;
+--cor-secundaria: #399b53;
+--cor-terciaria: #fafafa;
+}
+
+/* -------------------------------------------------------*/
+
+body{
+    font-family: var(--fonte-primaria);
+    margin: 0;
+    padding: 0;
+    
+}
+
+main{
+
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+.login-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--cor-terciaria);
+    width: 100%;
+    height: 100%;
+}
+
+.Login-box{
+    display: flex;
+    background-color: #eaeaea;
+    width: 50%;
+    height: 80%;
+    border-radius: 30px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo-login-area{
+    width: 100%;
+    text-align: center;
+
+}
+
+.logo-login-area img{
+    width: 300px;
+    margin-bottom: 30px;
+    
+}
+
+.text-area-logo{
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.login-entrar-area{
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    align-items: center;
+   
+}
+
+.entrada-dados-login{
+    margin-top: 10px;
+    width: 40%;
+}
+
+.entrada-dados-login p{
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.entrada-dados-login input{
+
+    padding: 9px;
+    width: 100%;
+    border-radius: 5px;
+    border: solid 1px #959595;
+
+}
+
+
+.entrar-btn-login{
+    padding: 9px;
+    width: 100px;
+    border-radius: 5px;
+    border: solid 1px #959595;
+    margin-top: 15px;
+    background-color: #e0e0e0;
+}
+
+.entrar-btn-login:hover{
+    cursor: pointer;
+}
+
+.area-botao-final{
+    text-align: center;
+    width: 40%;
+}
+
+.area-botao-final a {
+    font-style: unset;
+    text-decoration: none;
+    font-size: 14px;
+    
+}
+
+.area-botao-final p{
+    color: #1e1e1e;
+    margin-top: 20px;
+    margin-bottom: 1px;
+}
