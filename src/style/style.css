@@ -45,6 +45,10 @@ table {
 }
  /* -------------------------------------------------------*/
 
+ div, article, section, nav, header, main, footer, img, p{
+    transition: all .3s ease;
+    transition-delay: 0.2s;
+}
 
 /* -------------- Variaveis ------------- */
 :root{
@@ -170,4 +174,103 @@ main{
     color: #1e1e1e;
     margin-top: 20px;
     margin-bottom: 1px;
+}
+
+.cadastro-box-area{
+    display: flex;
+    background-color: #eaeaea;
+    width: 50%;
+    height: 95%;
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabeçalho-cadastr-db1{
+    display: flex;
+    width: 40%;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.cabeçalho-cadastr-db2{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabeçalho-cadastr-db2 h1{
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 20px;
+
+}
+
+.logo-cadastro{
+    margin-top: 20px;
+    width: 70%;
+}
+
+.cabeçalho-cadastro{
+    display: flex;
+   
+}
+
+.main-cadastro-area{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 25px;
+   
+
+}
+
+.main-cadastro-area input{
+    margin-top: 5px;
+    margin-right: 10px;
+    padding: 9px;
+    border-radius: 5px;
+    border: solid 1px #959595;
+    
+}
+
+.main-cadastro-area p{
+    margin-top: 10px;
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+.main-cadastro-area button{
+    margin-top: 20px;
+    font-size: 15px;
+    padding: 9px;
+    width: 100px;
+    border-radius: 5px;
+    border: solid 1px #959595;
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+
+.campos-em-row{
+    display:flex;
+
+}
+
+.btn-cadastro-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-cadastro-area label{
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+.cadastro-termos-area{
+    margin-top: 10px;
 }
