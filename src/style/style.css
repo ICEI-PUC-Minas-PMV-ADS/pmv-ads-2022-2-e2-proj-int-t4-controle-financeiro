@@ -131,7 +131,7 @@ main{
 
 .entrada-dados-login p{
     margin-top: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     font-size: 14px;
 }
 
@@ -141,8 +141,10 @@ main{
     width: 100%;
     border-radius: 5px;
     border: solid 1px #959595;
-
+    font-family: 'Noto Sans KR';
 }
+
+
 
 
 .entrar-btn-login{
@@ -152,6 +154,7 @@ main{
     border: solid 1px #959595;
     margin-top: 15px;
     background-color: #e0e0e0;
+    font-family: 'Noto Sans KR';
 }
 
 .entrar-btn-login:hover{
@@ -159,8 +162,10 @@ main{
 }
 
 .area-botao-final{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    width: 40%;
 }
 
 .area-botao-final a {
@@ -223,7 +228,7 @@ main{
     display: flex;
     flex-direction: column;
     width: 70%;
-    margin-top: 25px;
+    margin-top: 10px;
    
 
 }
@@ -234,13 +239,16 @@ main{
     padding: 9px;
     border-radius: 5px;
     border: solid 1px #959595;
-    
+    font-family: 'Noto Sans KR';
 }
+    
 
 .main-cadastro-area p{
     margin-top: 10px;
     margin-right: 5px;
     font-size: 13px;
+    font-weight: 400;
+    
 }
 
 .main-cadastro-area button{
@@ -261,6 +269,7 @@ main{
 }
 
 .btn-cadastro-area{
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -273,4 +282,63 @@ main{
 
 .cadastro-termos-area{
     margin-top: 10px;
+}
+
+.recupera-box-area{
+    display: flex;
+    background-color: #eaeaea;
+    width: 50%;
+    height: 60%;
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.textos-informativos{
+    text-align: center;
+    font-size: 1em;
+    margin-top: 7px;
+    width: 35rem;
+    max-width: 100%;
+}
+
+.main-recuperacao-area{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-top: 10px;
+    align-items: center;
+   
+
+}
+
+.main-recuperacao-area input{
+    margin-top: 1.5rem;
+    margin-right: 10px;
+    padding: 9px;
+    border-radius: 5px;
+    border: solid 1px #959595;
+    font-family: 'Noto Sans KR';
+    width: 15rem;
+    max-width: 100%;
+}
+    
+
+.main-recuperacao-area p{
+    margin-top: 10px;
+    margin-right: 5px;
+    font-weight: 400;
+    
+}
+
+.main-recuperacao-area button{
+    margin-top: 20px;
+    font-size: 15px;
+    padding: 9px;
+    width: 100px;
+    border-radius: 5px;
+    border: solid 1px #959595;
+    background-color: #e0e0e0;
+    cursor: pointer;
 }
