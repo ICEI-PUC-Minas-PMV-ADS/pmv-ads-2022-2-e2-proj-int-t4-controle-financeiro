@@ -1,0 +1,79 @@
+﻿@model ZCaixaV5.Models.Usuario
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+<<body>
+    <main>
+        <div class="login-area">
+
+            <div class="cadastro-box-area">
+
+
+                <div class="cabeçalho-cadastro">
+                    <a class="cabeçalho-cadastr-db1" asp-action="Index">
+                        <img class="logo-cadastro" src="~/imagens/logo-horizontal.png" alt="">
+                    </a>
+                    <div class="cabeçalho-cadastr-db2">
+                        <h1>Crie uma conta</h1>
+                    </div>
+                </div>
+
+                <form asp-action="Create" class="main-cadastro-area">
+                    <div class="campos-em-row">
+                        <div asp-for="Nome">
+                            <p>Nome</p>
+                            <input asp-for="Nome">
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                        <div asp-for="UltimoNome">
+                            <p>Último Nome</p>
+                            <input asp-for="UltimoNome">
+                            <span asp-validation-for="UltimoNome" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div asp-for="Username">
+                        <p>Username</p>
+                        <input asp-for="Username">
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div asp-for="Email">
+                        <p>E-mail</p>
+                        <input asp-for="Email" type="email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="campos-em-row">
+                        <div asp-for="DataNascimento">
+                            <p>Data de nascimento</p>
+                            <input asp-for="DataNascimento" type="date">
+                            <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                        </div>
+                        <div asp-for="Telefone">
+                            <p>Telefone</p>
+                            <input asp-for="Telefone" type="tel">
+                            <span asp-validation-for="Telefone" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div asp-for="Senha">
+                        <p>Crie uma Senha</p>
+                        <input asp-for="Senha" type="password">
+                        <span asp-validation-for="Senha" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <p>Confirme sua senha</p>
+                        <input type="password">
+                    </div>
+                    <div class="cadastro-termos-area">
+                        <input id="check" type="checkbox"><label for="check">Concordo com os termos</label>
+                    </div>
+                    <div class="btn-cadastro-area">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+                @section Scripts {
+                    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                }
+            </div>
+        </div>
+    </main>
+</body>
