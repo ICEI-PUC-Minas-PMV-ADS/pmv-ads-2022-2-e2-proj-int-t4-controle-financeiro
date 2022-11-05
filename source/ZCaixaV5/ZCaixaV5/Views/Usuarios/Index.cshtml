@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ZCaixaV5.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<body>
+    <main>
+        <div class="login-area">
+
+            <div class="Login-box">
+                <div class="logo-login-area">
+                    <a asp-action="Index"><img src="~/imagens/logo-horizontal.png" alt=""></a>
+                    <p class="text-area-logo">Insira suas credenciais de acesso abaixo.</p>
+                </div>
+
+                <div class="login-entrar-area">
+                    <form method="post" action="" class="entrada-dados-login">
+                        <p>E-mail, usuário ou telefone</p>
+                        <input type="email">
+
+                        <span class="entrada-dados-login">
+                            <p>Senha</p>
+                            <input type="password">
+                        </span>
+
+                        <span class="area-botao-final">
+                            <button class="entrar-btn-login">Entrar</button>
+                            <a asp-action="RecuperaSenha"><p>Esqueci minha senha</p></a>
+                            <a asp-action="Create"><p>Criar um cadastro</p></a>
+                        </span>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UltimoNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Senha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UltimoNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Senha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Username">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Username">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Username">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
