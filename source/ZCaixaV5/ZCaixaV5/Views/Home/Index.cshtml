@@ -1,4 +1,7 @@
-﻿@{
+﻿@model ZCaixaV5.Models.Usuario
+
+
+@{
     ViewData["Title"] = "Login";
 }
 
@@ -6,6 +9,7 @@
     <main>
         <div class="login-area">
 
+            <h3> @ViewBag.Message </h3>
             <div class="Login-box">
                 <div class="logo-login-area">
                     <a asp-action="Index"><img src="~/imagens/logo-horizontal.png" alt=""></a>
@@ -15,15 +19,17 @@
                 <div class="login-entrar-area">
                     <form method="post" action="" class="entrada-dados-login">
                         <p>E-mail, usuário ou telefone</p>
-                        <input type="email">
+                        <input asp-for="Username">
+                        <span asp-validation-for="Username" class="text-danger"></span>
 
                         <span class="entrada-dados-login">
                             <p>Senha</p>
-                            <input type="password">
+                            <input asp-for="Senha" type="password">
+                            <span asp-validation-for="Senha" class="text-danger"></span>
                         </span>
 
                         <span class="area-botao-final">
-                            <button class="entrar-btn-login">Entrar</button>
+                            <input type="submit" value="Entrar" class="entrar-btn-login"></input>
                             <a asp-action="RecuperaSenha"><p>Esqueci minha senha</p></a>
                             <a asp-controller="Usuarios" asp-action="Create"><p>Criar um cadastro</p></a>
                         </span>
@@ -33,6 +39,9 @@
 
                 </div>
             </div>
-         </div>
+        </div>
     </main>
 </body>
+
+
+

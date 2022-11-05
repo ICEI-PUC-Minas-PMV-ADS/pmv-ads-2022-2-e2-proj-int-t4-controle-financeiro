@@ -1,0 +1,44 @@
+﻿@model ZCaixaV5.Models.Usuario
+
+@{
+    ViewData["Title"] = "Esqueci Minha Senha";
+}
+<body>
+    <main>
+        <div class="login-area">
+
+            <div class="recupera-box-area">
+
+
+                <div class="cabeçalho-cadastro">
+                    <a class="cabeçalho-cadastr-db1" asp-action="Index">
+                        <img class="logo-cadastro" src="~/imagens/logo-horizontal.png" alt="">
+                    </a>
+                    <div class="cabeçalho-cadastr-db2">
+                        <h1>Esqueci minha senha</h1>
+                    </div>
+                </div>
+
+                <div class="main-recuperacao-area">
+                    <p class="textos-informativos">Insira seu nome de usuário, e-mail ou telefone que você usou no cadastro.</p>
+                    <p class="textos-informativos"> Nós mandaremos um e-mail com seu nome de usuário e sua senha.</p>
+                    <form asp-for="RecuperaSenha" class="">
+
+                        <input asp-for="Username">
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                        
+                        <h3 class="text-danger">@ViewBag.Message</h3>
+                    
+
+                    <div class="btn-cadastro-area">
+                        <input type="submit" class="btn-cadastro-area">
+                    </div>
+
+                        </form>
+    
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>

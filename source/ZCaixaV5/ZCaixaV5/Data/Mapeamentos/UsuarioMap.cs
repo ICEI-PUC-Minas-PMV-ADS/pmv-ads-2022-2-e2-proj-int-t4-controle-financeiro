@@ -22,8 +22,7 @@ namespace ZCaixaV5.Data.Mapeamentos
                 .HasMaxLength(150)
                 .IsRequired(false);
             builder.Property(t => t.Senha)
-                .IsRequired()
-                .HasMaxLength(20);
+                .IsRequired();
             builder.Property(t => t.Email)
                 .IsRequired();
             builder.Property(t => t.Telefone)

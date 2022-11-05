@@ -329,3 +329,10 @@ main {
         background-color: #e0e0e0;
         cursor: pointer;
     }
+
+    .text-danger {
+    display: block;
+    margin-top: 5px;
+    color: red;
+    font-size: 11px!important;
+    }

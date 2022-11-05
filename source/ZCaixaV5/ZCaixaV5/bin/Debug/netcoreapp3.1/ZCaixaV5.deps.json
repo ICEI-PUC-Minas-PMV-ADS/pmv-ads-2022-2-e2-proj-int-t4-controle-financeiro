@@ -31,6 +31,7 @@
     ".NETCoreApp,Version=v3.1": {
       "ZCaixaV5/1.0.0": {
         "dependencies": {
+          "BCrypt.Net-Next": "3.5.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.30",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.30",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.30",
@@ -306,6 +307,17 @@
         },
         "compile": {
           "ZCaixaV5.dll": {}
+        }
+      },
+      "BCrypt.Net-Next/3.5.0": {
+        "runtime": {
+          "lib/netstandard2.1/BCrypt.Net-Next.dll": {
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/BCrypt.Net-Next.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.30": {
@@ -1400,7 +1412,11 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.ComponentModel.Annotations/4.7.0": {},
+      "System.ComponentModel.Annotations/4.7.0": {
+        "compile": {
+          "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
+        }
+      },
       "System.ComponentModel.Primitives/4.3.0": {
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -3867,6 +3883,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BCrypt.Net-Next/3.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6DaFW42NhDA1/QDR6/8nyv04QBswBXEaCh0AXtm0kfbTTRFeMh7ROmlniqrVjP0Mpx4raGE+oWsy1f6IC/jWAQ==",
+      "path": "bcrypt.net-next/3.5.0",
+      "hashPath": "bcrypt.net-next.3.5.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.30": {
       "type": "package",
