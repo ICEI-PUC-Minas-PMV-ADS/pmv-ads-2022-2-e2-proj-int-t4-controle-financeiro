@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZCaixa - Entrar</title>
+    <link rel="shortcut icon" href="imagens/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    
+ <main>
+    <header class="plataforma-header">
+        <div class="logo-plataforma-area">
+        <img class="logo-plataforma" src="imagens/logo-horizontal.png" alt="">
+        </div>
+        <div class="botoes-plataforma-area">
+            <button type="button" class="btn-plataforma" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+               <img class="icones" src="imagens/add-icon.png" alt=""> 
+              </button>
+
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content modal-lancamento">
+                    <div class="modal-header">
+                      <h1 class="modal-title " id="staticBackdropLabel">Adicionar um Lançamento</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn-plataforma btn-atualiza">
+                <img class="icones" src="imagens/atualiza-icon.png" alt=""> 
+               </button>
+
+        </div>
+
+            
+        <div class="meta-plataforma-area">
+            <p>Status da meta:</p>
+            <img class="meta-png" src="imagens/meta.png" alt="">
+        </div>
+            
+        <div class="usuario-plataforma-area">
+            
+            <input type="checkbox" id="checkbox-menu-plataforma">
+            <p>Olá, Usuário</p>
+            
+            <label for="checkbox-menu-plataforma">
+                <a type="button" class="btn-limpo"><img class="icones" src="imagens/drop-down-icon.png" alt=""></a>
+               </label>
+            
+            <nav class="menu-usuario-plataforma">
+            <ul>
+                <li>
+                    <a href=""><img class="icones-menu-usuario" src="imagens/usuario-icon.png" alt=""> <p>Minha Conta</p></a>
+                </li>
+                <li>
+                    <a href=""><img class="icones-menu-usuario" src="imagens/sair-icon.png" alt=""> <p>Logout</p></a>
+                </li>
+                
+
+            </ul>
+            </nav>
+             
+
+            
+
+        </div>
+    </header>
+
+    <div class="Area-Central">
+        <div class="Area-esquerda">
+            <p>a</p>
+        </div>
+            
+        <div class="Area-direita">
+            <div class="cabecalho-filtro">
+              <div class="lancamento-conciliado"><a href="">Conciliado</a></div>
+              <div class="lancamento-data"><a href="">Data</a></div>
+              <div class="lancamento-valor"><a href="">Valor</a></div>
+              <div class="lancamento-categoria"><a href="">Categoria Origem X Destino</a></div>
+              <div class="lancamento-descricao"><a href="">Descrição</a></div>
+              <div class="lancamento-datalan"><a href="">Data Lançamento</a></div>
+              <div class="lancamento-excluir"><a href="">Excluir</a></div>
+              <div class="lancamento-alterar"><a href="">Alterar</a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Salario > Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+        </div>
+
+    </div>
+ </main>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+
+</html>

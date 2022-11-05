@@ -58,6 +58,9 @@ table {
 --cor-terciaria: #fafafa;
 }
 
+a {
+    text-decoration: none;
+}
 /* -------------------------------------------------------*/
 
 body{
@@ -342,4 +345,232 @@ main{
     border: solid 1px #959595;
     background-color: #e0e0e0;
     cursor: pointer;
+}
+
+/* Plataforma */
+
+.icones{
+    width: 20px;
+}
+
+.btn-limpo{
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+}
+
+.btn-plataforma{
+    
+    padding: 1px;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    border: solid 1px #959595;
+    margin-top: 15px;
+    background-color: #e0e0e0;
+    font-family: 'Noto Sans KR';
+}
+
+.btn-atualiza{
+    margin-left: 10px;
+}
+
+.plataforma-header{
+    display: flex;
+    background-color: #CFCFCF;
+    width: 100%;
+    height: 20%;
+}
+
+.logo-plataforma{
+    width: 70%;
+    height: 80%;
+}
+.logo-plataforma-area{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+.botoes-plataforma-area{
+    width: 25%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+.meta-plataforma-area{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.meta-png{
+    width: 80%;
+}
+
+.usuario-plataforma-area{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    color: #333333;;
+    
+}
+
+#checkbox-menu-plataforma{
+    display: none;
+}
+
+.menu-usuario-plataforma{
+    padding: 5px;
+    position: absolute;
+    display: none;
+    top: 13vh;
+    background-color: #bbbbbb;
+    width: 15vw;
+    height: 7vw;
+    border-radius: 10px;
+
+}
+
+.menu-usuario-plataforma ul{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+
+}
+
+.menu-usuario-plataforma li:hover{
+   background-color: #e0e0e0;
+   cursor: pointer; 
+   border-radius: 5px;
+ }
+
+.menu-usuario-plataforma li a{
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   align-items: center;
+   color: #333333;
+   font-weight: 400;
+
+}
+
+.icones-menu-usuario{
+    width: 2.3vw;
+}
+
+#checkbox-menu-plataforma:checked ~ .menu-usuario-plataforma {
+    display: flex;
+    align-items: center;
+    color: #333333;
+    
+}
+
+.Area-Central{
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+}
+
+.Area-esquerda{
+    width: 25%;
+    background-color: #CFCFCF;
+    border-top: 3px solid #b8b8b8;
+    border-right: 3px solid #b8b8b8;
+}
+
+.Area-direita{
+    
+    width: 75%;
+    background-color: #fff;
+    border-top: 3px solid #b8b8b8;
+}
+
+.modal-lancamento{
+    background-color: #CFCFCF;
+}
+
+.cabecalho-filtro{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #bbbbbb;
+    height: 5%;
+    align-items: center;
+    text-align: center;
+    border-bottom: 3px solid #b8b8b8;
+}
+
+.cabecalho-filtro a{
+    color: #414141;
+    font-size: 1vw;
+}
+
+.lancamento-conciliado{
+    width: 9%;
+    border-right: 2px solid #959595;
+}
+
+.lancamento-data{
+    width: 10%;
+    border-right: 2px solid #959595;
+}
+
+.lancamento-valor{
+    width: 11%;
+    border-right: 2px solid #959595;
+}
+.lancamento-categoria{
+    width: 20%;
+    border-right: 2px solid #959595;
+}
+
+.lancamento-descricao{
+    width: 20%;
+    border-right: 2px solid #959595;
+}
+
+.lancamento-datalan{
+    width: 15%;
+    border-right: 2px solid #959595;
+}
+
+.lancamento-excluir{
+    width: 7.5%;
+    border-right: 2px solid #959595;
+}
+
+.lancamento-alterar{
+    width: 7.5%;
+}
+
+.lancamento-unitario{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #FFF;
+    height: 5%;
+    align-items: center;
+    text-align: center;
+}
+
+.lancamento-unitario p{
+    color: #333333;
+    font-size: 1vw;
+}
+
+.icone-lancamento-unitario{
+    width: 1.0vw;
 }
