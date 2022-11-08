@@ -3,8 +3,14 @@
 **Casos de Teste**  | **CT-01 - Acessar tela inicial**
 
 `Requisitos Associados` - RF-13 - O sistema terá tela inicial (home/institucional) // RF-08 -  O sistema terá uma área com conteúdos (curadoria) voltados para educação financeira
+
+
 `Objetivo do teste` - Testar o acesso a página home/institucional e visualizar conteúdos de educação financeira
+
+
 `Passos` - Abrir o navegador > Informar o endreço do site https://xxxxxxxxxxx.com.br > Clicar nos conteúdos 
+
+
 `Critério de Êxito` - A página home/institucional foi acessada com sucesso e os conteúdo de educação financeira executados. 
 
 **CT-02 - Criar usuário e senha**
