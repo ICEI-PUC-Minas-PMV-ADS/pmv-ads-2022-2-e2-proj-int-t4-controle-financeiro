@@ -4,8 +4,13 @@
 |--------------------|------------------------------------|
 |`Requisitos Associados` | RF-13 - O sistema terá tela inicial // RF-08 -  O sistema terá uma área com conteúdos (curadoria) voltados para educação financeira |
 |`Objetivo do teste` | Testar o acesso a página home/institucional e visualizar conteúdos de educação financeira |
-|`Passos` | Abrir o navegador > Informar o endreço do site https://xxxxxxxxxxx.com.br > Clicar nos conteúdos |
+|`Dados de entrada` | Usuário: admin Senha: 12345 |
+|`Passos` |
+||1 - Abrir o navegador |
+||2 - Informar o endreço do site https://xxxxxxxxxxx.com.br |
+||3 - Clicar nos conteúdos |
 |`Critério de Êxito` | A página home/institucional foi acessada com sucesso e os conteúdo de educação financeira executados. |
+|`Avaliação` |  |
 
 
 | Casos de Teste | CT-02 - Criar usuário e senha |
