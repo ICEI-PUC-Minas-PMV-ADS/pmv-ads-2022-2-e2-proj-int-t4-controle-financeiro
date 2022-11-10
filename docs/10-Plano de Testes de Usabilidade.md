@@ -19,7 +19,7 @@
 
 **Detalhamento Análise Heurística**
 | ID | Característica | Sim Não N/A | Comentários |
-|:--------------------|:------------------------------------|------------------------------------|:------------------------------------|
+|:---------------|:------------------------------------|------------------------------------|:------------------------------------|
 | 1 - Visibilidade do status do sistema |
 | 1.1 | As telas do sistema iniciam com um título que descreve seu conteúdo? | [ ] [ ] [ ] |  |
 | 1.2 | O ícone selecionado é destacado dos demais não selecionados? | [ ] [ ] [ ] |  |
@@ -46,34 +46,34 @@
 | 4.5 | Os objetos do sistema são nomeados de maneira conssitente em todo o sistema? | [ ] [ ] [ ] |  |
 | 4.6 | Os campos obrigatórios e opcionais são corretamente sinalizados? | [ ] [ ] [ ] |  |
 | 5 - Prevenção de erros |
-| 5.1 | ? | [ ] [ ] [ ] |  |
-| 5.2 | ? | [ ] [ ] [ ] |  |
-| 5.3 | ? | [ ] [ ] [ ] |  |
+| 5.1 | As opções de menu são lógicas, distintas e mutualmente exclusivas? | [ ] [ ] [ ] |  |
+| 5.2 | Se o sistema exibe múltiplas janelas, a navegação entre janelas é simples e visível? | [ ] [ ] [ ] |  |
+| 5.3 | O sistema alerta o usuário se ele está prestes a fazer erros críticos? | [ ] [ ] [ ] |  |
 | 6 - Reconhecimento ao invés de recordação |
-| 6.1 | ? | [ ] [ ] [ ] |  |
-| 6.2 | ? | [ ] [ ] [ ] |  |
-| 6.3 | ? | [ ] [ ] [ ] |  |
-| 6.4 | ? | [ ] [ ] [ ] |  |
-| 6.5 | ? | [ ] [ ] [ ] |  |
+| 6.1 | Há distinção clara quando é possível selecionar um item ou vários? | [ ] [ ] [ ] |  |
+| 6.2 | Os rótulos de campo estão próximos dos campos e separados pelo menos um espaço? | [ ] [ ] [ ] |  |
+| 6.3 | São utulizadas bordas para identificar possiveis grupois de elementos? | [ ] [ ] [ ] |  |
+| 6.4 | Existem opções default para o que o usuário precisa selecionar? | [ ] [ ] [ ] |  |
+| 6.5 | Há alguma diferença visível para identificar a janela ativa? | [ ] [ ] [ ] |  |
 | 7 - Flexibilidade e eficiência de uso |
-| 7.1 | ? | [ ] [ ] [ ] |  |
-| 7.2 | ? | [ ] [ ] [ ] |  |
-| 7.3 | ? | [ ] [ ] [ ] |  |
+| 7.1 | Existem atalhos para as funções disponíveis no sistema? | [ ] [ ] [ ] |  |
+| 7.2 | O usuário pode realizar a tarefa de maneiras mais simplificadas? | [ ] [ ] [ ] |  |
+| 7.3 | O sistema permite integração com outras fontes das informações tratadas? | [ ] [ ] [ ] |  |
 | 8 - Estética e design minimalista |
-| 8.1 | ? | [ ] [ ] [ ] |  |
-| 8.2 | ? | [ ] [ ] [ ] |  |
-| 8.3 | ? | [ ] [ ] [ ] |  |
-| 8.4 | ? | [ ] [ ] [ ] |  |
+| 8.1 | Apenas a informação necessária para ação está visível na tela? | [ ] [ ] [ ] |  |
+| 8.2 | Os ícones e ilustrações estão distintos do seu fundo? | [ ] [ ] [ ] |  |
+| 8.3 | Os agrupamentos são separados por espaço em branco? | [ ] [ ] [ ] |  |
+| 8.4 | Os rótulos e menus são breves, familiares e descritivos das opções que representam? | [ ] [ ] [ ] |  |
 | 9 - Ajudar os usuários e reconhecer, diagnosticar se recuperar de erros |
-| 9.1 | ? | [ ] [ ] [ ] |  |
-| 9.2 | ? | [ ] [ ] [ ] |  |
-| 9.3 | ? | [ ] [ ] [ ] |  |
-| 9.4 | ? | [ ] [ ] [ ] |  |
-| 9.5 | ? | [ ] [ ] [ ] |  |
+| 9.1 | É utilizado um sinal sonoro para alertar de erros? | [ ] [ ] [ ] |  |
+| 9.2 | Os questionamentos são breves e sem ambiguidade? | [ ] [ ] [ ] |  |
+| 9.3 | Se um erro é detectado, o usuário tem visibilidade sobre qual o local gerador do erro? | [ ] [ ] [ ] |  |
+| 9.4 | As mensagens de erro identificam a severidade e a causa do erro? | [ ] [ ] [ ] |  |
+| 9.5 | As mensagens de erro sugerem uma ação para correção? | [ ] [ ] [ ] |  |
 | 10 - Ajuda e documentação |
-| 10.1 | ? | [ ] [ ] [ ] |  |
-| 10.2 | ? | [ ] [ ] [ ] |  |
-| 10.3 | ? | [ ] [ ] [ ] |  |
+| 10.1 | As instruções online es~toa visualemnte distintas? | [ ] [ ] [ ] |  |
+| 10.2 | Existe ajuda online sensível ao contexto? | [ ] [ ] [ ] |  |
+| 10.3 | É simples o acesso a ajuda do sistema e retorno ao sistema? | [ ] [ ] [ ] |  |
 
 
 
