@@ -1,4 +1,25 @@
-# Plano de Testes de Usabilidade
+## Plano de Testes de Usabilidade
+
+
+**Avaliação Funcional (feita pelo usuário que faz transações – casos de uso)**
+
+| Atividade a ser realizada | Feedback do usuário | Considerações (quais os problemas, deficiências, limitações, etc) | Sugestão de melhorias |
+|--------------------|------------------------------------|------------------------------------|------------------------------------|
+| Cadastro de usuário - Campos obrigatórios: Nome, Sobrenome, E-mail, Data de nascimento, Telefone, Senha, Confirmação da senha | |
+| Realizar login na aplicação - Campos obrigatórios: Usuário, E-mail ou telefone e senha | |
+| Cadastrar categorias | |
+| Realizar um lançamento Campos obrigatórios: Datas, Valor, Categoria, Descrição | |
+| Programar Lançamentos | |
+| Excluir um lançamento | |
+| Editar um lançamento | |
+| Visualizar lançamento por período (Filtro por semana, mês ou ano) | |
+| Definir metas | |
+| Simular cenários | |
+| Visualizar Relatórios | |
+
+
+
+
 
 **Modelo de teste: Descoberta de problemas**
 
