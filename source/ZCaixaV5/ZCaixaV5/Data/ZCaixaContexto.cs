@@ -22,10 +22,15 @@ namespace ZCaixaV5.Api.Data
         }
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Categoria> Categorias { get; set; }
+
+        public DbSet<Lancamento> Lancamentos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new CategoriaMap());
+            modelBuilder.ApplyConfiguration(new LancamentoMap());
         }
-        
     }
 }

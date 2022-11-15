@@ -32,9 +32,11 @@
       "ZCaixaV5/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "3.5.0",
+          "CompositeC1.Security": "0.9.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.30",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.30",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.30",
+          "Microsoft.Owin.Security.Authorization.Mvc": "1.2.2.4",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -318,6 +320,138 @@
         },
         "compile": {
           "lib/netstandard2.1/BCrypt.Net-Next.dll": {}
+        }
+      },
+      "CompositeC1.Core/4.2.1": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.3",
+          "Microsoft.AspNet.WebPages": "3.2.3",
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "SharpZipLib": "0.86.0"
+        },
+        "runtime": {
+          "lib/net45/Composite.Workflows.dll": {
+            "assemblyVersion": "4.2.5287.17500",
+            "fileVersion": "4.2.5287.17500"
+          },
+          "lib/net45/Composite.dll": {
+            "assemblyVersion": "4.2.5287.17495",
+            "fileVersion": "4.2.5287.17495"
+          },
+          "lib/net45/Microsoft.Practices.EnterpriseLibrary.Common.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net45/Microsoft.Practices.EnterpriseLibrary.Logging.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net45/Microsoft.Practices.EnterpriseLibrary.Validation.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net45/Microsoft.Practices.ObjectBuilder.dll": {
+            "assemblyVersion": "1.0.51206.0",
+            "fileVersion": "1.0.51206.0"
+          },
+          "lib/net45/TidyNet.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net45/Composite.Workflows.dll": {},
+          "lib/net45/Composite.dll": {},
+          "lib/net45/Microsoft.Practices.EnterpriseLibrary.Common.dll": {},
+          "lib/net45/Microsoft.Practices.EnterpriseLibrary.Logging.dll": {},
+          "lib/net45/Microsoft.Practices.EnterpriseLibrary.Validation.dll": {},
+          "lib/net45/Microsoft.Practices.ObjectBuilder.dll": {},
+          "lib/net45/TidyNet.dll": {}
+        }
+      },
+      "CompositeC1.Security/0.9.3": {
+        "dependencies": {
+          "CompositeC1.Core": "4.2.1",
+          "CompositeC1Contrib.Core": "0.8.3"
+        },
+        "runtime": {
+          "lib/net45/CompositeC1Contrib.Security.dll": {
+            "assemblyVersion": "0.9.3.0",
+            "fileVersion": "0.9.3.0"
+          }
+        },
+        "compile": {
+          "lib/net45/CompositeC1Contrib.Security.dll": {}
+        }
+      },
+      "CompositeC1Contrib.Core/0.8.3": {
+        "dependencies": {
+          "CompositeC1.Core": "4.2.1"
+        },
+        "runtime": {
+          "lib/net45/CompositeC1Contrib.Core.dll": {
+            "assemblyVersion": "0.8.3.0",
+            "fileVersion": "0.8.3.0"
+          }
+        },
+        "compile": {
+          "lib/net45/CompositeC1Contrib.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc/5.2.3": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.3",
+          "Microsoft.AspNet.WebPages": "3.2.3"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {
+            "assemblyVersion": "5.2.3.0",
+            "fileVersion": "5.2.30128.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor/3.2.3": {
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.2.3": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.3",
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
+          },
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
+          },
+          "lib/net45/System.Web.WebPages.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
+          },
+          "lib/net45/System.Web.WebPages.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.30": {
@@ -1050,6 +1184,65 @@
       },
       "Microsoft.NETCore.Platforms/2.1.2": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Owin/4.2.2": {
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.dll": {
+            "assemblyVersion": "4.2.2.0",
+            "fileVersion": "4.200.222.26002"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Host.SystemWeb/4.2.2": {
+        "dependencies": {
+          "Microsoft.Owin": "4.2.2",
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Host.SystemWeb.dll": {
+            "assemblyVersion": "4.2.2.0",
+            "fileVersion": "4.200.222.26002"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Host.SystemWeb.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Authorization/1.2.2.4": {
+        "dependencies": {
+          "Microsoft.Owin.Host.SystemWeb": "4.2.2"
+        },
+        "runtime": {
+          "lib/net462/Microsoft.Owin.Security.Authorization.dll": {
+            "assemblyVersion": "1.2.2.4",
+            "fileVersion": "1.2.2.4"
+          }
+        },
+        "compile": {
+          "lib/net462/Microsoft.Owin.Security.Authorization.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Authorization.Mvc/1.2.2.4": {
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "5.2.3",
+          "Microsoft.Owin.Host.SystemWeb": "4.2.2",
+          "Microsoft.Owin.Security.Authorization": "1.2.2.4"
+        },
+        "runtime": {
+          "lib/net462/Microsoft.Owin.Security.Authorization.Mvc.dll": {
+            "assemblyVersion": "1.2.2.4",
+            "fileVersion": "1.2.2.4"
+          }
+        },
+        "compile": {
+          "lib/net462/Microsoft.Owin.Security.Authorization.Mvc.dll": {}
+        }
+      },
       "Microsoft.VisualStudio.Web.CodeGeneration/3.1.5": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "3.1.30",
@@ -1172,6 +1365,17 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
         }
       },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.20105.407"
+          }
+        },
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2",
@@ -1258,6 +1462,17 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "Owin/1.0.0": {
+        "runtime": {
+          "lib/net40/Owin.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net40/Owin.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -1340,6 +1555,17 @@
           }
         }
       },
+      "SharpZipLib/0.86.0": {
+        "runtime": {
+          "lib/20/ICSharpCode.SharpZipLib.dll": {
+            "assemblyVersion": "0.86.0.518",
+            "fileVersion": "0.86.0.518"
+          }
+        },
+        "compile": {
+          "lib/20/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1412,11 +1638,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.ComponentModel.Annotations/4.7.0": {
-        "compile": {
-          "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
-        }
-      },
+      "System.ComponentModel.Annotations/4.7.0": {},
       "System.ComponentModel.Primitives/4.3.0": {
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -3891,6 +4113,48 @@
       "path": "bcrypt.net-next/3.5.0",
       "hashPath": "bcrypt.net-next.3.5.0.nupkg.sha512"
     },
+    "CompositeC1.Core/4.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L6OVK3IgMtvKt65wOOcVF5SP8Uq8CeSHQbthi86oyW/57GW9YbvYRkTyjvChKOpg18zX/kVjp8cU4YiPROrdPQ==",
+      "path": "compositec1.core/4.2.1",
+      "hashPath": "compositec1.core.4.2.1.nupkg.sha512"
+    },
+    "CompositeC1.Security/0.9.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W2ENtl/1Xamn2LsPpOfV0wOP7sVdSm1/T7UbuP+6KBKSMhXVNPQeYFio1Myk7nhWmLweoDhFcVpd7SBek2w+xw==",
+      "path": "compositec1.security/0.9.3",
+      "hashPath": "compositec1.security.0.9.3.nupkg.sha512"
+    },
+    "CompositeC1Contrib.Core/0.8.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TKlJ3EgjayuuY+QJ6iaGlLwKsc0W1oSlmkEmm3cxDDq0VA01GNlRKoZdC5ewOfx63Hmoh/rHfy1p2jZzWWLVzg==",
+      "path": "compositec1contrib.core/0.8.3",
+      "hashPath": "compositec1contrib.core.0.8.3.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Mvc/5.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i8jZf5QrbcFmjiYWRD7o7qTak/oXKxV80MgP4cZ33A8GC0RBtBIdZ1VHaloGUg+qsHUz5rVkGpwenM+ugDz5PA==",
+      "path": "microsoft.aspnet.mvc/5.2.3",
+      "hashPath": "microsoft.aspnet.mvc.5.2.3.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Razor/3.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-leta+Q73O7+pR8ThTqXmwaNMSqwZQQ3BHfpUHd8S1XaUWe1jRVLitMHqo1AmY7wPNLyankPA1beiUKEGj8Q3Dw==",
+      "path": "microsoft.aspnet.razor/3.2.3",
+      "hashPath": "microsoft.aspnet.razor.3.2.3.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebPages/3.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zbtxBERla5RE/mhftwbrXOzc0r6lh8WcnjpGW7QQe+PvSDDx1BgsTUGzfCXO/vJznHNpY5oCSYLt8Q5vUu7F0g==",
+      "path": "microsoft.aspnet.webpages/3.2.3",
+      "hashPath": "microsoft.aspnet.webpages.3.2.3.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.30": {
       "type": "package",
       "serviceable": true,
@@ -4206,6 +4470,34 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
+    "Microsoft.Owin/4.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jt410l/8dvCIguRdU7dupYdm4kGLepVdD8EOTKU4nYZcLRrn6kQYqI6pbJOTJp7Vlm/T2WUF5bzyKK2z29xtjg==",
+      "path": "microsoft.owin/4.2.2",
+      "hashPath": "microsoft.owin.4.2.2.nupkg.sha512"
+    },
+    "Microsoft.Owin.Host.SystemWeb/4.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MYdqpNXC5xX7pVAnhGDfZvU7ybylYENqnV17XYGGkInk3Hco2Fx8t4nVBXBoAw/3ox6cNTbazq+EiS4Pi9lGQA==",
+      "path": "microsoft.owin.host.systemweb/4.2.2",
+      "hashPath": "microsoft.owin.host.systemweb.4.2.2.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security.Authorization/1.2.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IlmSnLp+VS+j/2EFzT3KDAj+kuRlZQTljkUz6LYGktfzPeu4ISXtkI0+diCI12XAuY4pO97SBncgq0+vRaFzIQ==",
+      "path": "microsoft.owin.security.authorization/1.2.2.4",
+      "hashPath": "microsoft.owin.security.authorization.1.2.2.4.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security.Authorization.Mvc/1.2.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KWtYhmTeMa069D9JWs7BmPxyGG717cKZTUZytUgfDfSveTss053TtAYD76vCeB6PvBjP/TQ5zkhJo/zqQpmzzw==",
+      "path": "microsoft.owin.security.authorization.mvc/1.2.2.4",
+      "hashPath": "microsoft.owin.security.authorization.mvc.1.2.2.4.nupkg.sha512"
+    },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.1.5": {
       "type": "package",
       "serviceable": true,
@@ -4262,6 +4554,13 @@
       "path": "microsoft.visualstudio.web.codegenerators.mvc/3.1.5",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.3.1.5.nupkg.sha512"
     },
+    "Microsoft.Web.Infrastructure/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "path": "microsoft.web.infrastructure/1.0.0",
+      "hashPath": "microsoft.web.infrastructure.1.0.0.nupkg.sha512"
+    },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4296,6 +4595,13 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "Owin/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
+      "path": "owin/1.0.0",
+      "hashPath": "owin.1.0.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
@@ -4436,6 +4742,13 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "SharpZipLib/0.86.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5DbS1SlKLMi+WG00Cm0ueYf2oyXJrowETQk8nx96rmdjTuHsA3laPykGV7Sxi0R5Xxfx0Kh/EfacAZ1f6M7y/g==",
+      "path": "sharpziplib/0.86.0",
+      "hashPath": "sharpziplib.0.86.0.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

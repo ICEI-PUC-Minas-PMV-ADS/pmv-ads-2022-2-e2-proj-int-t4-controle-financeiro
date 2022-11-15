@@ -34,6 +34,15 @@ namespace ZCaixaV5
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 });
+
+            services.AddAuthentication("CookieAuthentication")
+                    .AddCookie("CookieAuthentication", config =>
+                    {
+                         config.Cookie.Name = "UserLoginCookie";
+                         config.LoginPath = "/Login/UserLogin";
+                         config.AccessDeniedPath = "/Login/AccessDenied";
+                     });
+
             services.AddControllersWithViews();
         }
 
@@ -55,6 +64,10 @@ namespace ZCaixaV5
 
             app.UseRouting();
 
+            // Quem é você?
+            app.UseAuthentication();
+
+            // Verifica Permissões
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
