@@ -44,7 +44,7 @@ namespace Aspnet_AuthCookies1.Controllers
                     ViewBag.Message = "Usuário e/ou Senha incorretos.";
                     return View();
                 }
-
+                await HttpContext.SignOutAsync();
                 var nome = user.Nome;
                 bool SenhaOk = BCrypt.Net.BCrypt.Verify(usuario.Senha, user.Senha);
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -12,7 +13,6 @@ using ZCaixaV5.Models;
 namespace ZCaixaV5.Controllers
 
 {
-    [Authorize]
     public class CategoriasController : Controller
     {
         private readonly ZCaixaContexto _context;
@@ -23,12 +23,25 @@ namespace ZCaixaV5.Controllers
         }
 
         // GET: Categorias
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? pageNumber)
         {
-            return View(await _context.Categorias.ToListAsync());
+            if (string.IsNullOrEmpty(HttpContext.User.Identity.Name))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                int pageSize = 3;
+                var categoria = from s in _context.Categorias
+                               select s;
+                categoria = categoria.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
+                categoria = categoria.OrderBy(s => s.Nome);
+                return View(await PaginaList<Categoria>.CreateAsync(categoria.AsNoTracking(), pageNumber ?? 1, pageSize));
+            }
         }
 
         // GET: Categorias/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,6 +60,7 @@ namespace ZCaixaV5.Controllers
         }
 
         // GET: Categorias/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -55,6 +69,7 @@ namespace ZCaixaV5.Controllers
         // POST: Categorias/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,Tipo,Username")] Categoria categoria)
@@ -86,6 +101,7 @@ namespace ZCaixaV5.Controllers
         }
 
         // GET: Categorias/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -104,6 +120,7 @@ namespace ZCaixaV5.Controllers
         // POST: Categorias/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Tipo,Username")] Categoria categoria)
@@ -154,6 +171,7 @@ namespace ZCaixaV5.Controllers
         }
 
         // GET: Categorias/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -172,6 +190,7 @@ namespace ZCaixaV5.Controllers
         }
 
         // POST: Categorias/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -190,5 +209,7 @@ namespace ZCaixaV5.Controllers
         {
             return _context.Categorias.Any(e => e.Nome == nome);
         }
+
     }
+   
 }

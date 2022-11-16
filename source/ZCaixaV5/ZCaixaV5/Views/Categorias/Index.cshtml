@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ZCaixaV5.Models.Categoria>
+﻿@model PaginaList<ZCaixaV5.Models.Categoria>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tipo)
+                Tipo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Username)
+                Username
             </th>
             <th></th>
         </tr>
@@ -45,3 +45,19 @@
 }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

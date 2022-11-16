@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,9 @@ using ZCaixaV5.Data;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ZCaixaV5.Data.Mapeamentos;
 using ZCaixaV5.Api.Data;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 
 namespace ZCaixaV5
 {
@@ -30,10 +34,9 @@ namespace ZCaixaV5
         public void ConfigureServices(IServiceCollection services)
 
         {
-            services.AddDbContext<ZCaixaContexto>(options => 
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-                });
+            services.AddDbContext<ZCaixaContexto>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            .ReplaceService<IQueryTranslationPostprocessorFactory, SqlServer2008QueryTranslationPostprocessorFactory>());
 
             services.AddAuthentication("CookieAuthentication")
                     .AddCookie("CookieAuthentication", config =>

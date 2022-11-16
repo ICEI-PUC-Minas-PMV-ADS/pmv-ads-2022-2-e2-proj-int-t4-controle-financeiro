@@ -1,5 +1,6 @@
 ﻿
 using Aspnet_AuthCookies1.Controllers;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -25,6 +26,7 @@ namespace Aspnet_AuthCookies1.Controllers
 
             public IActionResult Index()
             {
+                HttpContext.SignOutAsync();
                 string usr;
                 bool autenticado;
                 if (HttpContext.User.Identity.IsAuthenticated)
@@ -34,7 +36,7 @@ namespace Aspnet_AuthCookies1.Controllers
                 }
                 else
                 {
-                    usr = "Não Logado";
+                    usr = null;
                     autenticado = false;
                 }
 

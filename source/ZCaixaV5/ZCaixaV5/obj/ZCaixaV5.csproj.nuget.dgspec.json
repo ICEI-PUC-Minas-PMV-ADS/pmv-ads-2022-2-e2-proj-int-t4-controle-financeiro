@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[0.9.3, )"
             },
+            "EfCore3.SqlServer2008Query": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.30, )"

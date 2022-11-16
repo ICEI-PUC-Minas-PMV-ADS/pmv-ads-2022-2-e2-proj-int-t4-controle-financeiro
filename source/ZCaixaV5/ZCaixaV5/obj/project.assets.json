@@ -67,6 +67,18 @@
           "lib/net45/CompositeC1Contrib.Core.dll": {}
         }
       },
+      "EfCore3.SqlServer2008Query/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/EfCore3.SqlServer2008Query.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/EfCore3.SqlServer2008Query.dll": {}
+        }
+      },
       "Microsoft.AspNet.Mvc/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -3275,6 +3287,18 @@
         "compositec1contrib.core.0.8.3.nupkg.sha512",
         "compositec1contrib.core.nuspec",
         "lib/net45/CompositeC1Contrib.Core.dll"
+      ]
+    },
+    "EfCore3.SqlServer2008Query/1.0.0": {
+      "sha512": "Ypn8QN5FhdBuK8MZQsy+HmV0lMgfPC39f6JT7/+IN8Bu/otdQ7U3qu8PPNP8hpCkMAcRwKsAp+t/epje3PUpnQ==",
+      "type": "package",
+      "path": "efcore3.sqlserver2008query/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "efcore3.sqlserver2008query.1.0.0.nupkg.sha512",
+        "efcore3.sqlserver2008query.nuspec",
+        "lib/netstandard2.1/EfCore3.SqlServer2008Query.dll"
       ]
     },
     "Microsoft.AspNet.Mvc/5.2.3": {
@@ -9331,6 +9355,7 @@
     ".NETCoreApp,Version=v3.1": [
       "BCrypt.Net-Next >= 3.5.0",
       "CompositeC1.Security >= 0.9.3",
+      "EfCore3.SqlServer2008Query >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.30",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.30",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.30",
@@ -9384,6 +9409,10 @@
           "CompositeC1.Security": {
             "target": "Package",
             "version": "[0.9.3, )"
+          },
+          "EfCore3.SqlServer2008Query": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DY5WQR6+cbf1HS94b/AdZVHn4jOVFLaqKPEJyFkTRKPN+jLtE7bXnbCPUUiS39p2pLIIcyzPqGS1odlVTZvb1Q==",
+  "dgSpecHash": "aSOXWo/pst7yUWvp2A2Z5S4eNF2liePQ+FWx8nLNxupBlB98FcmPlTrKlckV7aZRMVm+HYXASTYqNjRh0YadZw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ricardo\\Documents\\GitHub\\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\\source\\ZCaixaV5\\ZCaixaV5\\ZCaixaV5.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Ricardo\\.nuget\\packages\\compositec1.core\\4.2.1\\compositec1.core.4.2.1.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\compositec1.security\\0.9.3\\compositec1.security.0.9.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\compositec1contrib.core\\0.8.3\\compositec1contrib.core.0.8.3.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\efcore3.sqlserver2008query\\1.0.0\\efcore3.sqlserver2008query.1.0.0.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.3\\microsoft.aspnet.mvc.5.2.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.3\\microsoft.aspnet.razor.3.2.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.3\\microsoft.aspnet.webpages.3.2.3.nupkg.sha512",
