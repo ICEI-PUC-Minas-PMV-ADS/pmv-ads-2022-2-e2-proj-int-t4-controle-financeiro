@@ -16,7 +16,7 @@ namespace ZCaixaV5.Models
         [Required(ErrorMessage = "Informe uma Categoria")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório um tipo (Receita ou Despesa)")]
+        //[Required(ErrorMessage = "Obrigatório um tipo (Receita ou Despesa)")]
         public string Tipo { get; set; }
 
         public string Username { get; set; }

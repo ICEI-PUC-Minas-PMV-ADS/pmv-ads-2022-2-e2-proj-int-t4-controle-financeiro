@@ -31,7 +31,7 @@ namespace ZCaixaV5.Controllers
             }
             else
             {
-                int pageSize = 3;
+                int pageSize = 2;
                 var categoria = from s in _context.Categorias
                                select s;
                 categoria = categoria.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
@@ -63,6 +63,12 @@ namespace ZCaixaV5.Controllers
         [Authorize]
         public IActionResult Create()
         {
+            ViewBag.TipoId = new SelectList
+                    (
+                        new Tipo().ListaTipos(),
+                        "TipoId",
+                        "Nome"
+                    );
             return View();
         }
 
@@ -72,8 +78,17 @@ namespace ZCaixaV5.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Tipo,Username")] Categoria categoria)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Tipo,Username")] Categoria categoria, string TipoId)
         {
+            categoria.Tipo = TipoId;
+            categoria.Username = HttpContext.User.Identity.Name;
+            ViewBag.TipoId = new SelectList
+                    (
+                        new Tipo().ListaTipos(),
+                        "TipoId",
+                        "Nome",
+                        TipoId
+                    );
             if (ModelState.IsValid)
             {
                 var erro = false;
@@ -114,6 +129,13 @@ namespace ZCaixaV5.Controllers
             {
                 return NotFound();
             }
+            ViewBag.TipoId = new SelectList
+                    (
+                        new Tipo().ListaTipos(),
+                        "TipoId",
+                        "Nome", 
+                        categoria.Tipo
+                    );
             return View(categoria);
         }
 
@@ -123,22 +145,36 @@ namespace ZCaixaV5.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Tipo,Username")] Categoria categoria)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Tipo,Username")] Categoria categoria, string TipoId)
         {
             if (id != categoria.Id)
             {
                 return NotFound();
             }
 
+            categoria.Tipo = TipoId;
+            categoria.Username = HttpContext.User.Identity.Name;
+            ViewBag.TipoId = new SelectList
+                    (
+                        new Tipo().ListaTipos(),
+                        "TipoId",
+                        "Nome",
+                        TipoId
+                    );
+
             if (ModelState.IsValid)
             {
                 var erro = false;
+                /* Tirei essa condição de baixo porque sempre vai 
+                 * existir o lançamento, pois se trata de uma alteração
+                    
                 if (NomeExists(categoria.Nome))
                 {
                     //ViewBag.Mensage = "Já existe uma categoria com esse nome.";
                     ViewData["Message"] = "Já existe uma categoria com esse nome.";
                     erro = true;
                 }
+                */
                 if (categoria.Tipo != "R" && categoria.Tipo != "D")
                 {
                     //ViewBag.Mensage2 = "Tipo só pode ser (R)Receita ou (D)Despesa";

@@ -47,17 +47,43 @@
 </table>
 
 @{
-    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    var prevDisabled = !Model.HasPreviousPage ? "hidden" : "";
+    var nextDisabled = !Model.HasNextPage ? "hidden" : "";
 }
 
-<a asp-action="Index"
-   asp-route-pageNumber="@(Model.PageIndex - 1)"
-   class="btn btn-default @prevDisabled">
-    Previous
-</a>
-<a asp-action="Index"
-   asp-route-pageNumber="@(Model.PageIndex + 1)"
-   class="btn btn-default @nextDisabled">
-    Next
-</a>
+@{
+    if (Model.HasPreviousPage)
+    {
+        <a asp-action="Index" 
+         asp-route-pageNumber="@(Model.PageIndex - 1)"
+         class="btn btn-default">
+            Previous
+        </a>
+    }
+    else
+    {
+        <a asp-action="Index" 
+         asp-route-pageNumber="@(Model.PageIndex - 1)"
+         class="btn btn-default" hidden>
+            Previous
+        </a>
+    }
+}
+@{
+    if (Model.HasNextPage)
+    {
+        <a asp-action="Index"
+         asp-route-pageNumber="@(Model.PageIndex + 1)"
+         class="btn btn-default">
+            Next
+        </a>
+    }    
+    else
+    {
+        <a asp-action="Index"
+         asp-route-pageNumber="@(Model.PageIndex + 1)"
+         class="btn btn-default" hidden>
+            Next
+        </a>
+    }
+}
