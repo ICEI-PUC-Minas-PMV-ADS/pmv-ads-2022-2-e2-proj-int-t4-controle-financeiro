@@ -15,29 +15,43 @@
 <body>
     
  <main>
+
+  <button class="btn-plataforma btn-area-esquerda btn-relatorio btn-adiciona-lancamento">Relatorios</button>
+
     <header class="plataforma-header">
         <div class="logo-plataforma-area">
         <img class="logo-plataforma" src="imagens/logo-horizontal.png" alt="">
         </div>
         <div class="botoes-plataforma-area">
-            <button type="button" class="btn-plataforma" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn-plataforma btn-adiciona-lancamento" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                <img class="icones" src="imagens/add-icon.png" alt=""> 
               </button>
 
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
+              <div class="modal fade" id="exampleModalCenter"  tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content modal-lancamento">
                     <div class="modal-header">
-                      <h1 class="modal-title " id="staticBackdropLabel">Adicionar um Lançamento</h1>
+                      <h1 class="modal-title" id="staticBackdropLabel">Adicionar um Lançamento</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      ...
-                    </div>
+                      <input type="date">
+                      R$ <input type="number" step="0.01" min="0.01">
+                      
+                        <select name="Categoria" id="">
+                          <option value="teste">Teste</option>
+                          <option value="teste2">teste 2</option>
+                        </select>
+                      <input type="text">
+                      <input type="text">
+                      <input type="text">
+                      <input type="text">
+                    
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Understood</button>
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-success">Adicionar</button>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -63,12 +77,12 @@
                </label>
             
             <nav class="menu-usuario-plataforma">
-            <ul>
-                <li>
+            <ul class="menu-usuario-plataforma-lista">
+                <li class="opcao-minha-conta">
                     <a href=""><img class="icones-menu-usuario" src="imagens/usuario-icon.png" alt=""> <p>Minha Conta</p></a>
                 </li>
-                <li>
-                    <a href=""><img class="icones-menu-usuario" src="imagens/sair-icon.png" alt=""> <p>Logout</p></a>
+                <li class="opcao-sair">
+                    <a href=""><img class="icones-menu-usuario" src="imagens/sair-icon.png" alt=""> <p>Sair</p></a>
                 </li>
                 
 
@@ -83,27 +97,108 @@
 
     <div class="Area-Central">
         <div class="Area-esquerda">
-            <p>a</p>
+            <div class="Datas-entradas-saidas-area">
+              <select class="btn-data-mes" name="mounth" id="">
+                <option value="Janeiro">Jan</option>
+                <option value="Janeiro">Fev</option>
+                <option value="Janeiro">Mar</option>
+                <option value="Janeiro">Abr</option>
+                <option value="Janeiro">Mai</option>
+                <option value="Janeiro">Jun</option>
+                <option value="Janeiro">Jul</option>
+                <option value="Janeiro">Ago</option>
+                <option value="Janeiro">Set</option>
+                <option value="Janeiro">Out</option>
+                <option value="Janeiro">Nov</option>
+                <option value="Janeiro">Dez</option>
+              </select>
+
+              <select class="btn-data-mes" name="year" id="">
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select>
+              <span class="btn-ok">Ok</span>
+              </div>
+            <div class="area-esquerda-titulos">
+            <h2>Entradas e Saídas</h2>
+            </div>
+            <div class="entradas-saidas-area">
+
+                  <div class="entradas-valores">
+                  <p class="saldos-titulos"> Total de entradas:</p><p>R$500,00</p>
+                  </div>
+                  <p class="underline-entradas-saidas"></p>
+                  <div class="saidas-valores">
+                  <p class="saldos-titulos"> Total de Saídas:</p><p>R$0,00</p>
+                  </div>
+                  <p class="underline-entradas-saidas"></p>
+                <div class="saldo-total-area">
+                  <p class="saldos-titulos">Saldo total:</p>  <p> R$500,00</p>
+                </div>
+
+                <div class="entradas-saidas-categorias-area">
+                  <p class="saldos-titulos categorias-titulo"> Valores por Categorias: </p>
+                  <div class="entradas-valores valores-categorias">
+                    <p class="saldos-titulos">Salário</p> <p>R$ 250,00</p>
+                  </div>
+                  <p class="underline-entradas-saidas"></p>
+
+                  <div class="entradas-valores valores-categorias">
+                    <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                  </div>
+
+                  <div class="entradas-valores valores-categorias">
+                    <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                  </div>
+                  <div class="entradas-valores valores-categorias">
+                    <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                  </div>
+                  <div class="entradas-valores valores-categorias">
+                    <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                  </div>
+                  <div class="entradas-valores valores-categorias">
+                    <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                  </div>
+                  <div class="entradas-valores valores-categorias">
+                    <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                  </div>
+                  <div class="entradas-valores valores-categorias">
+                    <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                  </div>
+                  
+                </div>
+                
+
+            </div>
+            <div class="botoes-esquerda-areas">
+            <button class="btn-plataforma btn-area-esquerda btn-atualiza">Simular</button>
+            <button class="btn-plataforma btn-area-esquerda btn-atualiza">Meta</button>
+            </div>
         </div>
             
         <div class="Area-direita">
             <div class="cabecalho-filtro">
+              <div class="filtros-area">
               <div class="lancamento-conciliado"><a href="">Conciliado</a></div>
               <div class="lancamento-data"><a href="">Data</a></div>
               <div class="lancamento-valor"><a href="">Valor</a></div>
-              <div class="lancamento-categoria"><a href="">Categoria Origem X Destino</a></div>
+              <div class="lancamento-categoria"><a href="">Categoria</a></div>
               <div class="lancamento-descricao"><a href="">Descrição</a></div>
               <div class="lancamento-datalan"><a href="">Data Lançamento</a></div>
               <div class="lancamento-excluir"><a href="">Excluir</a></div>
               <div class="lancamento-alterar"><a href="">Alterar</a></div>
+              </div>
 
             </div>
-
+            <div class="area-lancamentos">
             <div class="lancamento-unitario">
-              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-conciliado"><input class="concicliacao" type="checkbox"></div>
               <div class="lancamento-data"><p>04/11/2022</p></div>
               <div class="lancamento-valor"><p>R$250,00</p></div>
-              <div class="lancamento-categoria"><p>Salario > Cartão</p></div>
+              <div class="lancamento-categoria"><p>Salario</p></div>
               <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
               <div class="lancamento-datalan"><p>04/11/2022</p></div>
               <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
@@ -111,6 +206,202 @@
 
             </div>
 
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+
+            <div class="lancamento-unitario">
+              <div class="lancamento-conciliado"><input type="checkbox"></div>
+              <div class="lancamento-data"><p>04/11/2022</p></div>
+              <div class="lancamento-valor"><p>R$250,00</p></div>
+              <div class="lancamento-categoria"><p>Cartão</p></div>
+              <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+              <div class="lancamento-datalan"><p>04/11/2022</p></div>
+              <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+              <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+            </div>
+            
+          </div>
         </div>
 
     </div>
