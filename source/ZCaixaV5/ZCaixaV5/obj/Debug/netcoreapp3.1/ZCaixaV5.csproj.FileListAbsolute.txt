@@ -356,3 +356,5 @@ C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-finance
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Edit.cshtml.g.cs
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Index.cshtml.g.cs
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index - Cópia.cshtml.g.cs
+C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Erro.cshtml.g.cs
+C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Erro.cshtml.g.cs

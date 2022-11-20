@@ -30,7 +30,10 @@ namespace ZCaixaV5.Models
 
         public string Username { get; set; }
 
+        [Required(ErrorMessage = "Informe uma Categoria")]
         public int CatId { get; set; }
+        
         public Categoria Cat { get; set; }
+        
     }
 }

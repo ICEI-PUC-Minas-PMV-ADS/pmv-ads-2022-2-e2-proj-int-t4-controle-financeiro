@@ -9,8 +9,9 @@ namespace ZCaixaV5.Models
 {
     public class CategoriaLista
     {
-        public string CatListaId { get;  set; }
-        public string CatListaNome { get; set; }    
+        public string Text { get; set; }
+        public string Value { get; set; }
+  
         public List<CategoriaLista> ListaCategorias()
         {
             return new List<CategoriaLista>

@@ -23,5 +23,6 @@ namespace ZCaixaV5.Models
         public string Username { get; set; }
 
         public List<Lancamento> Lancamentos { get; set; }
+       
     }
 }

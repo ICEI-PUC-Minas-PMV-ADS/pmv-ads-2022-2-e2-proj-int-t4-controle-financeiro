@@ -31,7 +31,7 @@ namespace ZCaixaV5.Controllers
             }
             else
             {
-                int pageSize = 2;
+                int pageSize = 10;
                 var categoria = from s in _context.Categorias
                                select s;
                 categoria = categoria.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
@@ -92,7 +92,7 @@ namespace ZCaixaV5.Controllers
             if (ModelState.IsValid)
             {
                 var erro = false;
-                if (NomeExists(categoria.Nome))
+                if (NomeExists(categoria.Nome, categoria.Username))
                 {
                     //ViewBag.Mensage = "Já existe uma categoria com esse nome.";
                     ViewData["Message"] = "Já existe uma categoria com esse nome.";
@@ -110,7 +110,7 @@ namespace ZCaixaV5.Controllers
                 }
                 _context.Add(categoria);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create", "Lancamentos");
             }
             return View(categoria);
         }
@@ -165,16 +165,6 @@ namespace ZCaixaV5.Controllers
             if (ModelState.IsValid)
             {
                 var erro = false;
-                /* Tirei essa condição de baixo porque sempre vai 
-                 * existir o lançamento, pois se trata de uma alteração
-                    
-                if (NomeExists(categoria.Nome))
-                {
-                    //ViewBag.Mensage = "Já existe uma categoria com esse nome.";
-                    ViewData["Message"] = "Já existe uma categoria com esse nome.";
-                    erro = true;
-                }
-                */
                 if (categoria.Tipo != "R" && categoria.Tipo != "D")
                 {
                     //ViewBag.Mensage2 = "Tipo só pode ser (R)Receita ou (D)Despesa";
@@ -221,8 +211,13 @@ namespace ZCaixaV5.Controllers
             {
                 return NotFound();
             }
+            if (LancamentoExists(categoria.Id, categoria.Username))
+            {
+                TempData["mensagemErro"] = "Não pode excluir Categoria que tenha lançamentos. Exclua os lancamentos antes!";
+                return RedirectToAction(nameof(Erro));
+            }
 
-            return View(categoria);
+                return View(categoria);
         }
 
         // POST: Categorias/Delete/5
@@ -236,6 +231,14 @@ namespace ZCaixaV5.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        // GET: Lancamentos/Erro
+        [Authorize]
+        public IActionResult Erro()
+        {
+            return View();
+        }
+
         // GET: Efetuar Lançamentos (Atalho)
         public IActionResult Lancamento()
         {
@@ -253,9 +256,15 @@ namespace ZCaixaV5.Controllers
         {
             return _context.Categorias.Any(e => e.Id == id);
         }
-        private bool NomeExists(string nome)
+        private bool NomeExists(string nome, string username)
         {
-            return _context.Categorias.Any(e => e.Nome == nome);
+
+            return _context.Categorias.Any(e => e.Nome == nome & e.Username == username);
+        }
+        private bool LancamentoExists(int id, string username)
+        {
+
+            return _context.Lancamentos.Any(e => e.CatId == id & e.Username == username);
         }
 
     }

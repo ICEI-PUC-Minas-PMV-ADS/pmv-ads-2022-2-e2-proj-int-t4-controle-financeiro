@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Composite.Core.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using ZCaixaV5.Api.Data;
 using ZCaixaV5.Models;
 using static Composite.Core.Logging.LoggingService;
@@ -33,15 +35,9 @@ namespace ZCaixaV5.Controllers
             }
             else
             {
-                int pageSize = 2;
-                
-                var categoria = from c in _context.Categorias
-                                select c;
-                categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
-                categoria = categoria.OrderBy(c => c.Nome);
-
-                var lancamento = from s in _context.Lancamentos
-                                select s;
+                int pageSize = 10;
+                var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
+                                 select s;
                 lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
                 lancamento = lancamento.OrderByDescending(s => s.Data);
    
@@ -72,14 +68,28 @@ namespace ZCaixaV5.Controllers
 
         // GET: Lancamentos/Create
         [Authorize]
-        public IActionResult Create()
+        public ActionResult Create()
         {
+            var categoria = from c in _contextcat.Categorias
+                            select c;
+            categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
+            categoria = categoria.OrderBy(c => c.Nome);
+
+            List <SelectListItem> itens = new List<SelectListItem> ();
+            foreach (Categoria w in categoria)
+            {
+                itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
+            }
+
+            ViewBag.Categ = itens;
+
             ViewBag.TipoLanId = new SelectList
-                    (
-                        new TipoLan().ListaTiposLan(),
-                        "TipoLanId",
-                        "NomeLan"
-                    );
+                 (
+                     new TipoLan().ListaTiposLan(),
+                     "TipoLanId",
+                     "NomeLan"
+                 );
+
             return View();
         }
 
@@ -89,11 +99,32 @@ namespace ZCaixaV5.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId)
+        public async Task<IActionResult> Create([Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
         {
+            lancamento.CatId = Convert.ToInt32(Categ);
             lancamento.Tipo = TipoLanId;
             lancamento.Conciliado = false;
             lancamento.Username = HttpContext.User.Identity.Name;
+
+            var categoria = from c in _contextcat.Categorias
+                            select c;
+            categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
+            categoria = categoria.OrderBy(c => c.Nome);
+            List<SelectListItem> itens = new List<SelectListItem>();
+            foreach (Categoria w in categoria)
+            {
+                if ( lancamento.CatId == w.Id)
+                {
+                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString(), Selected = true });
+                }
+                else
+                {
+                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
+                };
+            }
+
+            ViewBag.Categ = itens;
+
             ViewBag.TipoLanId = new SelectList
                     (
                         new TipoLan().ListaTiposLan(),
@@ -134,6 +165,26 @@ namespace ZCaixaV5.Controllers
             {
                 return NotFound();
             }
+
+            var categoria = from c in _contextcat.Categorias
+                            select c;
+            categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
+            categoria = categoria.OrderBy(c => c.Nome);
+            List<SelectListItem> itens = new List<SelectListItem>();
+            foreach (Categoria w in categoria)
+            {
+                if (lancamento.CatId == w.Id)
+                {
+                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString(), Selected = true });
+                }
+                else
+                {
+                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
+                };
+            }
+
+            ViewBag.Categ = itens;
+
             ViewBag.TipoLanId = new SelectList
                     (
                         new TipoLan().ListaTiposLan(),
@@ -150,12 +201,13 @@ namespace ZCaixaV5.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
         {
             if (id != lancamento.Id)
             {
                 return NotFound();
             }
+            lancamento.CatId = Convert.ToInt32(Categ);
             lancamento.Tipo = TipoLanId;
             lancamento.Username = HttpContext.User.Identity.Name;
             ViewBag.TipoLanId = new SelectList
@@ -210,11 +262,12 @@ namespace ZCaixaV5.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (lancamento == null)
             {
-                return NotFound();
+                return NotFound(); 
             }
             if (lancamento.Conciliado == true)
-            {
-                return Content("Alerta", "Não pode excluir um lançamento já conciliado");
+            {       
+                TempData["mensagemErro"] = "Não pode excluir um lançamento já conciliado";
+                return RedirectToAction(nameof(Erro));
             }
             return View(lancamento);
         }
@@ -230,6 +283,14 @@ namespace ZCaixaV5.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        // GET: Lancamentos/Erro
+        [Authorize]
+        public IActionResult Erro()
+        {
+            return View();
+        }
+
         // GET: Cadastro de Categorias (Atalho)
         public IActionResult Categoria()
         {

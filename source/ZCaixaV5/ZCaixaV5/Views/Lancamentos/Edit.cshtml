@@ -1,4 +1,4 @@
-﻿@model ZCaixaV5.Models.Lancamento
+@model ZCaixaV5.Models.Lancamento
 
 @{
     ViewData["Title"] = "Edit";
@@ -14,13 +14,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="CatId" class="control-label"></label>
-                <input asp-for="CatId" class="form-control" />
-                <span asp-validation-for="CatId" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-md-8">
+                        Escolha a Categoria
+                        @Html.DropDownList("Categ", String.Empty)
+                    </div>
+                </div>
+                <span asp-validation-for="Data" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Data" class="control-label"></label>
-                <input asp-for="Data" class="form-control" />
+                <input asp-for="Data" type="date">
                 <span asp-validation-for="Data" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -61,5 +65,8 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+    
