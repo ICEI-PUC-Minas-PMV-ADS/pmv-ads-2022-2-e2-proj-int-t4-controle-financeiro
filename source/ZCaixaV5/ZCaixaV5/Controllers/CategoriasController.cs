@@ -236,6 +236,18 @@ namespace ZCaixaV5.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        // GET: Efetuar Lançamentos (Atalho)
+        public IActionResult Lancamento()
+        {
+            if (string.IsNullOrEmpty(HttpContext.User.Identity.Name))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Create", "Lancamentos");
+            }
+        }
 
         private bool CategoriaExists(int id)
         {

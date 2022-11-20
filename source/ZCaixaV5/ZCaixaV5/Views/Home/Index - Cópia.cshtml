@@ -9,39 +9,33 @@
     <main>
         <div class="login-area">
 
-
+            <h3> @ViewBag.Message </h3>
             <div class="Login-box">
                 <div class="logo-login-area">
-                    <a asp-controller="Usuarios" asp-action="Login"><img src="~/imagens/logo-horizontal.png" alt=""></a>
+                    <a asp-action="Index"><img src="~/imagens/logo-horizontal.png" alt=""></a>
                     <p class="text-area-logo">Insira suas credenciais de acesso abaixo.</p>
                 </div>
 
                 <div class="login-entrar-area">
-                    <form asp-action="Login" class="entrada-dados-login">
-                        <div asp-validation-summary="ModelOnly"></div>
-
-
+                    <form method="post" action="" class="entrada-dados-login">
                         <p>E-mail, usuário ou telefone</p>
                         <input asp-for="Username">
+                        <span asp-validation-for="Username" class="text-danger"></span>
 
-
-
-                        <p>Senha</p>
-
-                        <input asp-for="Senha" type="password">
-
-
-                        <h3 class="text-danger"> @ViewBag.Saudar @ViewBag.Message @ViewBag.Message1 </h3>
+                        <span class="entrada-dados-login">
+                            <p>Senha</p>
+                            <input asp-for="Senha" type="password">
+                            <span asp-validation-for="Senha" class="text-danger"></span>
+                        </span>
 
                         <span class="area-botao-final">
-                            <input type="submit" value="Entrar" class="entrar-btn-login">
-                            <a asp-controller="Usuarios" asp-action="RecuperaSenha"><p>Esqueci minha senha</p></a>
+                            <input type="submit" value="Entrar" class="entrar-btn-login"></input>
+                            <a asp-action="RecuperaSenha"><p>Esqueci minha senha</p></a>
                             <a asp-controller="Usuarios" asp-action="Create"><p>Criar um cadastro</p></a>
                         </span>
 
 
                     </form>
-
                 </div>
             </div>
         </div>

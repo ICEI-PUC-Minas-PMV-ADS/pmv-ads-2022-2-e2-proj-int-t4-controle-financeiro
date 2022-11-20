@@ -31,6 +31,9 @@ namespace ZCaixaV5.Api.Data
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new CategoriaMap());
             modelBuilder.ApplyConfiguration(new LancamentoMap());
+            //modelBuilder.Entity<Usuario>().ToTable("Usuario");
+            //modelBuilder.Entity<Categoria>().ToTable("Categoria");
+            //modelBuilder.Entity<Lancamento>().ToTable("Lancamento");
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Aspnet_AuthCookies1.Controllers
 
                 ViewBag.usr = usr;
                 ViewBag.autenticado = autenticado;
-                return View();
+                return RedirectToAction("Login", "Usuarios");
             }
 
             [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

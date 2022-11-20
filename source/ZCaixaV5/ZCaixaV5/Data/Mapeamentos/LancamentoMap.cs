@@ -17,8 +17,6 @@ namespace ZCaixaV5.Data.Mapeamentos
 
             builder.Property(t => t.Data)
                .IsRequired();
-            builder.Property(t => t.DataLancamento)
-               .IsRequired();
             builder.Property(t => t.Descricao);
             builder.Property(t => t.Tipo)
                 .IsRequired();

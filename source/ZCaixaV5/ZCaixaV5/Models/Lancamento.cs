@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,27 +11,26 @@ namespace ZCaixaV5.Models
     public class Lancamento
     {
         [Key]
-        public string Id { get; set; }
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Informe uma Data")]
-        public string Data { get; set; }
-
-        [Required(ErrorMessage = "Informe uma Data de Lançamento")]
-        public string DataLancamento { get; set; }
+        public DateTime Data { get; set; }
 
         public string Descricao { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório um tipo (Débito ou Crédito)")]
         public string Tipo { get; set; }
 
         [Required(ErrorMessage = "Informe um valor")]
-        public string Valor { get; set; }
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Valor { get; set; }
 
-        public string Conciliado { get; set; }
+        public bool Conciliado { get; set; }
 
         public string Username { get; set; }
 
-        [Required(ErrorMessage = "Informe uma Categoria")]
-        public string CatId { get; set; }
+        public int CatId { get; set; }
+        public Categoria Cat { get; set; }
     }
 }
