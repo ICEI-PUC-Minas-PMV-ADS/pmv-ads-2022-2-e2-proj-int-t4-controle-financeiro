@@ -383,10 +383,10 @@ main{
 
 .btn-relatorio{
     position: fixed;
-    right: 0;
+    left: 0;
     bottom: 0;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 10rem;
 }
 
 .icones{
@@ -415,13 +415,13 @@ main{
 }
 
 .btn-adiciona-lancamento{
-    background-color:#5cbf71;
-    border: solid 1px #5cbf71;
+    background-color:#479ef7;
+    border: solid 1px #479ef7;
 }
 
 .btn-adiciona-lancamento:hover{
-    background-color:#3ca052!important;
-    border: solid 1px #5cbf71;
+    background-color:#4790da!important;
+    border: solid 1px #4790da;
 }
 
 .btn-plataforma:hover{
@@ -430,14 +430,14 @@ main{
 
 .btn-atualiza{
     margin-left: 10px;
-    background-color: #5cbf71;
-    border: solid 1px #5cbf71; 
+    background-color: #479ef7;
+    border: solid 1px #479ef7; 
 }
 
 .btn-atualiza:hover{
    
-    background-color: #3ca052;
-    border: solid 1px #3ca052; 
+    background-color: #4790da;
+    border: solid 1px #4790da; 
   
 }
 
@@ -647,12 +647,12 @@ main{
 }
 
 .lancamento-descricao{
-    width: 28%;
+    width: 38%;
     border-right: 2px solid #959595;
 }
 
-.lancamento-datalan{
-    width: 15%;
+.lancamento-tipo{
+    width: 5%;
     border-right: 2px solid #959595;
 }
 

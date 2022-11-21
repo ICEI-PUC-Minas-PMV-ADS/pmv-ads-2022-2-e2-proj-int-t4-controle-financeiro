@@ -1,8 +1,305 @@
 ﻿@model PaginaList<ZCaixaV5.Models.Lancamento>
 
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Meu Caixa";
 }
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZCaixa - Entrar</title>
+    <link rel="shortcut icon" href="~/imagens/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+
+    <main>
+
+        <button class="btn-plataforma btn-area-esquerda btn-relatorio btn-adiciona-lancamento">Relatorios</button>
+
+        <header class="plataforma-header">
+            <div class="logo-plataforma-area">
+                <img class="logo-plataforma" src="~/imagens/logo-horizontal.png" alt="">
+            </div>
+            <div class="botoes-plataforma-area">
+                <button type="button" class="btn-plataforma btn-adiciona-lancamento" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                    <img class="icones" src="~/imagens/add-icon.png" alt="">
+                </button>
+
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content modal-lancamento">
+                            <div class="modal-header">
+                                <h1 class="modal-title" id="staticBackdropLabel">Adicionar um Lançamento</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                
+
+                                <input type="date">
+                                R$ <input type="number" step="0.01" min="0.01">
+
+                                <select name="Categoria" id="">
+                                    <option value="teste">Teste</option>
+                                    <option value="teste2">teste 2</option>
+                                </select>
+                                <input type="text">
+                                <input type="text">
+                                <input type="text">
+                                <input type="text">
+
+
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-success">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-plataforma btn-atualiza">
+                    <img class="icones" src="~/imagens/atualiza-icon.png" alt="">
+                </button>
+
+            </div>
+
+
+            <div class="meta-plataforma-area">
+                <p>Status da meta:</p>
+                <img class="meta-png" src="~/imagens/meta.png" alt="">
+            </div>
+
+            <div class="usuario-plataforma-area">
+
+                <input type="checkbox" id="checkbox-menu-plataforma">
+                <p>Olá, @ViewBag.Nome</p>
+
+                <label for="checkbox-menu-plataforma">
+                    <a type="button" class="btn-limpo"><img class="icones" src="~/imagens/drop-down-icon.png" alt=""></a>
+                </label>
+
+                <nav class="menu-usuario-plataforma">
+                    <ul class="menu-usuario-plataforma-lista">
+                        <li class="opcao-minha-conta">
+                            <a href=""><img class="icones-menu-usuario" src="~/imagens/usuario-icon.png" alt=""> <p>Minha Conta</p></a>
+                        </li>
+                        <li class="opcao-sair">
+                            <a href=""><img class="icones-menu-usuario" src="~/imagens/sair-icon.png" alt=""> <p>Sair</p></a>
+                        </li>
+
+
+                    </ul>
+                </nav>
+
+
+
+
+            </div>
+        </header>
+
+        <div class="Area-Central">
+            <div class="Area-esquerda">
+                <div class="Datas-entradas-saidas-area">
+                    <select class="btn-data-mes" name="mounth" id="">
+                        <option value="Janeiro">Jan</option>
+                        <option value="Janeiro">Fev</option>
+                        <option value="Janeiro">Mar</option>
+                        <option value="Janeiro">Abr</option>
+                        <option value="Janeiro">Mai</option>
+                        <option value="Janeiro">Jun</option>
+                        <option value="Janeiro">Jul</option>
+                        <option value="Janeiro">Ago</option>
+                        <option value="Janeiro">Set</option>
+                        <option value="Janeiro">Out</option>
+                        <option value="Janeiro">Nov</option>
+                        <option value="Janeiro">Dez</option>
+                    </select>
+
+                    <select class="btn-data-mes" name="year" id="">
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                    </select>
+                    <span class="btn-ok">Ok</span>
+                </div>
+                <div class="area-esquerda-titulos">
+                    <h2>Entradas e Saídas</h2>
+                </div>
+                <div class="entradas-saidas-area">
+
+                    <div class="entradas-valores">
+                        <p class="saldos-titulos"> Total de entradas:</p><p>R$500,00</p>
+                    </div>
+                    <p class="underline-entradas-saidas"></p>
+                    <div class="saidas-valores">
+                        <p class="saldos-titulos"> Total de Saídas:</p><p>R$0,00</p>
+                    </div>
+                    <p class="underline-entradas-saidas"></p>
+                    <div class="saldo-total-area">
+                        <p class="saldos-titulos">Saldo total:</p>  <p> R$500,00</p>
+                    </div>
+
+                    <div class="entradas-saidas-categorias-area">
+                        <p class="saldos-titulos categorias-titulo"> Valores por Categorias: </p>
+                        <div class="entradas-valores valores-categorias">
+                            <p class="saldos-titulos">Salário</p> <p>R$ 250,00</p>
+                        </div>
+                        <p class="underline-entradas-saidas"></p>
+
+                        <div class="entradas-valores valores-categorias">
+                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                        </div>
+
+                        <div class="entradas-valores valores-categorias">
+                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                        </div>
+                        <div class="entradas-valores valores-categorias">
+                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                        </div>
+                        <div class="entradas-valores valores-categorias">
+                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                        </div>
+                        <div class="entradas-valores valores-categorias">
+                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                        </div>
+                        <div class="entradas-valores valores-categorias">
+                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                        </div>
+                        <div class="entradas-valores valores-categorias">
+                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="botoes-esquerda-areas">
+                    <button class="btn-plataforma btn-area-esquerda btn-atualiza">Simular</button>
+                    <button class="btn-plataforma btn-area-esquerda btn-atualiza">Meta</button>
+                </div>
+            </div>
+
+            <div class="Area-direita">
+                <div class="cabecalho-filtro">
+                    <div class="filtros-area">
+                        <div class="lancamento-conciliado"><a href="">Conciliado</a></div>
+                        <div class="lancamento-data"><a href="">Data</a></div>
+                        <div class="lancamento-valor"><a href="">Valor</a></div>
+                        <div class="lancamento-categoria"><a href="">Categoria</a></div>
+                        <div class="lancamento-descricao"><a href="">Descrição</a></div>
+                        <div class="lancamento-tipo"><a href="">Tipo</a></div>
+                        <div class="lancamento-excluir"><a href="">Excluir</a></div>
+                        <div class="lancamento-alterar"><a href="">Alterar</a></div>
+                    </div>
+
+                </div>
+                <div class="area-lancamentos">
+                    <div class="lancamento-unitario">
+                        <div class="lancamento-conciliado"><input class="concicliacao" type="checkbox"></div>
+                        <div class="lancamento-data"><p>04/11/2022</p></div>
+                        <div class="lancamento-valor"><p>R$250,00</p></div>
+                        <div class="lancamento-categoria"><p>Salario</p></div>
+                        <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+                        <div class="lancamento-tipo"><p>D</p></div>
+                        <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+                        <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Categoria  |
+                                </th>
+                                <th>
+                                    Data      |
+                                </th>
+                                <th>
+                                    Tipo  |
+                                </th>
+                                <th>
+                                    Valor       |
+                                </th>
+                                <th>
+                                    Conciliado  |
+                                </th>
+                                <th>
+                                    Username
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <div class="lancamento-unitario">
+                                    <div class="lancamento-conciliado">@Html.DisplayFor(modelItem => item.Conciliado)</div>
+                                    <div class="lancamento-data"><p>@Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")</p></div>
+                                    <div class="lancamento-valor"><p>@Html.DisplayFor(modelItem => item.Valor)</p></div>
+                                    <div class="lancamento-categoria"><p>@Html.DisplayFor(modelItem => item.Cat.Nome)</p></div>
+                                    <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
+                                    <div class="lancamento-tipo"><p>@Html.DisplayFor(modelItem => item.Tipo)</p></div>
+                                    <div class="lancamento-excluir"><a class="btn-limpo" asp-action="Delete" asp-route-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+                                    <div class="lancamento-alterar"><a class="btn-limpo" asp-action="Edit" asp-route-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+
+                                </div>
+
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cat.Nome)
+                                    </td>
+                                    <td>
+                                        @*@Html.DisplayFor(modelItem => item.Data)*@
+                                        @Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Tipo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Valor)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Conciliado)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Username)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+
+</html>
 
 <h1>Index</h1>
 
@@ -34,56 +331,57 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cat.Nome)
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.Data)*@
-                @Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Valor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Conciliado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cat.Nome)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Data)*@
+                    @Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Conciliado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
 @{
     @*var prevDisabled = !Model.HasPreviousPage ? "hidden" : "";
-      var nextDisabled = !Model.HasNextPage ? "hidden" : "";*@
+        var nextDisabled = !Model.HasNextPage ? "hidden" : "";*@
 }
 
 @{
     if (Model.HasPreviousPage)
     {
         <a asp-action="Index"
-         asp-route-pageNumber="@(Model.PageIndex - 1)"
-         class="btn btn-default">
+           asp-route-pageNumber="@(Model.PageIndex - 1)"
+           class="btn btn-default">
             Anterior  |
         </a>
     }
     else
     {
         <a asp-action="Index"
-         asp-route-pageNumber="@(Model.PageIndex - 1)"
-         class="btn btn-default" hidden>
+           asp-route-pageNumber="@(Model.PageIndex - 1)"
+           class="btn btn-default" hidden>
             Próximo
         </a>
     }
@@ -92,16 +390,16 @@
     if (Model.HasNextPage)
     {
         <a asp-action="Index"
-         asp-route-pageNumber="@(Model.PageIndex + 1)"
-         class="btn btn-default">
+           asp-route-pageNumber="@(Model.PageIndex + 1)"
+           class="btn btn-default">
             Next
         </a>
     }
     else
     {
         <a asp-action="Index"
-         asp-route-pageNumber="@(Model.PageIndex + 1)"
-         class="btn btn-default" hidden>
+           asp-route-pageNumber="@(Model.PageIndex + 1)"
+           class="btn btn-default" hidden>
             Next
         </a>
     }

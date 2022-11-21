@@ -24,6 +24,8 @@ namespace ZCaixaV5.Api.Data
 
         public DbSet<Categoria> Categorias { get; set; }
 
+        public DbSet<Categoria> TTTTT { get; set; }
+
         public DbSet<Lancamento> Lancamentos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,5 +37,7 @@ namespace ZCaixaV5.Api.Data
             //modelBuilder.Entity<Categoria>().ToTable("Categoria");
             //modelBuilder.Entity<Lancamento>().ToTable("Lancamento");
         }
+
+        public DbSet<ZCaixaV5.Models.TTTTT> TTTTT_1 { get; set; }
     }
 }

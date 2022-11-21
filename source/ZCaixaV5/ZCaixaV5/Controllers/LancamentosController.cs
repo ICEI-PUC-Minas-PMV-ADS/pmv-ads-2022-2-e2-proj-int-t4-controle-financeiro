@@ -26,6 +26,8 @@ namespace ZCaixaV5.Controllers
             _contextcat = context;
         }
 
+
+        
         // GET: Lancamentos
         public async Task<IActionResult> Index(int? pageNumber)
         {
@@ -35,6 +37,7 @@ namespace ZCaixaV5.Controllers
             }
             else
             {
+                ViewBag.Nome = HttpContext.User.Identity.Name;
                 int pageSize = 10;
                 var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
                                  select s;
@@ -43,6 +46,64 @@ namespace ZCaixaV5.Controllers
    
                 return View(await PaginaList<Lancamento>.CreateAsync(lancamento.AsNoTracking(), pageNumber ?? 1, pageSize));
             }
+        }
+
+        // POST: Lancamentos/Index e Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index([Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
+        {
+            lancamento.CatId = Convert.ToInt32(Categ);
+            lancamento.Tipo = TipoLanId;
+            lancamento.Conciliado = false;
+            lancamento.Username = HttpContext.User.Identity.Name;
+
+            var categoria = from c in _contextcat.Categorias
+                            select c;
+            categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
+            categoria = categoria.OrderBy(c => c.Nome);
+            List<SelectListItem> itens = new List<SelectListItem>();
+            foreach (Categoria w in categoria)
+            {
+                if (lancamento.CatId == w.Id)
+                {
+                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString(), Selected = true });
+                }
+                else
+                {
+                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
+                };
+            }
+
+            ViewBag.Categ = itens;
+
+            ViewBag.TipoLanId = new SelectList
+                    (
+                        new TipoLan().ListaTiposLan(),
+                        "TipoLanId",
+                        "NomeLan",
+                        TipoLanId
+                    );
+            if (ModelState.IsValid)
+            {
+                var erro = false;
+                if (lancamento.Tipo != "C" && lancamento.Tipo != "D")
+                {
+                    ViewData["Message"] = "Tipo só pode ser (C)Crédito ou (D)Débito";
+                    erro = true;
+                }
+                if (erro)
+                {
+                    return View();
+                }
+                _context.Add(lancamento);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(lancamento);
         }
 
         // GET: Lancamentos/Details/5

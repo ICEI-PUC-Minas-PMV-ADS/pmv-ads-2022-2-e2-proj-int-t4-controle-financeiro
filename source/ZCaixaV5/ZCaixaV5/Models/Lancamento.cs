@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace ZCaixaV5.Models
 {
-    public class Lancamento
+    
+        public class Lancamento
     {
+        
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -34,6 +37,11 @@ namespace ZCaixaV5.Models
         public int CatId { get; set; }
         
         public Categoria Cat { get; set; }
-        
+
     }
-}
+
+    
+    }
+
+
+
