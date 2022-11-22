@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace ZCaixaV5.Models
 {
-    
-        public class Lancamento
+
+    public class Lancamento
     {
-        
+
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -35,13 +35,17 @@ namespace ZCaixaV5.Models
 
         [Required(ErrorMessage = "Informe uma Categoria")]
         public int CatId { get; set; }
-        
+
         public Categoria Cat { get; set; }
 
+        [NotMapped]
+        public List<Lancamento> ListaLancamentos { get; set; }
     }
-
     
-    }
+    
+
+
+}
 
 
 

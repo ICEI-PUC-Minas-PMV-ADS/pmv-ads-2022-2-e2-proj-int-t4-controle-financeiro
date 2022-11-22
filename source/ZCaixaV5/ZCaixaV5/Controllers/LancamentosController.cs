@@ -48,64 +48,6 @@ namespace ZCaixaV5.Controllers
             }
         }
 
-        // POST: Lancamentos/Index e Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index([Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
-        {
-            lancamento.CatId = Convert.ToInt32(Categ);
-            lancamento.Tipo = TipoLanId;
-            lancamento.Conciliado = false;
-            lancamento.Username = HttpContext.User.Identity.Name;
-
-            var categoria = from c in _contextcat.Categorias
-                            select c;
-            categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
-            categoria = categoria.OrderBy(c => c.Nome);
-            List<SelectListItem> itens = new List<SelectListItem>();
-            foreach (Categoria w in categoria)
-            {
-                if (lancamento.CatId == w.Id)
-                {
-                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString(), Selected = true });
-                }
-                else
-                {
-                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
-                };
-            }
-
-            ViewBag.Categ = itens;
-
-            ViewBag.TipoLanId = new SelectList
-                    (
-                        new TipoLan().ListaTiposLan(),
-                        "TipoLanId",
-                        "NomeLan",
-                        TipoLanId
-                    );
-            if (ModelState.IsValid)
-            {
-                var erro = false;
-                if (lancamento.Tipo != "C" && lancamento.Tipo != "D")
-                {
-                    ViewData["Message"] = "Tipo só pode ser (C)Crédito ou (D)Débito";
-                    erro = true;
-                }
-                if (erro)
-                {
-                    return View();
-                }
-                _context.Add(lancamento);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(lancamento);
-        }
-
         // GET: Lancamentos/Details/5
         [Authorize]
         public async Task<IActionResult> Details(int? id)
@@ -151,7 +93,7 @@ namespace ZCaixaV5.Controllers
                      "NomeLan"
                  );
 
-            return View();
+            return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
         }
 
         // POST: Lancamentos/Create
@@ -207,7 +149,29 @@ namespace ZCaixaV5.Controllers
                 }
                 _context.Add(lancamento);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
+
+                var categ = from c in _contextcat.Categorias
+                                select c;
+                categ = categ.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
+                categ = categ.OrderBy(c => c.Nome);
+
+                List<SelectListItem> itenscat = new List<SelectListItem>();
+                foreach (Categoria w in categ)
+                {
+                    itenscat.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
+                }
+
+                ViewBag.Categ = itenscat;
+
+                ViewBag.TipoLanId = new SelectList
+                     (
+                         new TipoLan().ListaTiposLan(),
+                         "TipoLanId",
+                         "NomeLan"
+                     );
+
+                return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
             }
             return View(lancamento);
         }
@@ -363,6 +327,17 @@ namespace ZCaixaV5.Controllers
             {
                 return RedirectToAction("Create", "Categorias");
             }
+        }
+
+        public List<Lancamento> GetLancamentos()
+        {
+            List<Lancamento> model = new List<Lancamento>();
+            var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
+                             select s;
+            lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
+            lancamento = lancamento.OrderByDescending(s => s.Data);
+            model.AddRange(lancamento);
+            return model;
         }
 
         private bool LancamentoExists(int id)

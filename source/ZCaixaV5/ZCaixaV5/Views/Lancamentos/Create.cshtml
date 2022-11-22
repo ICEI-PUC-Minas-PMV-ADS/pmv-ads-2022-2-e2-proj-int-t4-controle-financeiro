@@ -58,7 +58,15 @@
     <a asp-action="Categoria">Cadastrar Categoria</a>
     <a asp-action="Index">Back to List</a>
 </div>
+<div style="margin-top:70px; margin-left:70px">
+     
+        <p>
+              @Html.Partial("Lista", Model.ListaLancamentos);
+        </p>
 
-@section Scripts { 
+    
+</div>
+
+@*@section Scripts { 
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@
