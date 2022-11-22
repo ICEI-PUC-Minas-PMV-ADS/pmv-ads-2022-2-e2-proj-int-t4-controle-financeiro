@@ -29,7 +29,7 @@ namespace ZCaixaV5.Controllers
 
         
         // GET: Lancamentos
-        public async Task<IActionResult> Index(int? pageNumber)
+        public ActionResult Index(int? pageNumber)
         {
             if (string.IsNullOrEmpty(HttpContext.User.Identity.Name))
             {
@@ -38,8 +38,6 @@ namespace ZCaixaV5.Controllers
             else
             {
                 ViewBag.Nome = HttpContext.User.Identity.Name;
-                int pageSize = 10;
-
                 var categoria = from c in _contextcat.Categorias
                                 select c;
                 categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
@@ -161,11 +159,12 @@ namespace ZCaixaV5.Controllers
                 }
                 if (erro)
                 {
-                    return View();
+                    new Lancamento() { ListaLancamentos = GetLancamentos() };
+                    return RedirectToAction(nameof(Index));
                 }
                 _context.Add(lancamento);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
 
                 var categ = from c in _contextcat.Categorias
                                 select c;
@@ -187,9 +186,13 @@ namespace ZCaixaV5.Controllers
                          "NomeLan"
                      );
 
-                return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
+                //return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
+                new Lancamento() { ListaLancamentos = GetLancamentos() };
+                return RedirectToAction(nameof(Index));
             }
-            return View(lancamento);
+            ViewData["Message"] = "Não pode Lançar um formulário nulo";
+            new Lancamento() { ListaLancamentos = GetLancamentos() };
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Lancamentos/Edit/5
@@ -351,7 +354,7 @@ namespace ZCaixaV5.Controllers
             var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
                              select s;
             lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
-            lancamento = lancamento.OrderByDescending(s => s.Data);
+            lancamento = lancamento.OrderByDescending(s => s.Data).OrderByDescending(s => s.Id);
             model.AddRange(lancamento);
             return model;
         }
