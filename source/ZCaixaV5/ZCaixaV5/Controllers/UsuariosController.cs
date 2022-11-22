@@ -63,7 +63,7 @@ namespace Aspnet_AuthCookies1.Controllers
                     //cria o cookie
                     await HttpContext.SignInAsync(userPrincipal);
                     //return View();
-                    return RedirectToAction("Create", "Lancamentos");
+                    return RedirectToAction("Index", "Lancamentos");
                 }
 
                 ViewBag.Message = "Usuário e/ou Senha incorretos.";

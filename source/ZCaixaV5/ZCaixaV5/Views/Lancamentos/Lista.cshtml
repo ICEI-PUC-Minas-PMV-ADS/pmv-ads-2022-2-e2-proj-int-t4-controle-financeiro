@@ -5,60 +5,17 @@
     ViewData["Title"] = "Lançamentos";
 }
 
-<h1>Lançamentos</h1>
+@foreach (var item in Model)
+{
+    <div class="lancamento-unitario">
+        <div class="lancamento-conciliado">@Html.DisplayFor(modelItem => item.Conciliado)</div>
+        <div class="lancamento-data"><p>@Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")</p></div>
+        <div class="lancamento-valor"><p>@Html.DisplayFor(modelItem => item.Valor)</p></div>
+        <div class="lancamento-categoria"><p>@Html.DisplayFor(modelItem => item.Cat.Nome)</p></div>
+        <div class="lancamento-descricao"><p>@Html.DisplayFor(modelItem => item.Descricao)</p></div>
+        <div class="lancamento-tipo"><p>@Html.DisplayFor(modelItem => item.Tipo)</p></div>
+        <div class="lancamento-excluir"><a class="btn-limpo" asp-action="Delete" asp-route-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+        <div class="lancamento-alterar"><a class="btn-limpo" asp-action="Edit" asp-route-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Categoria  |
-            </th>
-            <th>
-                Data      |
-            </th>
-            <th>
-                Tipo  |
-            </th>
-            <th>
-                Valor       |
-            </th>
-            <th>
-                Conciliado  |
-            </th>
-            <th>
-                Username
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cat.Nome)
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.Data)*@
-                @Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Valor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Conciliado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+    </div>
 }
-    </tbody>
-</table>

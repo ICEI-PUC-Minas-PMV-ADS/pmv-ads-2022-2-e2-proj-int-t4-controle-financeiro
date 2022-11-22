@@ -39,12 +39,28 @@ namespace ZCaixaV5.Controllers
             {
                 ViewBag.Nome = HttpContext.User.Identity.Name;
                 int pageSize = 10;
-                var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
-                                 select s;
-                lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
-                lancamento = lancamento.OrderByDescending(s => s.Data);
-   
-                return View(await PaginaList<Lancamento>.CreateAsync(lancamento.AsNoTracking(), pageNumber ?? 1, pageSize));
+
+                var categoria = from c in _contextcat.Categorias
+                                select c;
+                categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
+                categoria = categoria.OrderBy(c => c.Nome);
+
+                List<SelectListItem> itens = new List<SelectListItem>();
+                foreach (Categoria w in categoria)
+                {
+                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
+                }
+
+                ViewBag.Categ = itens;
+
+                ViewBag.TipoLanId = new SelectList
+                     (
+                         new TipoLan().ListaTiposLan(),
+                         "TipoLanId",
+                         "NomeLan"
+                     );
+
+                return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
             }
         }
 
@@ -93,7 +109,7 @@ namespace ZCaixaV5.Controllers
                      "NomeLan"
                  );
 
-            return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
+            return View(Index(1));
         }
 
         // POST: Lancamentos/Create
@@ -149,7 +165,7 @@ namespace ZCaixaV5.Controllers
                 }
                 _context.Add(lancamento);
                 await _context.SaveChangesAsync();
-                //return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
 
                 var categ = from c in _contextcat.Categorias
                                 select c;

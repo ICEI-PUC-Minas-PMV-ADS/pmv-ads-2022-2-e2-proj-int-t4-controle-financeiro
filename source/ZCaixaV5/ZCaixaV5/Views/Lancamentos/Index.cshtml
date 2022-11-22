@@ -1,4 +1,5 @@
-﻿@model PaginaList<ZCaixaV5.Models.Lancamento>
+﻿@model ZCaixaV5.Models.Lancamento
+@using ZCaixaV5.Models
 
 
 @{
@@ -35,7 +36,7 @@
                 </button>
 
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    
+
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content modal-lancamento">
                             <div class="modal-header">
@@ -43,27 +44,53 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <form asp-action="Create">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                Escolha a Categoria
+                                                @Html.DropDownList("Categ", String.Empty)
+                                            </div>
+                                        </div>
+                                        <span asp-validation-for="CatId" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Data" class="control-label"></label>
+                                        <input asp-for="Data" type="date" id="calInicio" value="today" placeholder="today">
+                                        <span asp-validation-for="Data" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Descricao" class="control-label"></label>
+                                        <input asp-for="Descricao" class="form-control" />
+                                        <span asp-validation-for="Descricao" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                Escolha o Tipo:
+                                                @* Passando o Nome da ViewBag *@
+                                                @Html.DropDownList("TipoLanId", String.Empty)
+                                            </div>
+                                        </div>
+                                        <h3 class="text-danger"> @ViewData["Message"] </h3>
+                                        <span asp-validation-for="Tipo" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Valor" class="control-label"></label>
+                                        <input asp-for="Valor" type="money" step="any" id="decimal" />
+                                        <span asp-validation-for="Valor" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        
+                                    </div>
 
-                                
 
-                                <input type="date">
-                                R$ <input type="number" step="0.01" min="0.01">
-
-                                <select name="Categoria" id="">
-                                    <option value="teste">Teste</option>
-                                    <option value="teste2">teste 2</option>
-                                </select>
-                                <input type="text">
-                                <input type="text">
-                                <input type="text">
-                                <input type="text">
-
-
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-success">Adicionar</button>
-                                </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                        <input type="submit" value="Inserir" class="btn btn-success" />
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -207,90 +234,7 @@
 
                 </div>
                 <div class="area-lancamentos">
-                    <div class="lancamento-unitario">
-                        <div class="lancamento-conciliado"><input class="concicliacao" type="checkbox"></div>
-                        <div class="lancamento-data"><p>04/11/2022</p></div>
-                        <div class="lancamento-valor"><p>R$250,00</p></div>
-                        <div class="lancamento-categoria"><p>Salario</p></div>
-                        <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
-                        <div class="lancamento-tipo"><p>D</p></div>
-                        <div class="lancamento-excluir"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
-                        <div class="lancamento-alterar"><a class="btn-limpo"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
-
-                    </div>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Categoria  |
-                                </th>
-                                <th>
-                                    Data      |
-                                </th>
-                                <th>
-                                    Tipo  |
-                                </th>
-                                <th>
-                                    Valor       |
-                                </th>
-                                <th>
-                                    Conciliado  |
-                                </th>
-                                <th>
-                                    Username
-                                </th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-
-                                <div class="lancamento-unitario">
-                                    <div class="lancamento-conciliado">@Html.DisplayFor(modelItem => item.Conciliado)</div>
-                                    <div class="lancamento-data"><p>@Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")</p></div>
-                                    <div class="lancamento-valor"><p>@Html.DisplayFor(modelItem => item.Valor)</p></div>
-                                    <div class="lancamento-categoria"><p>@Html.DisplayFor(modelItem => item.Cat.Nome)</p></div>
-                                    <div class="lancamento-descricao"><p>Pagamento de fatura 11/22</p></div>
-                                    <div class="lancamento-tipo"><p>@Html.DisplayFor(modelItem => item.Tipo)</p></div>
-                                    <div class="lancamento-excluir"><a class="btn-limpo" asp-action="Delete" asp-route-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
-                                    <div class="lancamento-alterar"><a class="btn-limpo" asp-action="Edit" asp-route-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
-
-                                </div>
-
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Cat.Nome)
-                                    </td>
-                                    <td>
-                                        @*@Html.DisplayFor(modelItem => item.Data)*@
-                                        @Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Tipo)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Valor)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Conciliado)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Username)
-                                    </td>
-                                    <td>
-                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-
-
-
+                   @Html.Partial("Lista", Model.ListaLancamentos) 
                 </div>
             </div>
 
@@ -301,106 +245,3 @@
 
 </html>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Categoria  |
-            </th>
-            <th>
-                Data      |
-            </th>
-            <th>
-                Tipo  |
-            </th>
-            <th>
-                Valor       |
-            </th>
-            <th>
-                Conciliado  |
-            </th>
-            <th>
-                Username
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cat.Nome)
-                </td>
-                <td>
-                    @*@Html.DisplayFor(modelItem => item.Data)*@
-                    @Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tipo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Valor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Conciliado)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Username)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-@{
-    @*var prevDisabled = !Model.HasPreviousPage ? "hidden" : "";
-        var nextDisabled = !Model.HasNextPage ? "hidden" : "";*@
-}
-
-@{
-    if (Model.HasPreviousPage)
-    {
-        <a asp-action="Index"
-           asp-route-pageNumber="@(Model.PageIndex - 1)"
-           class="btn btn-default">
-            Anterior  |
-        </a>
-    }
-    else
-    {
-        <a asp-action="Index"
-           asp-route-pageNumber="@(Model.PageIndex - 1)"
-           class="btn btn-default" hidden>
-            Próximo
-        </a>
-    }
-}
-@{
-    if (Model.HasNextPage)
-    {
-        <a asp-action="Index"
-           asp-route-pageNumber="@(Model.PageIndex + 1)"
-           class="btn btn-default">
-            Next
-        </a>
-    }
-    else
-    {
-        <a asp-action="Index"
-           asp-route-pageNumber="@(Model.PageIndex + 1)"
-           class="btn btn-default" hidden>
-            Next
-        </a>
-    }
-}

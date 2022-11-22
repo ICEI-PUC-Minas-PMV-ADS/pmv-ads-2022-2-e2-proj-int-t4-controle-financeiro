@@ -20,6 +20,7 @@ namespace ZCaixaV5.Models
         [Required(ErrorMessage = "Informe uma Data")]
         public DateTime Data { get; set; }
 
+        [Required(ErrorMessage = "Informe a descrição")]
         public string Descricao { get; set; }
 
         public string Tipo { get; set; }
