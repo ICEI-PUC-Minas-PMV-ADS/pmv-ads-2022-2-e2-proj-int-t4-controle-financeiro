@@ -653,6 +653,61 @@ main {
         font-size: 1vw;
     }
 
+
+.campos-insere-lan-row {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.formulario-lancamento-input {
+    padding: 0.25rem;
+    border-radius: 0.3rem;
+    border-color: #fff;
+    margin-top: 0.25rem;
+    margin-bottom: 0.3rem;
+    border: 2px solid #FFFFFF;
+    margin-left: 0.8rem;
+}
+
+.formulario-lancamento p {
+    margin-top: 0.3rem;
+    margin-left: 0.8rem;
+}
+
+.modal-title {
+    font-weight: 500;
+}
+
+.valor-area {
+    width: 33%;
+}
+
+.campo-valor {
+    width: 100%;
+}
+.campo-tipo {
+    margin-left: 1rem;
+}
+
+.text-danger {
+    margin-top: 5px;
+    color: red;
+    font-size: 10px;
+}
+
+.formulario-lancamento select {
+    padding: 0.25rem;
+    border-radius: 0.3rem;
+    border-color: #fff;
+    margin-top: 0.25rem;
+    margin-left: 0.8rem;
+}
+
+.modal-footer{
+    margin-top: 1rem;
+}
+
 .icone-lancamento-unitario {
     width: 1.0vw;
 }
@@ -680,7 +735,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance: textfield;
-    appearance: textfield;
+    
 }
 
 .concicliacao {

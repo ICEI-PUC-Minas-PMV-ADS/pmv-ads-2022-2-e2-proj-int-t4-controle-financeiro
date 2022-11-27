@@ -31,6 +31,7 @@ namespace ZCaixaV5.Controllers
         // GET: Lancamentos
         public ActionResult Index(int? pageNumber)
         {
+
             if (string.IsNullOrEmpty(HttpContext.User.Identity.Name))
             {
                 return RedirectToAction("Index", "Home");
@@ -57,10 +58,12 @@ namespace ZCaixaV5.Controllers
                          "TipoLanId",
                          "NomeLan"
                      );
-
+                
                 return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
             }
         }
+
+
 
         // GET: Lancamentos/Details/5
         [Authorize]
@@ -83,8 +86,8 @@ namespace ZCaixaV5.Controllers
             return View(lancamento);
         }
 
-        // GET: Lancamentos/Create
-        [Authorize]
+        //GET: Lancamentos/Create
+       [Authorize]
         public ActionResult Create()
         {
             var categoria = from c in _contextcat.Categorias
@@ -92,7 +95,7 @@ namespace ZCaixaV5.Controllers
             categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
             categoria = categoria.OrderBy(c => c.Nome);
 
-            List <SelectListItem> itens = new List<SelectListItem> ();
+            List<SelectListItem> itens = new List<SelectListItem>();
             foreach (Categoria w in categoria)
             {
                 itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
@@ -107,11 +110,11 @@ namespace ZCaixaV5.Controllers
                      "NomeLan"
                  );
 
-            return View(Index(1));
+            return RedirectToAction("Index");
         }
 
-        // POST: Lancamentos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        //POST: Lancamentos/Create
+        //To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize]
         [HttpPost]
@@ -160,11 +163,9 @@ namespace ZCaixaV5.Controllers
                 if (erro)
                 {
                     new Lancamento() { ListaLancamentos = GetLancamentos() };
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction();
                 }
-                _context.Add(lancamento);
-                await _context.SaveChangesAsync();
-                //return RedirectToAction(nameof(Index));
+               
 
                 var categ = from c in _contextcat.Categorias
                                 select c;
@@ -186,13 +187,24 @@ namespace ZCaixaV5.Controllers
                          "NomeLan"
                      );
 
-                //return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
-                new Lancamento() { ListaLancamentos = GetLancamentos() };
-                return RedirectToAction(nameof(Index));
+                if (lancamento.Descricao == null)
+                {
+                    ViewBag.Mensage2 = "Não é possível prosseguir.";
+                    return View("Index");
+                }
+
+                _context.Add(lancamento);
+                await _context.SaveChangesAsync();
+                //return RedirectToAction(nameof(Index));
+                
+                //return View();
+                //new Lancamento() { ListaLancamentos = GetLancamentos() };
+                return RedirectToAction();
             }
-            ViewData["Message"] = "Não pode Lançar um formulário nulo";
-            new Lancamento() { ListaLancamentos = GetLancamentos() };
-            return RedirectToAction(nameof(Index));
+            ViewBag.Message = "Não pode Lançar um formulário nulo";
+            return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
+
+
         }
 
         // GET: Lancamentos/Edit/5
@@ -313,7 +325,7 @@ namespace ZCaixaV5.Controllers
                 TempData["mensagemErro"] = "Não pode excluir um lançamento já conciliado";
                 return RedirectToAction(nameof(Erro));
             }
-            return View(lancamento);
+            return View("Index");
         }
 
         // POST: Lancamentos/Delete/5

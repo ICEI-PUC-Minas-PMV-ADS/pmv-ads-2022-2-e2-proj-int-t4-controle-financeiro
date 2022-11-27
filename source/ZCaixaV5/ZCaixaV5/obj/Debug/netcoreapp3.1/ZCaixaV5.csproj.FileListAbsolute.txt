@@ -531,7 +531,6 @@ C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeir
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index - Cópia.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Home\RecuperaSenha.cshtml.g.cs
-C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Create.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Delete.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Details.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Edit.cshtml.g.cs
@@ -562,3 +561,4 @@ C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-finance
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\CreateTeste.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Lista.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\ListaTeste.cshtml.g.cs
+C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Create.cshtml.g.cs
