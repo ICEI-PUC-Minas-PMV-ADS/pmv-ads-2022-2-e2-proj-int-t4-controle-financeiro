@@ -5,7 +5,7 @@
 
 | Atividade a ser realizada | Feedback do usuário | Considerações (quais os problemas, deficiências, limitações, etc) | Sugestão de melhorias |
 |--------------------|------------------------------------|------------------------------------|------------------------------------|
-| Cadastro de usuário - Campos obrigatórios: Nome, Sobrenome, E-mail, Data de nascimento, Telefone, Senha, Confirmação da senha | |
+| Cadastro de usuário - Campos obrigatórios: Nome, Sobrenome, E-mail, Data de nascimento, Telefone, Senha, Confirmação da senha | | teste feedback usuario | 
 | Realizar login na aplicação - Campos obrigatórios: Usuário, E-mail ou telefone e senha | |
 | Cadastrar categorias | |
 | Realizar um lançamento Campos obrigatórios: Datas, Valor, Categoria, Descrição | |
