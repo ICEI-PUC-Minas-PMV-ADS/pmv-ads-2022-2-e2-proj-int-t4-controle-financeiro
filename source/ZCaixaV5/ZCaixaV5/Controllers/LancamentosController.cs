@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using ZCaixaV5.Api.Data;
 using ZCaixaV5.Models;
+using ZCaixaV5.Filters;
 using static Composite.Core.Logging.LoggingService;
 
 namespace ZCaixaV5.Controllers
@@ -26,9 +27,8 @@ namespace ZCaixaV5.Controllers
             _contextcat = context;
         }
 
-
-        
         // GET: Lancamentos
+        [ImportModelStateFromTempData]
         public ActionResult Index(int? pageNumber)
         {
 
@@ -63,8 +63,6 @@ namespace ZCaixaV5.Controllers
             }
         }
 
-
-
         // GET: Lancamentos/Details/5
         [Authorize]
         public async Task<IActionResult> Details(int? id)
@@ -85,9 +83,9 @@ namespace ZCaixaV5.Controllers
             
             return View(lancamento);
         }
-
+        
         //GET: Lancamentos/Create
-       [Authorize]
+        [Authorize]
         public ActionResult Create()
         {
             var categoria = from c in _contextcat.Categorias
@@ -119,7 +117,9 @@ namespace ZCaixaV5.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
+        //[IgnoreModelErrors("Create")]
+        //[ExportModelStateToTempData]
+        public ActionResult Create([Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
         {
             lancamento.CatId = Convert.ToInt32(Categ);
             lancamento.Tipo = TipoLanId;
@@ -163,7 +163,7 @@ namespace ZCaixaV5.Controllers
                 if (erro)
                 {
                     new Lancamento() { ListaLancamentos = GetLancamentos() };
-                    return RedirectToAction();
+                    return RedirectToAction("Index");
                 }
                
 
@@ -187,24 +187,13 @@ namespace ZCaixaV5.Controllers
                          "NomeLan"
                      );
 
-                if (lancamento.Descricao == null)
-                {
-                    ViewBag.Mensage2 = "Não é possível prosseguir.";
-                    return View("Index");
-                }
-
                 _context.Add(lancamento);
-                await _context.SaveChangesAsync();
-                //return RedirectToAction(nameof(Index));
-                
-                //return View();
-                //new Lancamento() { ListaLancamentos = GetLancamentos() };
-                return RedirectToAction();
+                _context.SaveChangesAsync();
+                new Lancamento() { ListaLancamentos = GetLancamentos() };
+                return RedirectToAction("Index");
             }
             ViewBag.Message = "Não pode Lançar um formulário nulo";
-            return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
-
-
+            return RedirectToAction("Index");
         }
 
         // GET: Lancamentos/Edit/5
@@ -345,6 +334,12 @@ namespace ZCaixaV5.Controllers
         public IActionResult Erro()
         {
             return View();
+        }
+
+        public ActionResult Success()
+        {
+            new Lancamento() { ListaLancamentos = GetLancamentos() };
+            return RedirectToAction("Index");
         }
 
         // GET: Cadastro de Categorias (Atalho)

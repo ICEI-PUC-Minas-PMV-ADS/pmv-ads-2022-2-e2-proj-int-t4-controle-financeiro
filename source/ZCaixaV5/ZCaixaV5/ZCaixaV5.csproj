@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Teste\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
 
 </Project>
