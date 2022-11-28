@@ -14,7 +14,11 @@
         <div class="lancamento-categoria"><p>@Html.DisplayFor(modelItem => item.Cat.Nome)</p></div>
         <div class="lancamento-descricao"><p>@Html.DisplayFor(modelItem => item.Descricao)</p></div>
         <div class="lancamento-tipo"><p>@Html.DisplayFor(modelItem => item.Tipo)</p></div>
-        <div class="lancamento-excluir"><a class="btn-limpo" asp-action="Delete" asp-route-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+        <div class="lancamento-excluir">
+            <form asp-action="Delete" asp-route-id="@item.Id">
+                <input type="image" class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt="" />
+            </form>
+        </div>
         <div class="lancamento-alterar"><a class="btn-limpo" asp-action="Edit" asp-route-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
 
     </div>

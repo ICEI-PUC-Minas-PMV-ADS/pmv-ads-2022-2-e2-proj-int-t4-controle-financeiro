@@ -60,28 +60,6 @@ namespace ZCaixaV5.Controllers
                 return View (new Lancamento() { ListaLancamentos = GetLancamentos() });
             }
         }
-
-        // GET: Lancamentos/Details/5
-        [Authorize]
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var lancamento = await _context.Lancamentos
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (lancamento == null)
-            {
-                return NotFound();
-            }
-            var categoria = await _contextcat.Categorias
-                .FirstOrDefaultAsync(m => m.Id == lancamento.CatId);
-            
-            return View(lancamento);
-        }
-        
         
         //GET: Lancamentos/Create
         [Authorize]
@@ -110,7 +88,6 @@ namespace ZCaixaV5.Controllers
             return RedirectToAction("Index");
         }
         
-
         //POST: Lancamentos/Create
         //To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -293,38 +270,25 @@ namespace ZCaixaV5.Controllers
             return View(lancamento);
         }
 
-        // GET: Lancamentos/Delete/5
-        [Authorize]
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var lancamento = await _context.Lancamentos
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (lancamento == null)
-            {
-                return NotFound(); 
-            }
-            if (lancamento.Conciliado == true)
-            {       
-                TempData["mensagemErro"] = "Não pode excluir um lançamento já conciliado";
-                return RedirectToAction(nameof(Erro));
-            }
-            return View("Index");
-        }
-
         // POST: Lancamentos/Delete/5
         [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var lanc = await _context.Lancamentos
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (lanc.Conciliado == true)
+            {
+                TempData["mensagemErro"] = "Não pode excluir um lançamento já conciliado";
+                return RedirectToAction("Index");
+            }
+        
             var lancamento = await _context.Lancamentos.FindAsync(id);
             _context.Lancamentos.Remove(lancamento);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            new Lancamento() { ListaLancamentos = GetLancamentos() };
+            return RedirectToAction("Index");
         }
 
         // GET: Lancamentos/Erro
