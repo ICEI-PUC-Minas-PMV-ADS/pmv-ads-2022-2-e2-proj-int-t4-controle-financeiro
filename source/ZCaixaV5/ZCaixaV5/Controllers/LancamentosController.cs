@@ -28,8 +28,7 @@ namespace ZCaixaV5.Controllers
         }
 
         // GET: Lancamentos
-        [ImportModelStateFromTempData]
-        public ActionResult Index(int? pageNumber)
+        public IActionResult Index()
         {
 
             if (string.IsNullOrEmpty(HttpContext.User.Identity.Name))
@@ -58,8 +57,7 @@ namespace ZCaixaV5.Controllers
                          "TipoLanId",
                          "NomeLan"
                      );
-                
-                return View(new Lancamento() { ListaLancamentos = GetLancamentos() });
+                return View (new Lancamento() { ListaLancamentos = GetLancamentos() });
             }
         }
 
@@ -84,9 +82,10 @@ namespace ZCaixaV5.Controllers
             return View(lancamento);
         }
         
+        
         //GET: Lancamentos/Create
         [Authorize]
-        public ActionResult Create()
+        public IActionResult Create()
         {
             var categoria = from c in _contextcat.Categorias
                             select c;
@@ -107,9 +106,10 @@ namespace ZCaixaV5.Controllers
                      "TipoLanId",
                      "NomeLan"
                  );
-
+            new Lancamento() { ListaLancamentos = GetLancamentos() };
             return RedirectToAction("Index");
         }
+        
 
         //POST: Lancamentos/Create
         //To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -117,9 +117,7 @@ namespace ZCaixaV5.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //[IgnoreModelErrors("Create")]
-        //[ExportModelStateToTempData]
-        public ActionResult Create([Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
+        public async Task<IActionResult> Create([Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
         {
             lancamento.CatId = Convert.ToInt32(Categ);
             lancamento.Tipo = TipoLanId;
@@ -188,12 +186,12 @@ namespace ZCaixaV5.Controllers
                      );
 
                 _context.Add(lancamento);
-                _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
                 new Lancamento() { ListaLancamentos = GetLancamentos() };
                 return RedirectToAction("Index");
             }
             ViewBag.Message = "Não pode Lançar um formulário nulo";
-            return RedirectToAction("Index");
+            return RedirectToAction("Index");  
         }
 
         // GET: Lancamentos/Edit/5
@@ -336,12 +334,6 @@ namespace ZCaixaV5.Controllers
             return View();
         }
 
-        public ActionResult Success()
-        {
-            new Lancamento() { ListaLancamentos = GetLancamentos() };
-            return RedirectToAction("Index");
-        }
-
         // GET: Cadastro de Categorias (Atalho)
         public IActionResult Categoria()
         {
@@ -361,7 +353,7 @@ namespace ZCaixaV5.Controllers
             var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
                              select s;
             lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
-            lancamento = lancamento.OrderByDescending(s => s.Data).OrderByDescending(s => s.Id);
+            lancamento = lancamento.OrderByDescending(s => s.Id).OrderByDescending(s => s.Data);
             model.AddRange(lancamento);
             return model;
         }
