@@ -84,7 +84,7 @@
 ||7 - Clicar no botão "filtrar" |
 ||8 - Clicar na opção "Lançamentos conciliados"  |
 |`Critério de Êxito` | Lançamentos de cartão de crédito conciliados com sucesso e filtrados com sucesso. |
-|`Avaliação` | ***Conciliação?? Qual lançamento é despesa qual é receita? *** |
+|`Avaliação` | ***Conciliação?? Qual lançamento é despesa qual é receita?*** |
 
 
 | Casos de Teste | CT-06 - Definir meta e simular possíveis cenários de atingimento da meta |
