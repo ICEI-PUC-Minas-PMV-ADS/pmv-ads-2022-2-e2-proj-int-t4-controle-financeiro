@@ -5,17 +5,17 @@
 
 | Atividade a ser realizada | Feedback do usuário | Considerações (quais os problemas, deficiências, limitações, etc) | Sugestão de melhorias |
 |--------------------|------------------------------------|------------------------------------|------------------------------------|
-| Cadastro de usuário - Campos obrigatórios: Nome, Sobrenome, E-mail, Data de nascimento, Telefone, Senha, Confirmação da senha | | teste feedback usuario | 
-| Realizar login na aplicação - Campos obrigatórios: Usuário, E-mail ou telefone e senha | |
-| Cadastrar categorias | |
-| Realizar um lançamento Campos obrigatórios: Datas, Valor, Categoria, Descrição | |
-| Programar Lançamentos | |
-| Excluir um lançamento | |
-| Editar um lançamento | |
-| Visualizar lançamento por período (Filtro por semana, mês ou ano) | |
-| Definir metas | |
-| Simular cenários | |
-| Visualizar Relatórios | |
+| Cadastro de usuário - Campos obrigatórios: Nome, Sobrenome, E-mail, Data de nascimento, Telefone, Senha, Confirmação da senha | Consegui cadastrar o usuário sem problemas | O campo de telefone está permitindo infinitos caractéres, assim como "ano" na data de nascimento | Limitar os campos de caracteres citados| 
+| Realizar login na aplicação - Campos obrigatórios: Usuário, E-mail ou telefone e senha | Consegui realizar o login na aplicação | Nenhum | Nenhuma | 
+| Cadastrar categorias | Consegui cadastrar as categorias desejadas | Somente consegui cadastrar as categorias acessando a parte de criação direto pelo endpoint | Adicionar o botão de "criar categoria". Informar se o lançamento é débito ou crédito. 
+| Realizar um lançamento - Campos obrigatórios: Data, Valor, Categoria, Descrição | Consegui realizar o lançamento | Não consegui identificar se o lançamento era receita ou despesa | Identificar se os lanaçamentos são despesas ou receitas | 
+| Programar Lançamentos | ???????? | ???????? | ???????? |
+| Excluir um lançamento | ???????? | ???????? | ???????? | 
+| Editar um lançamento | ???????? | ???????? | ???????? | 
+| Visualizar lançamento por período (Filtro por semana, mês ou ano) | ???????? | ???????? | ???????? | 
+| Definir metas | ???????? | ???????? | ???????? |
+| Simular cenários | ???????? | ???????? | ???????? |
+| Visualizar Relatórios | ???????? | ???????? | ???????? |
 
 **Detalhamento Análise Heurística**
 | ID | Característica | Sim Não N/A | Comentários |
