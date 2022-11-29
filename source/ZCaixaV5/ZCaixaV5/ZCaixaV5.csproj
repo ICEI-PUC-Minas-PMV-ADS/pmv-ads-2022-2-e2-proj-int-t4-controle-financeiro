@@ -15,6 +15,9 @@
     <PackageReference Include="BCrypt.Net-Next" Version="3.5.0" />
     <PackageReference Include="CompositeC1.Security" Version="0.9.3" />
     <PackageReference Include="EfCore3.SqlServer2008Query" Version="1.0.0" />
+    <PackageReference Include="LigerShark.WebOptimizer.Sass" Version="3.0.91" />
+    <PackageReference Include="Microsoft.AspNet.Web.Optimization.pt-br" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNet.Web.Optimization.WebForms" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.30" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.30" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.30">
@@ -24,10 +27,6 @@
     <PackageReference Include="Microsoft.Owin.Security.Authorization.Mvc" Version="1.2.2.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="MSBuild.Microsoft.VisualStudio.Web_WebApplication.Targets" Version="12.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Filters\" />
   </ItemGroup>
 
 </Project>

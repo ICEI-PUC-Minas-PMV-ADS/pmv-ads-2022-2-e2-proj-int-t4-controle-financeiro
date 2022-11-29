@@ -22,76 +22,78 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Localization;
 using System.Globalization;
 
-namespace ZCaixaV5
-{
-    public class Startup
+
+    namespace ZCaixaV5
     {
-        public Startup(IConfiguration configuration)
+        public class Startup
         {
-            Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-
-        {
-            services.AddDbContext<ZCaixaContexto>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
-            .ReplaceService<IQueryTranslationPostprocessorFactory, SqlServer2008QueryTranslationPostprocessorFactory>());
-
-            services.AddAuthentication("CookieAuthentication")
-                    .AddCookie("CookieAuthentication", config =>
-                    {
-                         config.Cookie.Name = "UserLoginCookie";
-                         config.LoginPath = "/Login/UserLogin";
-                         config.AccessDeniedPath = "/Login/AccessDenied";
-                     });
-
-            services.AddControllersWithViews();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            // Definindo a cultura padrão: pt-BR
-            var supportedCultures = new[] { new CultureInfo("pt-BR") };
-            app.UseRequestLocalization(new RequestLocalizationOptions
+            public Startup(IConfiguration configuration)
             {
-                DefaultRequestCulture = new RequestCulture(culture: "pt-BR", uiCulture: "pt-BR"),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures
-            });
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
+                Configuration = configuration;
             }
-            else
+
+            public IConfiguration Configuration { get; }
+
+            // This method gets called by the runtime. Use this method to add services to the container.
+            public void ConfigureServices(IServiceCollection services)
+
             {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                services.AddDbContext<ZCaixaContexto>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                .ReplaceService<IQueryTranslationPostprocessorFactory, SqlServer2008QueryTranslationPostprocessorFactory>());
+
+                services.AddAuthentication("CookieAuthentication")
+                        .AddCookie("CookieAuthentication", config =>
+                        {
+                            config.Cookie.Name = "UserLoginCookie";
+                            config.LoginPath = "/Login/UserLogin";
+                            config.AccessDeniedPath = "/Login/AccessDenied";
+                        });
+                          
+                services.AddControllersWithViews();
+                services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
             }
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
-            app.UseRouting();
-
-            // Quem é você?
-            app.UseAuthentication();
-
-            // Verifica Permissões
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
+            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
+                // Definindo a cultura padrão: pt-BR
+                var supportedCultures = new[] { new CultureInfo("pt-BR") };
+                app.UseRequestLocalization(new RequestLocalizationOptions
+                {
+                    DefaultRequestCulture = new RequestCulture(culture: "pt-BR", uiCulture: "pt-BR"),
+                    SupportedCultures = supportedCultures,
+                    SupportedUICultures = supportedCultures
+                });
+
+                if (env.IsDevelopment())
+                {
+                    app.UseDeveloperExceptionPage();
+                }
+                else
+                {
+                    app.UseExceptionHandler("/Home/Error");
+                    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                    app.UseHsts();
+                }
+                app.UseHttpsRedirection();
+                app.UseStaticFiles();
+
+                app.UseRouting();
+
+                // Quem é você?
+                app.UseAuthentication();
+
+                // Verifica Permissões
+                app.UseAuthorization();
+
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                        name: "default",
+                        pattern: "{controller=Home}/{action=Index}/{id?}");
+                });
+            }
         }
     }
-}
+

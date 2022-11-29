@@ -19,7 +19,30 @@
                 <input type="image" class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt="" />
             </form>
         </div>
-        <div class="lancamento-alterar"><a class="btn-limpo" asp-action="Edit" asp-route-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+        <div class="lancamento-alterar">
+            @*
+            <form asp-action="Edit" asp-route-id="@item.Id">
+                <input type="image" class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt="" />
+            </form>
+            *@
+            <button type="button" class="icone-lancamento-unitario" asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="modal" data-bs-target="#exampleModalCenter2">
+                <img class="icones" src="~/imagens/editar-icon.png" alt="">
+            </button>
+            <div class="modal fade" id="exampleModalCenter2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content modal-lancamento">
+                        <div class="modal-header">
+                            <h1 class="modal-title" id="staticBackdropLabel">Alterar um Lançamento</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            *@Html.Partial("Edit", @item)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 }

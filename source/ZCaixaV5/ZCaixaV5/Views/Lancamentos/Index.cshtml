@@ -1,6 +1,5 @@
-﻿@model ZCaixaV5.Models.Lancamento
+﻿@model PaginaList<ZCaixaV5.Models.Lancamento>
 @using ZCaixaV5.Models
-
 
 @{
     ViewData["Title"] = "Meu Caixa";
@@ -31,71 +30,12 @@
                 <img class="logo-plataforma" src="~/imagens/logo-horizontal.png" alt="">
             </div>
             <div class="botoes-plataforma-area">
-                <button type="button" class="btn-plataforma btn-adiciona-lancamento" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                
+                <button type="button" class="btn-plataforma btn-adiciona-lancamento create">
                     <img class="icones" src="~/imagens/add-icon.png" alt="">
                 </button>
-
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content modal-lancamento">
-                            <div class="modal-header">
-                                <h1 class="modal-title" id="staticBackdropLabel">Adicionar um Lançamento</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-
-                                <form asp-action="Create" class="formulario-lancamento">                     
-
-                                    <div class="campos-insere-lan-row">
-
-                                        <div class="">
-                                            <p>Data</p>
-                                            <input class="formulario-lancamento-input" asp-for="Data" type="date" value="today">
-                                            <span asp-validation-for="Data" class="text-danger"></span>
-                                        </div>
-                                        <div>
-                                            <p>Categoria</p>
-                                            @Html.DropDownList("Categ", String.Empty)
-                                        </div>
-
-                                        <span asp-validation-for="CatId" class="text-danger"></span>
-                                    </div>
-
-                                    <div class="campos-insere-lan-row">
-                                        <div class="valor-area">
-                                            <p>Valor</p>
-                                            <input class="formulario-lancamento-input campo-valor" asp-for="Valor" type="money" />
-                                            <span asp-validation-for="Valor" class="text-danger"></span>
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <div class="campo-tipo">
-                                                <p>Tipo</p>
-                                                @* Passando o Nome da ViewBag *@
-                                                @Html.DropDownList("TipoLanId", String.Empty)
-                                            </div>
-
-                                            <h3 class="text-danger"> @ViewData["Message"] </h3>
-                                            <span asp-validation-for="Tipo" class="text-danger"></span>
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <p>Descrição</p>
-                                        <input asp-for="Descricao" class="formulario-lancamento-input" />
-                                        <span asp-validation-for="Descricao" class="text-danger campo-descricao"></span>
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                        <input type="submit" value="Inserir" class="btn btn-success" />
-                                    </div>
-                                </form>                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+                
                 <button type="button" class="btn-plataforma btn-atualiza">
                     <img class="icones" src="~/imagens/atualiza-icon.png" alt="">
                 </button>
@@ -125,14 +65,8 @@
                         <li class="opcao-sair">
                             <a href=""><img class="icones-menu-usuario" src="~/imagens/sair-icon.png" alt=""> <p>Sair</p></a>
                         </li>
-
-
                     </ul>
                 </nav>
-
-
-
-
             </div>
         </header>
 
@@ -235,13 +169,97 @@
 
                 </div>
                 <div class="area-lancamentos">
-                   @Html.Partial("Lista", Model.ListaLancamentos)
+                    @foreach (var item in Model)
+                    {
+                        <div class="lancamento-unitario">
+                            <div class="lancamento-conciliado">@Html.DisplayFor(modelItem => item.Conciliado)</div>
+                            <div class="lancamento-data"><p>@Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")</p></div>
+                            <div class="lancamento-valor"><p>@Html.DisplayFor(modelItem => item.Valor)</p></div>
+                            <div class="lancamento-categoria"><p>@Html.DisplayFor(modelItem => item.Cat.Nome)</p></div>
+                            <div class="lancamento-descricao"><p>@Html.DisplayFor(modelItem => item.Descricao)</p></div>
+                            <div class="lancamento-tipo"><p>@Html.DisplayFor(modelItem => item.Tipo)</p></div>
+                            <div class="lancamento-excluir"><a class="btn-limpo Delete" data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+                            <div class="lancamento-alterar"><a class="btn-limpo Edit" data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>                            
+                        </div>
+                    }
                 </div>
+                @{
+                    if (Model.HasPreviousPage)
+                    {
+                                        <a asp-action="Index"
+                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                   class="btn btn-default">
+                                            Anterior
+                                        </a>
+                    }
+                    else
+                    {
+                                        <a asp-action="Index"
+                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                   class="btn btn-default" hidden>
+                                            Anterior
+                                        </a>
+                    }
+                }
+                @{
+                    if (Model.HasNextPage)
+                    {
+                                        <a asp-action="Index"
+                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                   class="btn btn-default">
+                                            Próximo
+                                        </a>
+                    }
+                    else
+                    {
+                                        <a asp-action="Index"
+                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                   class="btn btn-default" hidden>
+                                            Próximo
+                                        </a>
+                    }
+                }
             </div>
 
         </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <div id="modal" class="modal fade" role="dialog" />
+
+        @section scripts
+            {
+            <script>
+                $(function () {
+                    $(".edit").click(function () {
+                        var id = $(this).attr("data-id");
+                        alert(id);
+                        $("#modal").load("Edit?id=" + id, function () {
+                            $("#modal").modal();
+                        })
+                    });
+
+                    $(".delete").click(function () {
+                        var id = $(this).attr("data-id");
+                        alert(id);
+                        $("#modal").load("Delete?id=" + id, function () {
+                            $("#modal").modal();
+                        })
+                    });
+
+                    $(".create").click(function () {
+                        $("#modal").load("Create", function () {
+                            alert("teste")
+                            $("#modal").modal();
+                        })
+                    });
+
+                })
+            </script>
+        }
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

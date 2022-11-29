@@ -11,7 +11,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using ZCaixaV5.Api.Data;
 using ZCaixaV5.Models;
-using ZCaixaV5.Filters;
 using static Composite.Core.Logging.LoggingService;
 
 namespace ZCaixaV5.Controllers
@@ -28,7 +27,7 @@ namespace ZCaixaV5.Controllers
         }
 
         // GET: Lancamentos
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int? pageNumber)
         {
 
             if (string.IsNullOrEmpty(HttpContext.User.Identity.Name))
@@ -57,7 +56,14 @@ namespace ZCaixaV5.Controllers
                          "TipoLanId",
                          "NomeLan"
                      );
-                return View (new Lancamento() { ListaLancamentos = GetLancamentos() });
+
+                int pageSize = 14;
+                var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
+                                 select s;
+                lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
+                lancamento = lancamento.OrderByDescending(s => s.Id).OrderByDescending(s => s.Data);
+                return View(await PaginaList<Lancamento>.CreateAsync(lancamento.AsNoTracking(), pageNumber ?? 1, pageSize));
+                
             }
         }
         
@@ -212,7 +218,8 @@ namespace ZCaixaV5.Controllers
                         "NomeLan",
                         lancamento.Tipo
                     );
-            return View(lancamento);
+            new Lancamento() { ListaLancamentos = GetLancamentos() };
+            return RedirectToAction("Index");
         }
 
         // POST: Lancamentos/Edit/5
@@ -247,7 +254,7 @@ namespace ZCaixaV5.Controllers
                 }
                 if (erro)
                 {
-                    return View();
+                    return RedirectToAction("Index");
                 }
                 try
                 {
@@ -265,9 +272,10 @@ namespace ZCaixaV5.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                new Lancamento() { ListaLancamentos = GetLancamentos() };
+                return RedirectToAction("Index");
             }
-            return View(lancamento);
+            return RedirectToAction("Index");
         }
 
         // POST: Lancamentos/Delete/5
