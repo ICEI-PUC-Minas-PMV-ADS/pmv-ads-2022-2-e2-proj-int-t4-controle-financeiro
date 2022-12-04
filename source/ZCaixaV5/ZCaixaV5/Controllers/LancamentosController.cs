@@ -57,7 +57,7 @@ namespace ZCaixaV5.Controllers
                          "TipoLanId",
                          "NomeLan"
                      );
-                int pageSize = 14;
+                int pageSize = 13;
                 var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
                                  select s;
                 lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));

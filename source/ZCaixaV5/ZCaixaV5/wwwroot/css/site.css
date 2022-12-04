@@ -658,21 +658,26 @@ main {
     display: flex;
     flex-direction: row;
     align-content: center;
+    align-items: center;
 }
 
 .formulario-lancamento-input {
+    font-size: 0.9rem;
     padding: 0.25rem;
     border-radius: 0.3rem;
     border-color: #fff;
     margin-top: 0.25rem;
-    margin-bottom: 0.3rem;
+    height: 35px;
     border: 2px solid #FFFFFF;
     margin-left: 0.8rem;
+    width: 93%;
 }
 
 .formulario-lancamento p {
     margin-top: 0.3rem;
     margin-left: 0.8rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
 }
 
 .modal-title {
@@ -684,10 +689,10 @@ main {
 }
 
 .campo-valor {
-    width: 100%;
+    
 }
 .campo-tipo {
-    margin-left: 1rem;
+   
 }
 
 .text-danger {
@@ -696,12 +701,29 @@ main {
     font-size: 10px;
 }
 
+.text-danger1 {
+    margin-top: 5px;
+    color: red;
+    font-size: 10px;
+    margin-left: 1rem;
+    display: block;
+}
+
 .formulario-lancamento select {
     padding: 0.25rem;
     border-radius: 0.3rem;
     border-color: #fff;
     margin-top: 0.25rem;
+    height: 35px;
+    border: 2px solid #FFFFFF;
     margin-left: 0.8rem;
+    width: 93%;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.d-none {
+    margin-left: 1rem!important;
 }
 
 .modal-footer{
