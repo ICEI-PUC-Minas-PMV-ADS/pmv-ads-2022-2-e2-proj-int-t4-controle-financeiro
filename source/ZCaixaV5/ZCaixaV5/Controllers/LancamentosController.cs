@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Composite.Core.Linq;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -56,254 +57,69 @@ namespace ZCaixaV5.Controllers
                          "TipoLanId",
                          "NomeLan"
                      );
-
                 int pageSize = 14;
                 var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
                                  select s;
                 lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
                 lancamento = lancamento.OrderByDescending(s => s.Id).OrderByDescending(s => s.Data);
-                return View(await PaginaList<Lancamento>.CreateAsync(lancamento.AsNoTracking(), pageNumber ?? 1, pageSize));
-                
+                return View(await PaginaList<Lancamento>.CreateAsync(lancamento.AsNoTracking(), pageNumber ?? 1, pageSize));           
             }
         }
-        
-        //GET: Lancamentos/Create
-        [Authorize]
-        public IActionResult Create()
-        {
-            var categoria = from c in _contextcat.Categorias
-                            select c;
-            categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
-            categoria = categoria.OrderBy(c => c.Nome);
 
-            List<SelectListItem> itens = new List<SelectListItem>();
-            foreach (Categoria w in categoria)
-            {
-                itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
-            }
-
-            ViewBag.Categ = itens;
-
-            ViewBag.TipoLanId = new SelectList
-                 (
-                     new TipoLan().ListaTiposLan(),
-                     "TipoLanId",
-                     "NomeLan"
-                 );
-            new Lancamento() { ListaLancamentos = GetLancamentos() };
-            return RedirectToAction("Index");
-        }
-        
-        //POST: Lancamentos/Create
-        //To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
+        public async Task<JsonResult> NovoLancamento(Lancamento lancamento)
         {
-            lancamento.CatId = Convert.ToInt32(Categ);
-            lancamento.Tipo = TipoLanId;
             lancamento.Conciliado = false;
             lancamento.Username = HttpContext.User.Identity.Name;
-
-            var categoria = from c in _contextcat.Categorias
-                            select c;
-            categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
-            categoria = categoria.OrderBy(c => c.Nome);
-            List<SelectListItem> itens = new List<SelectListItem>();
-            foreach (Categoria w in categoria)
-            {
-                if ( lancamento.CatId == w.Id)
-                {
-                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString(), Selected = true });
-                }
-                else
-                {
-                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
-                };
-            }
-
-            ViewBag.Categ = itens;
-
-            ViewBag.TipoLanId = new SelectList
-                    (
-                        new TipoLan().ListaTiposLan(),
-                        "TipoLanId",
-                        "NomeLan",
-                        TipoLanId
-                    );
+            
             if (ModelState.IsValid)
-            {
-                var erro = false;
-                if (lancamento.Tipo != "C" && lancamento.Tipo != "D")
-                {
-                    ViewData["Message"] = "Tipo só pode ser (C)Crédito ou (D)Débito";
-                    erro = true;
-                }
-                if (erro)
-                {
-                    new Lancamento() { ListaLancamentos = GetLancamentos() };
-                    return RedirectToAction("Index");
-                }
-               
-
-                var categ = from c in _contextcat.Categorias
-                                select c;
-                categ = categ.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
-                categ = categ.OrderBy(c => c.Nome);
-
-                List<SelectListItem> itenscat = new List<SelectListItem>();
-                foreach (Categoria w in categ)
-                {
-                    itenscat.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
-                }
-
-                ViewBag.Categ = itenscat;
-
-                ViewBag.TipoLanId = new SelectList
-                     (
-                         new TipoLan().ListaTiposLan(),
-                         "TipoLanId",
-                         "NomeLan"
-                     );
-
+            {               
                 _context.Add(lancamento);
                 await _context.SaveChangesAsync();
-                new Lancamento() { ListaLancamentos = GetLancamentos() };
-                return RedirectToAction("Index");
+                return Json(lancamento);
             }
-            ViewBag.Message = "Não pode Lançar um formulário nulo";
-            return RedirectToAction("Index");  
+            return Json(ModelState);
         }
 
-        // GET: Lancamentos/Edit/5
-        [Authorize]
-        public async Task<IActionResult> Edit(int? id)
+        [HttpGet]
+        public async Task<JsonResult> PegarLancamento(int lancamentoId)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var lancamento = await _context.Lancamentos.FindAsync(id);
-            if (lancamento == null)
-            {
-                return NotFound();
-            }
-
-            var categoria = from c in _contextcat.Categorias
-                            select c;
-            categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
-            categoria = categoria.OrderBy(c => c.Nome);
-            List<SelectListItem> itens = new List<SelectListItem>();
-            foreach (Categoria w in categoria)
-            {
-                if (lancamento.CatId == w.Id)
-                {
-                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString(), Selected = true });
-                }
-                else
-                {
-                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
-                };
-            }
-
-            ViewBag.Categ = itens;
-
-            ViewBag.TipoLanId = new SelectList
-                    (
-                        new TipoLan().ListaTiposLan(),
-                        "TipoLanId",
-                        "NomeLan",
-                        lancamento.Tipo
-                    );
-            new Lancamento() { ListaLancamentos = GetLancamentos() };
-            return RedirectToAction("Index");
+            Lancamento lancamento = await _context.Lancamentos.FindAsync(lancamentoId);
+            
+            return Json(lancamento);
         }
 
-        // POST: Lancamentos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Data,Descricao,Tipo,Valor,Conciliado,Username,CatId")] Lancamento lancamento, string TipoLanId, string Categ)
+        public async Task<JsonResult> AtualizarLancamento(Lancamento lancamento)
         {
-            if (id != lancamento.Id)
-            {
-                return NotFound();
-            }
-            lancamento.CatId = Convert.ToInt32(Categ);
-            lancamento.Tipo = TipoLanId;
+            lancamento.Conciliado = false;
             lancamento.Username = HttpContext.User.Identity.Name;
-            ViewBag.TipoLanId = new SelectList
-                    (
-                        new TipoLan().ListaTiposLan(),
-                        "TipoLanId",
-                        "NomeLan",
-                        TipoLanId
-                    );
             if (ModelState.IsValid)
             {
-                var erro = false;
-                if (lancamento.Tipo != "C" && lancamento.Tipo != "D")
-                {
-                    ViewData["Message"] = "Tipo só pode ser (C)Crédito ou (D)Débito";
-                    erro = true;
-                }
-                if (erro)
-                {
-                    return RedirectToAction("Index");
-                }
-                try
-                {
-                    _context.Update(lancamento);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!LancamentoExists(lancamento.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                new Lancamento() { ListaLancamentos = GetLancamentos() };
-                return RedirectToAction("Index");
+                _context.Lancamentos.Update(lancamento);
+                await _context.SaveChangesAsync();
+                return Json(lancamento);
             }
-            return RedirectToAction("Index");
+
+            return Json(ModelState);
         }
 
-        // POST: Lancamentos/Delete/5
-        [Authorize]
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        [HttpPost]
+        public async Task<IActionResult> ExcluirLancamento(int lancamentoId)
         {
-            var lanc = await _context.Lancamentos
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (lanc.Conciliado == true)
+            Lancamento lancamento = await _context.Lancamentos.FindAsync(lancamentoId);
+
+            if (lancamento != null)
             {
-                TempData["mensagemErro"] = "Não pode excluir um lançamento já conciliado";
-                return RedirectToAction("Index");
+                _context.Lancamentos.Remove(lancamento);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index", "Lancamentos");
             }
-        
-            var lancamento = await _context.Lancamentos.FindAsync(id);
-            _context.Lancamentos.Remove(lancamento);
-            await _context.SaveChangesAsync();
-            new Lancamento() { ListaLancamentos = GetLancamentos() };
-            return RedirectToAction("Index");
-        }
 
-        // GET: Lancamentos/Erro
-        [Authorize]
-        public IActionResult Erro()
-        {
-            return View();
+            return Json(new
+            {
+                mensagem = "Lançamento não encontrado"
+            });
         }
 
         // GET: Cadastro de Categorias (Atalho)

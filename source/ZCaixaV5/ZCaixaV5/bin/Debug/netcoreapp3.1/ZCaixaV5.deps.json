@@ -36,7 +36,7 @@
           "EfCore3.SqlServer2008Query": "1.0.0",
           "LigerShark.WebOptimizer.Sass": "3.0.91",
           "MSBuild.Microsoft.VisualStudio.Web_WebApplication.Targets": "12.0.2",
-          "Microsoft.AspNet.Web.Optimization.WebForms": "1.1.3",
+          "Microsoft.AspNet.Web.Optimization": "1.1.3",
           "Microsoft.AspNet.Web.Optimization.pt-br": "1.1.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.30",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.30",
@@ -576,21 +576,6 @@
           "lib/net40/pt-br/System.Web.Optimization.resources.dll": {
             "locale": "pt-br"
           }
-        }
-      },
-      "Microsoft.AspNet.Web.Optimization.WebForms/1.1.3": {
-        "dependencies": {
-          "Microsoft.AspNet.Web.Optimization": "1.1.3",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Web.Optimization.WebForms.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.40211.0"
-          }
-        },
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Web.Optimization.WebForms.dll": {}
         }
       },
       "Microsoft.AspNet.WebPages/3.2.3": {
@@ -4579,13 +4564,6 @@
       "sha512": "sha512-7lkEP4+pPuE1aqvCgHpJeJweEemyyB1GH1I7//roDN1LQQLgUELF7HtxDSUtGZ+pACY+g/tlxHPoRcM8jFiJJA==",
       "path": "microsoft.aspnet.web.optimization.pt-br/1.1.3",
       "hashPath": "microsoft.aspnet.web.optimization.pt-br.1.1.3.nupkg.sha512"
-    },
-    "Microsoft.AspNet.Web.Optimization.WebForms/1.1.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-DVlyZCrjWsh2COAkEIvAiXpsV2xhyx2NFWg3Z6X5mVUN9DfqhPtxCmHzoSAhjrNEDr5FaMYllxeffCQM9FjkCw==",
-      "path": "microsoft.aspnet.web.optimization.webforms/1.1.3",
-      "hashPath": "microsoft.aspnet.web.optimization.webforms.1.1.3.nupkg.sha512"
     },
     "Microsoft.AspNet.WebPages/3.2.3": {
       "type": "package",

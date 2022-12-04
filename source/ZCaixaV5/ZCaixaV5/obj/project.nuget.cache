@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "STxKuKoRidZ1mvPZSbp/CMrx/V/BwKZ0CP5VTpx40DskADD3hYW2hLWTFunHnMzeywhQYCLTf6RoE5JeIUaYSw==",
+  "dgSpecHash": "/XFatQzk6DJeYlw/i8NRObMEPXvl+c8otbcQ9maBzNDWA9JccX20o26IeTvgH/JNJpCGkjQ9HxJdXMt3ixlLQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ricardo\\Documents\\GitHub\\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\\source\\ZCaixaV5\\ZCaixaV5\\ZCaixaV5.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,6 @@
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.3\\microsoft.aspnet.razor.3.2.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.web.optimization\\1.1.3\\microsoft.aspnet.web.optimization.1.1.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.web.optimization.pt-br\\1.1.3\\microsoft.aspnet.web.optimization.pt-br.1.1.3.nupkg.sha512",
-    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.web.optimization.webforms\\1.1.3\\microsoft.aspnet.web.optimization.webforms.1.1.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.3\\microsoft.aspnet.webpages.3.2.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.30\\microsoft.aspnetcore.cryptography.internal.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.30\\microsoft.aspnetcore.cryptography.keyderivation.3.1.30.nupkg.sha512",
@@ -211,16 +210,6 @@
   ],
   "logs": [
     {
-      "code": "NU1602",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Microsoft.AspNet.Web.Optimization.WebForms 1.1.3 não fornece nenhum limite inferior inclusivo para a dependência Microsoft.Web.Infrastructure. A melhor correspondência aproximada Microsoft.Web.Infrastructure 1.0.0 foi resolvida.",
-      "libraryId": "Microsoft.Web.Infrastructure",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    },
-    {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
@@ -296,16 +285,6 @@
       "warningLevel": 1,
       "message": "O pacote 'Microsoft.AspNet.Web.Optimization.pt-br 1.1.3' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.AspNet.Web.Optimization.pt-br",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.Web.Optimization.WebForms 1.1.3' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "libraryId": "Microsoft.AspNet.Web.Optimization.WebForms",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
       ]

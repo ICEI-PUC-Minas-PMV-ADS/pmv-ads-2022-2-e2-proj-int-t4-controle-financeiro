@@ -5,33 +5,15 @@
     ViewData["Title"] = "Meu Caixa";
 }
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head runat="server">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZCaixa - Entrar</title>
-    <link rel="shortcut icon" href="~/imagens/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
-<body>
-
     <main>
-
         <button class="btn-plataforma btn-area-esquerda btn-relatorio btn-adiciona-lancamento">Relatorios</button>
-
         <header class="plataforma-header">
             <div class="logo-plataforma-area">
                 <img class="logo-plataforma" src="~/imagens/logo-horizontal.png" alt="">
             </div>
             <div class="botoes-plataforma-area">
                 
-                <button type="button" class="btn-plataforma btn-adiciona-lancamento create">
+                <button type="button" class="btn-plataforma btn-adiciona-lancamento novoLancamento">
                     <img class="icones" src="~/imagens/add-icon.png" alt="">
                 </button>
                 
@@ -145,8 +127,6 @@
                         </div>
 
                     </div>
-
-
                 </div>
                 <div class="botoes-esquerda-areas">
                     <button class="btn-plataforma btn-area-esquerda btn-atualiza">Simular</button>
@@ -178,89 +158,391 @@
                             <div class="lancamento-categoria"><p>@Html.DisplayFor(modelItem => item.Cat.Nome)</p></div>
                             <div class="lancamento-descricao"><p>@Html.DisplayFor(modelItem => item.Descricao)</p></div>
                             <div class="lancamento-tipo"><p>@Html.DisplayFor(modelItem => item.Tipo)</p></div>
-                            <div class="lancamento-excluir"><a class="btn-limpo Delete" data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
-                            <div class="lancamento-alterar"><a class="btn-limpo Edit" data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>                            
+                            <div class="lancamento-excluir"><a class="btn-limpo delete" data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+                            <div class="lancamento-alterar"><a class="btn-limpo edit"   data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
                         </div>
                     }
                 </div>
                 @{
-                    if (Model.HasPreviousPage)
-                    {
-                                        <a asp-action="Index"
-                   asp-route-pageNumber="@(Model.PageIndex - 1)"
-                   class="btn btn-default">
-                                            Anterior
-                                        </a>
+                    if (Model.HasPreviousPage){ 
+                        <a asp-action="Index" 
+                        asp-route-pageNumber="@(Model.PageIndex - 1)"
+                        type="button" class="btn btn-default">Anterior</a>
                     }
-                    else
-                    {
-                                        <a asp-action="Index"
-                   asp-route-pageNumber="@(Model.PageIndex - 1)"
-                   class="btn btn-default" hidden>
-                                            Anterior
-                                        </a>
+                    else {
+                        <a asp-action="Index" 
+                        asp-route-pageNumber="@(Model.PageIndex - 1)"
+                        type="button" class="btn btn-default" hidden>Anterior</a>
                     }
                 }
                 @{
-                    if (Model.HasNextPage)
-                    {
-                                        <a asp-action="Index"
-                   asp-route-pageNumber="@(Model.PageIndex + 1)"
-                   class="btn btn-default">
-                                            Próximo
-                                        </a>
+                    if (Model.HasNextPage){
+                        <a asp-action="Index" 
+                        asp-route-pageNumber="@(Model.PageIndex + 1)"
+                        type="button" class="btn btn-default">Próximo</a>
                     }
-                    else
-                    {
-                                        <a asp-action="Index"
-                   asp-route-pageNumber="@(Model.PageIndex + 1)"
-                   class="btn btn-default" hidden>
-                                            Próximo
-                                        </a>
+                    else {
+                        <a asp-action="Index" 
+                        asp-route-pageNumber="@(Model.PageIndex + 1)"
+                        type="button" class="btn btn-default" hidden>Próximo</a>
                     }
                 }
             </div>
+        </div> 
+      
+        <div class="modal fade" id=modal tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content modal-lancamento">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="staticBackdropLabel"></h1>
+                    </div>                    
+                    <div class="modal-body">
+                        <input type="hidden" class="form-control form-control-sm Id" />
+                        <input type="hidden" class="form-control form-control-sm Conciliado" />
+                        <div class="formulario-lancamento">   
+                                
+                            <div class="campos-insere-lan-row">
 
+                                <div class="">
+                                    <p>Data</p>                                            
+                                    <input type="date" class="form-control form-control-sm Data" />
+                                    <span class="text-danger erroData d-none"></span>                                            
+                                </div>
+                                <div>
+                                    <p>Categoria</p>                                            
+                                    @Html.DropDownList("Categ", String.Empty)
+                                    <span class="text-danger erroCatId d-none"></span> 
+                                </div>
+                            </div>
+
+                            <div class="campos-insere-lan-row">
+                                <div class="valor-area">
+                                    <p>Valor</p>
+                                    <input type="text" class="form-control form-control-sm Valor" onInput="mascaraMoeda(event);" />
+                                    <span class="text-danger erroValor d-none"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="campo-tipo">
+                                        <p>Tipo</p>
+                                        @Html.DropDownList("TipoLanId", String.Empty)
+                                        <span class="text-danger erroTipo d-none"></span>
+                                    </div>                                                                                        
+                                </div>
+                            </div>
+                            <div class="">
+                                <p>Descrição</p>
+                                <input type="text" class="form-control form-control-sm Descricao" />
+                                <span class="text-danger erroDescricao d-none"></span>
+                            </div>
+
+                            <div class="modal-footer">
+                                <input type="button" value="Cancelar" class="btn btn-danger" data-bs-dismiss="modal" />
+                                <input type="button" value="Salvar"   class="btn btn-success btnSalvar" />                                        
+                            </div>                                
+                        </div>                            
+                    </div>
+                </div> 
+            </div> 
         </div>
+        
+        @section scripts 
+        {
+        <script>
+                                            
+                $(".novoLancamento").click(function () 
+                {
+                    escolherTituloModal("Adicionar um Lançamento");
+                    mostrarModal();
+                    limparFormulario();
+                    $('.Id').val(0);
+                    $('.Conciliado').val(false);
+                });
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                $(".delete").click(function () 
+                {
+                        var LId = $(this).attr("data-id");
+                        excluirLancamento(LId);
+                });
 
-        <div id="modal" class="modal fade" role="dialog" />
+                $(".edit").click(function () 
+                {
+                        var LId = $(this).attr("data-id");
+                        pegarLancamento(LId);
+                });
 
-        @section scripts
-            {
-            <script>
-                $(function () {
-                    $(".edit").click(function () {
-                        var id = $(this).attr("data-id");
-                        alert(id);
-                        $("#modal").load("Edit?id=" + id, function () {
-                            $("#modal").modal();
-                        })
+
+                
+                $(".btnSalvar").click(function () 
+                {
+                    var IDCat = "";
+                    var sel = document.getElementById('Categ');
+                    if (!sel.value == '')
+                    {
+                        var comboCategoria = document.getElementById("Categ");
+                        IDCat = comboCategoria.options[comboCategoria.selectedIndex].value;
+                    };
+                    var IDTipo = "";
+                    var tip = document.getElementById('TipoLanId');
+                    if (!tip.value == '')
+                    {
+                        var comboTipo = document.getElementById("TipoLanId");
+                        IDTipo = comboTipo.options[comboTipo.selectedIndex].value;
+                    };
+
+                    var lancamento = {
+                        Id: $('.Id').val(),
+                        Data: $('.Data').val(),
+                        Descricao: $('.Descricao').val(),
+                        Tipo: IDTipo,
+                        Valor: $('.Valor').val(),
+                        Conciliado: $('.Conciliado').val(),
+                        Username: "",
+                        CatId: IDCat
+                    };
+                    if (validarFormulario(lancamento)) 
+                    {                        
+                        if (parseInt(lancamento.Id) > 0) 
+                        {                          
+                            atualizarLancamento(lancamento)
+                        };                      
+                        criarLancamento(lancamento)
+                    };
+                });
+                
+                function criarLancamento(lancamento) 
+                {
+                    $.ajax(
+                        {
+                            url: '@Url.Action("NovoLancamento", "Lancamentos")/',
+                            type: 'POST',
+                            dataType: 'json',
+                            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                            data: {
+                                lancamento: lancamento
+                            },
+                            success: (e) => 
+                            {
+                                    $("#modal").modal('hide');
+                                    limparFormulario();
+                                    location.reload();
+                            }
+                        });
+                }
+                
+                function pegarLancamento(lancamentoId) {
+                    $.ajax({
+                        dataType: "json",
+                        type: "GET",
+                        url: "Lancamentos/PegarLancamento",
+                        data: {
+                            lancamentoId: lancamentoId
+                        },
+                        success: function (lanc) 
+                        {
+                            let data = new Date(lanc.data);
+                            let diaA = '' + data.getDate();
+                            let diaB = diaA.padStart(2, '0');
+                            let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + diaB);                           
+                            var valor = lanc.valor;
+                            var valorFormatado = valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                            mostrarModal();
+                            escolherTituloModal(`Atualizar Lançamento`);
+                            $(".Id").val(lanc.id);
+                            $(".Data").val(dataFormatada);
+                            $(".Descricao").val(lanc.descricao);
+                            $(".Valor").val(valorFormatado);
+                            $(".Conciliado").val(lanc.conciliado);
+                            document.getElementById("Categ").value = lanc.catId;
+                            document.getElementById("TipoLanId").value = lanc.tipo;
+                            
+                        }
+                    })
+                }
+                
+                function atualizarLancamento(lancamento) {
+                    $.ajax({
+                        url: '@Url.Action("AtualizarLancamento", "Lancamentos")/',
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                        data: {
+                            lancamento: lancamento
+                        },
+                        success: (e) => 
+                        {
+                                $("#modal").modal('hide');
+                                limparFormulario();
+                                location.reload();
+                        }
                     });
-
-                    $(".delete").click(function () {
-                        var id = $(this).attr("data-id");
-                        alert(id);
-                        $("#modal").load("Delete?id=" + id, function () {
-                            $("#modal").modal();
-                        })
+                }
+                
+                function excluirLancamento(lancamentoId) {
+                    $.ajax({
+                        url: "Lancamentos/ExcluirLancamento",
+                        method: 'POST',
+                        data: {
+                            lancamentoId: lancamentoId
+                        },
+                        success: function (status) {
+                            if (status) {
+                                location.reload();
+                            }
+                            else
+                                alert(status.mensagem);
+                        }
                     });
+                }
+                
+                function validarFormulario(lancamento) {
+                    let DataValida = validarData(lancamento.Data);
+                    let CatIdValida = validarCatId(lancamento.CatId);
+                    let ValorValido = validarValor(lancamento.Valor);
+                    let TipoValido = validarTipo(lancamento.Tipo);
+                    let DescricaoValida = validarDescricao(lancamento.Descricao);
+                    if (DataValida == true && CatIdValida == true && ValorValido == true && TipoValido == true && DescricaoValida == true)
+                        return true;
 
-                    $(".create").click(function () {
-                        $("#modal").load("Create", function () {
-                            alert("teste")
-                            $("#modal").modal();
-                        })
-                    });
+                    return false;
+                }
 
-                })
-            </script>
+                function validarData(data) {
+                    let DataValida = true;
+
+                    if (data.trim() == '' || data == undefined) {
+                        $(".Data").addClass('is-invalid');
+                        $(".erroData").text("Preencha a data do Lançamento");
+                        $(".erroData").removeClass("d-none");
+                        DataValida = false;
+                    }
+                    else {
+                        $(".Data").removeClass('is-invalid');
+                        $(".Data").addClass('is-valid');
+                        $(".erroData").addClass("d-none");
+                        DataValida = true;
+                    }
+                    return DataValida;
+                }
+
+                function validarCatId(catid) 
+                {
+                    
+                    let CatIdValida = true;
+
+                    if (catid.trim() == '' || catid == undefined) 
+                    {
+                        $(".CatId").addClass('is-invalid');
+                        $(".erroCatId").text("Informe a Categoria");
+                        $(".erroCatId").removeClass("d-none");
+                        CatIdValida = false;
+                    }
+                    else 
+                    {
+                        $(".CatId").removeClass('is-invalid');
+                        $(".CatId").addClass('is-valid');
+                        $(".erroCatId").addClass("d-none");
+                        CatIdValida = true;
+                    }
+                    return CatIdValida;
+                }
+
+                function validarValor(valor) {
+                    let ValorValido = true;
+
+                    if (valor.trim() == '' || valor == undefined || valor.trim() == '0,00') {
+                        $(".Valor").addClass('is-invalid');
+                        $(".erroValor").text("Informe um valor");
+                        $(".erroValor").removeClass("d-none");
+                        ValorValido = false;
+                    }
+                    else {
+                        $(".Valor").removeClass('is-invalid');
+                        $(".Valor").addClass('is-valid');
+                        $(".erroValor").addClass("d-none");
+                        ValorValido = true;
+                    }
+                    return ValorValido;
+                }
+
+                function validarTipo(tipo) {
+                    let TipoValido = true;
+
+                    if (tipo.trim() == '' || tipo == undefined) {
+                        $(".Tipo").addClass('is-invalid');
+                        $(".erroTipo").text("Informe Débito ou Crédito");
+                        $(".erroTipo").removeClass("d-none");
+                        TipoValido = false;
+                    }
+                    else {
+                        $(".Tipo").removeClass('is-invalid');
+                        $(".Tipo").addClass('is-valid');
+                        $(".erroTipo").addClass("d-none");
+                        TipoValido = true;
+                    }
+                    return TipoValido;
+                }
+
+
+                function validarDescricao(descricao) {
+                    let DescricaoValida = true;
+
+                    if (descricao.trim() == '' || descricao == undefined) {
+                        $(".Descricao").addClass('is-invalid');
+                        $(".erroDescricao").text("Preencha a Descrição");
+                        $(".erroDescricao").removeClass("d-none");
+                        DescricaoValida = false;
+                    }
+                    else if (descricao.length > 50) {
+                        $(".Descricao").addClass('is-invalid');
+                        $(".erroDescricao").text("Use menos caracteres (até 50)");
+                        $(".erroDescricao").removeClass("d-none");
+                        DescricaoValida = false;
+                    }
+                    else {
+                        $(".Descricao").removeClass('is-invalid');
+                        $(".Descricao").addClass('is-valid');
+                        $(".erroDescricao").addClass("d-none");
+                        DescricaoValida = true;
+                    }
+
+                    return DescricaoValida;
+                }
+
+                function mascaraMoeda(event) {
+                    const onlyDigits = event.target.value
+                        .split("")
+                        .filter(s => /\d/.test(s))
+                        .join("")
+                        .padStart(3, "0")
+                    const digitsFloat = onlyDigits.slice(0, -2) + "." + onlyDigits.slice(-2)
+                    event.target.value = maskCurrency(digitsFloat)
+                }
+
+                function maskCurrency(valor, locale = 'pt-BR', currency = 'BRL') {
+                    return new Intl.NumberFormat(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(valor)
+                }
+
+                function mostrarModal() {
+                    new bootstrap.Modal($("#modal"), {}).show();
+                }
+
+                function limparFormulario() {
+                    $(".Data").val('');
+                    $(".Data").removeClass('is-valid');
+                    $(".CatId").val('');
+                    $(".CatId").removeClass('is-valid');
+                    $(".Valor").val('');
+                    $(".Valor").removeClass('is-valid');
+                    $(".Tipo").val('');
+                    $(".Tipo").removeClass('is-valid');
+                    $(".Descricao").val('');
+                    $(".Descricao").removeClass('is-valid');
+                }
+
+                function escolherTituloModal(texto) {
+                    $(".modal-title").text(texto);
+                }
+        </script>
         }
     </main>
-    
-</body>
-
-</html>
-

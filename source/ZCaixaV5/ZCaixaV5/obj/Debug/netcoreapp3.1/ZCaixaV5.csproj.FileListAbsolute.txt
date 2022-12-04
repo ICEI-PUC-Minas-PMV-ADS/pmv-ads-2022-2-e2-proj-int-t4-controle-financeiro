@@ -350,10 +350,8 @@ C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-finance
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Owin.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\EfCore3.SqlServer2008Query.dll
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Edit.cshtml.g.cs
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Index.cshtml.g.cs
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index - Cópia.cshtml.g.cs
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Erro.cshtml.g.cs
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Erro.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\appsettings.json
@@ -558,11 +556,6 @@ C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeir
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Lista.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\ListaTeste.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Create.cshtml.g.cs
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Index Oficial.cshtml.g.cs
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\CreateOficial.cshtml.g.cs
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\DeleteOficial.cshtml.g.cs
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\DetailsOficial.cshtml.g.cs
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\EditOficial.cshtml.g.cs
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\ZCaixaV5.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\AdvancedStringBuilder.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Antlr3.Runtime.dll
@@ -572,7 +565,6 @@ C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-finance
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\WebOptimizer.Core.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\WebOptimizer.Sass.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\System.Web.Optimization.dll
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Web.Optimization.WebForms.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\ClearScript.Core.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\ClearScript.V8.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\ClearScript.V8.ICUData.dll
@@ -599,4 +591,4 @@ C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-finance
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Create.cshtml.g.cs
+C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\web.config

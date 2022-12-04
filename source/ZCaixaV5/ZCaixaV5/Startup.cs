@@ -21,6 +21,8 @@ using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Localization;
 using System.Globalization;
+using System.Web.Optimization;
+using WebGrease;
 
 
     namespace ZCaixaV5
