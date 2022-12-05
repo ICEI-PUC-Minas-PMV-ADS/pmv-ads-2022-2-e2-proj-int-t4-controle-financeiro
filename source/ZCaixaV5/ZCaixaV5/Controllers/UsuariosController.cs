@@ -107,7 +107,7 @@ namespace Aspnet_AuthCookies1.Controllers
             // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public async Task<IActionResult> Create([Bind("Username,Nome,UltimoNome,Senha,Email,Telefone,DataNascimento")] Usuario usuario)
+            public async Task<IActionResult> Create([Bind("Username,Nome,UltimoNome,Senha,Email,Telefone,DataNascimento,Meta,MesConsulta,AnoConsulta")] Usuario usuario)
             {
                 if (ModelState.IsValid)
                 {
@@ -123,6 +123,10 @@ namespace Aspnet_AuthCookies1.Controllers
                         return View();
                     }
 
+                    usuario.Meta = 0;
+                    var Data = DateTime.Now;
+                    usuario.MesConsulta = Data.Month;
+                    usuario.AnoConsulta = Data.Year;
                     usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
                     _context.Add(usuario);
                     await _context.SaveChangesAsync();
@@ -152,7 +156,7 @@ namespace Aspnet_AuthCookies1.Controllers
             // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public async Task<IActionResult> Edit(string id, [Bind("Username,Nome,UltimoNome,Senha,Email,Telefone,DataNascimento")] Usuario usuario)
+            public async Task<IActionResult> Edit(string id, [Bind("Username,Nome,UltimoNome,Senha,Email,Telefone,DataNascimento,Meta,MesConsulta,AnoConsulta")] Usuario usuario)
             {
                 if (id != usuario.Username)
                 {

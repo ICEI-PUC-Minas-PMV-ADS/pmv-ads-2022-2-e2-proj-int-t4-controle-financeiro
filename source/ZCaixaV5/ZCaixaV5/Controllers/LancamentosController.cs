@@ -61,6 +61,8 @@ namespace ZCaixaV5.Controllers
                 var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
                                  select s;
                 lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
+              //lancamento = lancamento.Where(s => s.Data.Year == 2022);
+              //lancamento = lancamento.Where(s => s.Data.Month == 10);
                 lancamento = lancamento.OrderByDescending(s => s.Id).OrderByDescending(s => s.Data);
                 return View(await PaginaList<Lancamento>.CreateAsync(lancamento.AsNoTracking(), pageNumber ?? 1, pageSize));           
             }

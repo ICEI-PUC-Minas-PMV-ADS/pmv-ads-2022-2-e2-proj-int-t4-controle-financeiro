@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,6 +28,12 @@ namespace ZCaixaV5.Models
         public string Telefone { get; set; }
         [Required(ErrorMessage = "Obrigatório informar sua Data de Nascimento.")]
         public DateTime DataNascimento { get; set; }
+
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Meta { get; set; }
+        public int MesConsulta { get; set; }
+        public int AnoConsulta { get; set; }
 
     }
 }

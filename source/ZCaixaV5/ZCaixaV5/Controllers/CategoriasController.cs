@@ -252,6 +252,18 @@ namespace ZCaixaV5.Controllers
             }
         }
 
+        public IActionResult Principal()
+        {
+            if (string.IsNullOrEmpty(HttpContext.User.Identity.Name))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Lancamentos");
+            }
+        }
+
         private bool CategoriaExists(int id)
         {
             return _context.Categorias.Any(e => e.Id == id);

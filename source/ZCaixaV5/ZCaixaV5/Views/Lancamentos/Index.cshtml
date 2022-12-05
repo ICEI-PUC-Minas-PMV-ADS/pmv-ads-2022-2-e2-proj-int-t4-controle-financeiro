@@ -18,7 +18,7 @@
                 </button>
                 
                 
-                <button type="button" class="btn-plataforma btn-atualiza">
+                <button type="button" class="btn-plataforma btn-atualiza categoria">
                     <img class="icones" src="~/imagens/atualiza-icon.png" alt="">
                 </button>
 
@@ -56,28 +56,26 @@
             <div class="Area-esquerda">
                 <div class="Datas-entradas-saidas-area">
                     <select class="btn-data-mes" name="mounth" id="">
-                        <option value="Janeiro">Jan</option>
-                        <option value="Janeiro">Fev</option>
-                        <option value="Janeiro">Mar</option>
-                        <option value="Janeiro">Abr</option>
-                        <option value="Janeiro">Mai</option>
-                        <option value="Janeiro">Jun</option>
-                        <option value="Janeiro">Jul</option>
-                        <option value="Janeiro">Ago</option>
-                        <option value="Janeiro">Set</option>
-                        <option value="Janeiro">Out</option>
-                        <option value="Janeiro">Nov</option>
-                        <option value="Janeiro">Dez</option>
+                        <option value="01">Jan</option>
+                        <option value="02">Fev</option>
+                        <option value="03">Mar</option>
+                        <option value="04">Abr</option>
+                        <option value="05">Mai</option>
+                        <option value="06">Jun</option>
+                        <option value="07">Jul</option>
+                        <option value="08">Ago</option>
+                        <option value="09">Set</option>
+                        <option value="10">Out</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dez</option>
                     </select>
 
                     <select class="btn-data-mes" name="year" id="">
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
                         <option value="2022">2022</option>
                         <option value="2023">2023</option>
+                        <option value="2024">2024</option>
                     </select>
-                    <span class="btn-ok">Ok</span>
+                    <span class="btn-ok Ok">Ok</span>
                 </div>
                 <div class="area-esquerda-titulos">
                     <h2>Entradas e Saídas</h2>
@@ -165,24 +163,24 @@
                 </div>
                 @{
                     if (Model.HasPreviousPage){ 
-                        <a asp-action="Index" 
+                            <a asp-action="Index" 
                         asp-route-pageNumber="@(Model.PageIndex - 1)"
                         type="button" class="btn btn-default">Anterior</a>
                     }
                     else {
-                        <a asp-action="Index" 
+                            <a asp-action="Index" 
                         asp-route-pageNumber="@(Model.PageIndex - 1)"
                         type="button" class="btn btn-default" hidden>Anterior</a>
                     }
                 }
                 @{
                     if (Model.HasNextPage){
-                        <a asp-action="Index" 
+                            <a asp-action="Index" 
                         asp-route-pageNumber="@(Model.PageIndex + 1)"
                         type="button" class="btn btn-default">Próximo</a>
                     }
                     else {
-                        <a asp-action="Index" 
+                            <a asp-action="Index" 
                         asp-route-pageNumber="@(Model.PageIndex + 1)"
                         type="button" class="btn btn-default" hidden>Próximo</a>
                     }
@@ -257,6 +255,11 @@
                     limparFormulario();
                     $('.Id').val(0);
                     $('.Conciliado').val(false);
+                });
+
+                $(".categoria").click(function () 
+                {
+                    window.location.replace('categorias/index');
                 });
 
                 $(".delete").click(function () 

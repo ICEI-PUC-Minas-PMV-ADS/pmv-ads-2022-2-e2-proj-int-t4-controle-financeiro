@@ -28,6 +28,9 @@ namespace ZCaixaV5.Data.Mapeamentos
             builder.Property(t => t.Telefone)
                 .HasMaxLength(11);
             builder.Property(t => t.DataNascimento);
+            builder.Property(t => t.Meta);
+            builder.Property(t => t.MesConsulta);
+            builder.Property(t => t.AnoConsulta);
 
 
             builder.ToTable(nameof(Usuario));
