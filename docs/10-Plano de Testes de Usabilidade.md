@@ -76,7 +76,48 @@
 | 10.3 | É simples o acesso a ajuda do sistema e retorno ao sistema? | [x] [ ] [ ] |  |
 
 
+**Avaliação Estática (inspeção feita pela equipe de desenvolvimento ou alguém interno)**
+| Heurísticas |	Notas dos avaliadores |	Média	| Consenso |	Considerações |	Melhorias |
+|---------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
+| Visibilidade do status do sistema |
+| Correspondência entre sistema e mundo real |
+| Controle de usuário e liberdade |
+| Consistência e padrões |
+| Prevenção de erros |
+| Reconhecimento ao invés de recordação |
+| Flexibilidade e eficiência de uso |
+| Estética e design minimalista |
+| Ajudar os usuários e reconhecer, diagnosticar se recuperar de erros |
+| Ajuda e documentação |
 
+**O que fazer para melhorar**
+| Heurísticas |	Melhoria |
+|---------------|------------------------------------|
+| Visibilidade do status do sistema |
+| Correspondência entre sistema e mundo real |
+| Controle de usuário e liberdade |
+| Consistência e padrões |
+| Prevenção de erros |
+| Reconhecimento ao invés de recordação |
+| Flexibilidade e eficiência de uso |
+| Estética e design minimalista |
+| Ajudar os usuários e reconhecer, diagnosticar se recuperar de erros |
+| Ajuda e documentação |
+
+**Avaliação Funcional (feita pelo usuário que faz transações – casos de uso)**
+| Atividade a ser realizada |	Feedback do usuário | Considerações (quais os problemas, deficiências, limitações, etc) |	Sugestão de melhorias |
+|---------------|------------------------------------|------------------------------------|------------------------------------|
+| Cadastro de usuário - Campos obrigatórios: Nome, Sobrenome, E-mail, Data de nascimento, Telefone, Senha, Confirmação da senha |
+| Realizar login na aplicação - Campos obrigatórios: Usuário, E-mail ou telefone e senha |
+| Cadastrar categorias |
+| Realizar um lançamento - Campos obrigatórios: Datas, Valor, Categoria, Descrição  |
+| Programar Lançamentos |
+| Excluir um lançamento |
+| Editar um lançamento |
+| Visualizar lançamento por período (Filtro por semana, mês ou ano) |
+| Definir metas |
+| Simular cenários |
+| Visualizar Relatórios |
 
 
 **Modelo de teste: Descoberta de problemas**
