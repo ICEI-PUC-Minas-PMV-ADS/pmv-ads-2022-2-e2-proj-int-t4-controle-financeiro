@@ -26,13 +26,9 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |Demétrio Souza   | Ter os gastos separados por seções. Ex: delivery, assinaturas           | Pra conseguir distribuir melhor a renda mensal              |
 |Demétrio Souza        | Conseguir separar gastos entre débito e crédito                | Pra não ficar confuso entre os gastos do cartão de crédito e o que for no débito |
 |Rosilene Fernandes         | Ter a visão do valor que tem guardado                 | Se programar para o futuro  |
-|Rosilene Fernandes         | Conciliar compras no cartão                 | Saber se o que está na fatura do cartão bate com o que realmente foi gasto  |
-|Samuel Vieira         | Desejo ter acesso a conteúdo sobre educação financeira                 | Fomentar meus conhecimentos a fim de ter um melhor controle dos meus gastos  |
 |Samuel Vieira         | Ter a possibilidade de visualizar as minhas receitas e débitos do mês                 | Afim de controlar e mensurar meus gastos mês a mês  |
 |Beatriz Sampaio         | Ver todos os meus gastos em uma mesma tela com um total                 | Saber o que posso e o que eu não posso gastar  |
 |Beatriz Sampaio         | Criar e planejar metas                  | Ser informada periodicamente sobre a situação das metas |
-|João Nascimento        | Ser lembrado que tenho despesas que irão vencer                 | Para não esquecer e efetuar o pagamento em dia |
-|João Nascimento        | Saber se meus gastos aumentaram ou diminuíram em relação a períodos anteriores                 | Tentar verificar se estou economizando ou não |
 |João Nascimento        | Ter meu próprio usuário para utilizar o sistema                 | Que outras pessoas não vejam meus lançamentos  |
 
 ## Requisitos
@@ -44,17 +40,11 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 |RF-001| O sistema permite agrupar valores por seções (categorias)  | ALTA | 
-|RF-002| O sistema permite agrupar categorias   | ALTA |
-|RF-003| O sistema permite o lançamento de débitos  | ALTA |
-|RF-004| O sistema permite o lançamento de crédito | ALTA |
-|RF-005| O sistema permite a conciliação dos gastos do cartão de crédito  | MÉDIA |
-|RF-006| O sistema permite filtrar os lançamentos conciliados e os não conciliados  | MÉDIA |
-|RF-007| O sistema permite datar/programar lançamentos (exemplo: pagamentos ou recebimentos futuros)  | ALTA |
-|RF-008| O sistema terá uma área com conteúdo (curadoria) voltados para educação financeira | ALTA |
-|RF-009| O sistema permite a visualização de entradas, saídas, ativos e passivos por mês, trimestre e ano em uma única tela  | ALTA |
-|RF-010| O sistema permite a definição e simulação (com manipulação) do atingimento da meta estabelecida  | ALTA |
-|RF-011| O sistema informa as contas a vencer  | ALTA |
-|RF-012| O sistema emitirá relatórios comparativos entre períodos determinados pelo usuário (relatório de evolução do atingimento da meta)  | MÉDIA |
+|RF-002| O sistema permite o lançamento de débitos  | ALTA |
+|RF-003| O sistema permite o lançamento de crédito | ALTA |
+|RF-004| O sistema permite datar (exemplo: pagamentos ou recebimentos futuros)  | ALTA |
+|RF-005| O sistema permite a visualização de entradas e saídas por mês | ALTA |
+|RF-006| O sistema permite a definição de meta  | ALTA |
 
 ### Requisitos não Funcionais
 
@@ -65,7 +55,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RNF-003| O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge)  |  ALTA | 
 |RNF-004| O site será modelado usando UML 2.3  |  ALTA |
 |RNF-005| O site deve ter interface gráfica amigável  |  ALTA |
-|RNF-006| O sistema deve ter tela inicial (home/institucional) |ALTA|
+|RNF-006| O sistema deve ter tela inicial (home) |ALTA|
 |RNF-007| A plataforma interativa deve permitir o acesso apenas de usuários cadastrados |ALTA|
 
 ### Regras de negócio
