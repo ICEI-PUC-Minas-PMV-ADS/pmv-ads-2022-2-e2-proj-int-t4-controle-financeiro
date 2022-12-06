@@ -55,7 +55,7 @@
         <div class="Area-Central">
             <div class="Area-esquerda">
                 <div class="Datas-entradas-saidas-area">
-                    <select class="btn-data-mes" name="mounth" id="">
+                    <select class="btn-data-mes" name="mounth" id="mouth">
                         <option value="01">Jan</option>
                         <option value="02">Fev</option>
                         <option value="03">Mar</option>
@@ -70,12 +70,12 @@
                         <option value="12">Dez</option>
                     </select>
 
-                    <select class="btn-data-mes" name="year" id="">
+                    <select class="btn-data-mes" name="year" id="year">
                         <option value="2022">2022</option>
                         <option value="2023">2023</option>
                         <option value="2024">2024</option>
                     </select>
-                    <span class="btn-ok Ok">Ok</span>
+                    <button class="btn-ok Ok">Ok</button>
                 </div>
                 <div class="area-esquerda-titulos">
                     <h2>Entradas e Saídas</h2>
@@ -163,24 +163,24 @@
                 </div>
                 @{
                     if (Model.HasPreviousPage){ 
-                            <a asp-action="Index" 
+                                        <a asp-action="Index" 
                         asp-route-pageNumber="@(Model.PageIndex - 1)"
                         type="button" class="btn btn-default">Anterior</a>
                     }
                     else {
-                            <a asp-action="Index" 
+                                        <a asp-action="Index" 
                         asp-route-pageNumber="@(Model.PageIndex - 1)"
                         type="button" class="btn btn-default" hidden>Anterior</a>
                     }
                 }
                 @{
                     if (Model.HasNextPage){
-                            <a asp-action="Index" 
+                                        <a asp-action="Index" 
                         asp-route-pageNumber="@(Model.PageIndex + 1)"
                         type="button" class="btn btn-default">Próximo</a>
                     }
                     else {
-                            <a asp-action="Index" 
+                                        <a asp-action="Index" 
                         asp-route-pageNumber="@(Model.PageIndex + 1)"
                         type="button" class="btn btn-default" hidden>Próximo</a>
                     }
@@ -247,6 +247,33 @@
         @section scripts 
         {
         <script>
+
+                $(document).ready(function()
+                {
+                    document.getElementById("mouth").value = @ViewBag.mesConsulta;
+                    document.getElementById("year").value = @ViewBag.anoConsulta;
+                    
+                });
+
+                $(".Ok").click(function () 
+                {
+                    var IDMes = 0;
+                    var selMes = document.getElementById('mouth');
+                    if (!selMes.value == 0)
+                    {
+                        var comboMes = document.getElementById("mouth");
+                        IDMes = comboMes.options[comboMes.selectedIndex].value;
+                    };
+                    var IDAno = 0;
+                    var selAno = document.getElementById('year');
+                    if (!selAno.value == 0)
+                    {
+                        var comboAno = document.getElementById("year");
+                        IDAno = comboAno.options[comboAno.selectedIndex].value;
+                    };                                         
+                    atualizarFiltro(IDMes, IDAno);
+                });
+
                                             
                 $(".novoLancamento").click(function () 
                 {
@@ -363,6 +390,31 @@
                     })
                 }
                 
+                function atualizarFiltro(IDMes, IDAno) {
+                    const vData = [IDMes, IDAno];
+                    $.ajax({   
+                        url: "Lancamentos/AtualizarFiltroMes",                                               
+                        method: 'POST',
+                        data: {
+                            IDMes: IDMes
+                        },
+                        success: (e) => 
+                        {
+                            $.ajax({   
+                                url: "Lancamentos/AtualizarFiltroAno",                                               
+                                method: 'POST',
+                                data: {
+                                    IDAno: IDAno
+                                },
+                                success: (e) => 
+                                {
+                                    location.reload();
+                                }
+                            })
+                        }
+                    });
+                }
+
                 function atualizarLancamento(lancamento) {
                     $.ajax({
                         url: '@Url.Action("AtualizarLancamento", "Lancamentos")/',

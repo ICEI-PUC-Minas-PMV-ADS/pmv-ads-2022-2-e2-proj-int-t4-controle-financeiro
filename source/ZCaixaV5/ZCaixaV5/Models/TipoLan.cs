@@ -15,8 +15,8 @@ namespace ZCaixaV5.Models
         {
             return new List<TipoLan>
             {
-                new TipoLan { TipoLanId = "C", NomeLan = "Crédito"},
-                new TipoLan { TipoLanId = "D", NomeLan = "Débito"}
+                new TipoLan { TipoLanId = "C", NomeLan = "Entrada"},
+                new TipoLan { TipoLanId = "D", NomeLan = "Saída"}
             };
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using ZCaixaV5.Api.Data;
 using ZCaixaV5.Models;
 using static Composite.Core.Logging.LoggingService;
@@ -20,11 +22,13 @@ namespace ZCaixaV5.Controllers
     {
         private readonly ZCaixaContexto _context;
         private readonly ZCaixaContexto _contextcat;
+        private readonly ZCaixaContexto _contextusr;
 
         public LancamentosController(ZCaixaContexto context)
         {
             _context = context;
             _contextcat = context;
+            _contextusr = context;
         }
 
         // GET: Lancamentos
@@ -37,6 +41,12 @@ namespace ZCaixaV5.Controllers
             }
             else
             {
+                Usuario usuario = await _contextusr.Usuarios.FindAsync(HttpContext.User.Identity.Name);
+                ViewBag.mesConsulta = usuario.MesConsulta;
+                ViewBag.anoConsulta = usuario.AnoConsulta;
+
+
+
                 ViewBag.Nome = HttpContext.User.Identity.Name;
                 var categoria = from c in _contextcat.Categorias
                                 select c;
@@ -61,8 +71,8 @@ namespace ZCaixaV5.Controllers
                 var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
                                  select s;
                 lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
-              //lancamento = lancamento.Where(s => s.Data.Year == 2022);
-              //lancamento = lancamento.Where(s => s.Data.Month == 10);
+                lancamento = lancamento.Where(s => s.Data.Year == usuario.AnoConsulta);
+                lancamento = lancamento.Where(s => s.Data.Month == usuario.MesConsulta);
                 lancamento = lancamento.OrderByDescending(s => s.Id).OrderByDescending(s => s.Data);
                 return View(await PaginaList<Lancamento>.CreateAsync(lancamento.AsNoTracking(), pageNumber ?? 1, pageSize));           
             }
@@ -89,6 +99,35 @@ namespace ZCaixaV5.Controllers
             Lancamento lancamento = await _context.Lancamentos.FindAsync(lancamentoId);
             
             return Json(lancamento);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> AtualizarFiltroMes(int IDMes)
+        {
+            if (ModelState.IsValid)
+            {
+                Usuario usuario = await _contextusr.Usuarios.FindAsync(HttpContext.User.Identity.Name);
+                usuario.MesConsulta = IDMes;                
+                _contextusr.Usuarios.Update(usuario);
+                await _context.SaveChangesAsync();
+                return Json(IDMes);
+            }
+
+            return Json(ModelState);
+        }
+        [HttpPost]
+        public async Task<JsonResult> AtualizarFiltroAno(int IDAno)
+        {
+            if (ModelState.IsValid)
+            {
+                Usuario usuario = await _contextusr.Usuarios.FindAsync(HttpContext.User.Identity.Name);
+                usuario.AnoConsulta = IDAno;
+                _contextusr.Usuarios.Update(usuario);
+                await _context.SaveChangesAsync();
+                return Json(IDAno);
+            }
+
+            return Json(ModelState);
         }
 
         [HttpPost]
