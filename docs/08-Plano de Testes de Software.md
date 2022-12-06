@@ -55,7 +55,7 @@
 
 | Casos de Teste | CT-04- Definir meta e visualizar alterações no status da meta|
 |--------------------|------------------------------------|
-|`Requisitos Associados` | RF-006 - O sistema permite a definição de meta |
+|`Requisitos Associados` | RF-006 - O sistema permite a definição de meta e visualização do progresso de atingimento |
 |`Objetivo do teste` | Definir meta |
 |`Dados de entrada` | Usuário: admin Senha: 123456 |
 |`Passos` | 
@@ -64,6 +64,7 @@
 ||3 - Informar o Usuário e Senha |
 ||4 - Clicar no botão "Entrar" |
 ||5 - Clicar no botão "Meta" |
-||6 - Definir uma meta |
-|`Critério de Êxito` | Meta cadastrada. |
-|`Avaliação` | ***??????*** |
+||6 - Informar o valor da meta |
+||7 - Clicar o botão "Inserir" | 
+|`Critério de Êxito` | Meta cadastrada |
+|`Avaliação` | A meta foi cadastrada e foi visualizado seu progresso de atingimento com base nos lançamentos da conta |
