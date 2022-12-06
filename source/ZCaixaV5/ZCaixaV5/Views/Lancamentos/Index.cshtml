@@ -27,7 +27,8 @@
 
         <div class="meta-plataforma-area">
             <p>Status da meta:</p>
-            <img class="meta-png" src="~/imagens/meta.png" alt="">
+            <progress value=@ViewBag.PercMeta max="100" />
+            @*<img class="meta-png" src="~/imagens/meta.png" alt="">*@
         </div>
 
         <div class="usuario-plataforma-area">
@@ -45,7 +46,7 @@
                         <a href=""><img class="icones-menu-usuario" src="~/imagens/usuario-icon.png" alt=""> <p>Minha Conta</p></a>
                     </li>
                     <li class="opcao-sair">
-                        <a href=""><img class="icones-menu-usuario" src="~/imagens/sair-icon.png" alt=""> <p>Sair</p></a>
+                        <a asp-action="SairSistema"><img class="icones-menu-usuario" src="~/imagens/sair-icon.png" alt=""> <p>Sair</p></a>                
                     </li>
                 </ul>
             </nav>
@@ -76,22 +77,26 @@
                     <option value="2024">2024</option>
                 </select>
                 <button class="btn-ok Ok">Ok</button>
+                <button class="btn-ok Todos os Lançamentos">Todos</button>
             </div>
             <div class="area-esquerda-titulos">
-                <h2>Entradas e Saídas</h2>
+                <h2>Receitas e Despesas</h2>
             </div>
             <div class="entradas-saidas-area">
 
                 <div class="entradas-valores">
-                    <p class="saldos-titulos"> Total de entradas:</p><p>R$500,00</p>
+                    <p class="saldos-titulos"> Total de Receitas:</p>
+                    <output name="totReceita" id="totReceita" />
                 </div>
                 <p class="underline-entradas-saidas"></p>
                 <div class="saidas-valores">
-                    <p class="saldos-titulos"> Total de Saídas:</p><p>R$0,00</p>
+                    <p class="saldos-titulos"> Total de Despesas:</p>
+                    <output name="totDespesa" id="totDespesa" />
                 </div>
                 <p class="underline-entradas-saidas"></p>
                 <div class="saldo-total-area">
-                    <p class="saldos-titulos">Saldo total:</p>  <p> R$500,00</p>
+                    <p class="saldos-titulos">Saldo Total:</p>
+                    <output name="totSaldo" id="totSaldo" />
                 </div>
 
                 <div class="entradas-saidas-categorias-area">
@@ -129,38 +134,37 @@
             <div class="botoes-esquerda-areas">
                 <button class="btn-plataforma btn-area-esquerda btn-atualiza">Relatorios</button>
                 <input type="checkbox" id="checkbox-menu-meta">
-                <label class="botao-meta btn-plataforma btn-area-esquerda btn-atualiza botao-meta" for="checkbox-menu-meta">
+                
+                <label class="botao-meta btn-plataforma btn-area-esquerda btn-atualiza botao-meta novameta" @*for="checkbox-menu-meta"*@>
                     <a class="">Meta</a>
                 </label>
-
                 <div class="menu-meta">
-                    <div class="area-titulo-categorias">
-                        <h3>Inserir Meta</h3>
-                        <input type="checkbox" id="checkbox-menu-meta">
-                        <label for="checkbox-menu-meta">
-                            <a class="btn btn-danger botao-fechar-modal">X</a>
-                        </label>
+                    <div class="modal fade" id=modalMeta tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content modal-lancamento">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="staticBackdropLabel"></h1>
+                                </div>                    
+                                <div class="modal-body">
+                                    <div class="formulario-lancamento">                                                                           
+                                        <div class="campos-insere-lan-row">
+                                            <div class="valor-area">
+                                                <p>Inserir Meta</p>
+                                                <input type="text" class="formulario-lancamento-input campo-valor form-control form-control-sm ValorMetaF" onInput="mascaraMoeda(event);" />                  
+                                            </div>                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" value="Cancelar" class="btn btn-danger" data-bs-dismiss="modal" />
+                                            <input type="button" value="Inserir"   class="btn btn-success btnSalvarMeta" />                                        
+                                        </div>                                
+                                    </div>                            
+                                </div>
+                            </div> 
+                        </div> 
                     </div>
-
-                    <div class="menu-categoria-db">
-
-                        <p>Insira o valor da Meta:</p>
-                        <input class="formulario-lancamento-input" type="number" />
-
-                    </div>
-                    <div>
-                        <label for="checkbox-menu-meta">
-                            <a class="btn btn-success">Definir Meta</a>
-                        </label>
-                    </div>
-
-
                 </div>
             </div>
-
-
-        </div>
-        
+        </div>        
 
         <div class="Area-direita">
             <div class="cabecalho-filtro">
@@ -194,13 +198,13 @@
             @{
                 if (Model.HasPreviousPage)
                 {
-                    <a asp-action="Index"
+                                                                            <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex - 1)"
                        type="button" class="btn btn-default">Anterior</a>
                 }
                 else
                 {
-                    <a asp-action="Index"
+                                                                            <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex - 1)"
                        type="button" class="btn btn-default" hidden>Anterior</a>
                 }
@@ -208,13 +212,13 @@
             @{
                 if (Model.HasNextPage)
                 {
-                    <a asp-action="Index"
+                                                                            <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex + 1)"
                        type="button" class="btn btn-default">Próximo</a>
                 }
                 else
                 {
-                    <a asp-action="Index"
+                                                                            <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex + 1)"
                        type="button" class="btn btn-default" hidden>Próximo</a>
                 }
@@ -303,9 +307,6 @@
                                 </div>
 
                             </div>
-
-
-
                             <input type="button" value="Cancelar" class="btn btn-danger" data-bs-dismiss="modal" />
                             <input type="button" value="Inserir" class="btn btn-success btnSalvar" />
                         </div>
@@ -323,8 +324,16 @@
                 $(document).ready(function()
                 {
                     document.getElementById("mouth").value = @ViewBag.mesConsulta;
-                    document.getElementById("year").value = @ViewBag.anoConsulta;
-
+                    document.getElementById("year").value = @ViewBag.anoConsulta; 
+                    atual = @ViewBag.Receita;
+                    var receita = atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    atual = @ViewBag.Despesa;
+                    var despesa = atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    atual = @ViewBag.Saldo;
+                    var saldo = atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    document.getElementById("totReceita").value = receita;
+                    document.getElementById("totDespesa").value = despesa;
+                    document.getElementById("totSaldo").value = saldo;
                 });
 
                 $(".Ok").click(function ()
@@ -346,6 +355,21 @@
                     atualizarFiltro(IDMes, IDAno);
                 });
 
+                $(".Todos").click(function ()
+                {
+                    var IDMes = 0;
+                    var IDAno = 0;
+                    atualizarFiltro(IDMes, IDAno);
+                });
+
+                $(".novameta").click(function ()
+                {
+                    escolherTituloModal("Adicionar uma Meta");
+                    mostrarModalMeta();
+                    atual = @ViewBag.ValorMeta;
+                    var vmeta = atual.toLocaleString('pt-br', { minimumFractionDigits: 2 });   
+                    $(".ValorMetaF").val(vmeta);
+                });
 
                 $(".novoLancamento").click(function ()
                 {
@@ -373,7 +397,24 @@
                         pegarLancamento(LId);
                 });
 
-
+                 $(".btnSalvarMeta").click(function ()
+                {
+                    var ValorMetaS = $(".ValorMetaF").val();
+                    $.ajax({
+                        url: '@Url.Action("AtualizarMeta", "Lancamentos")/',
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                        data: {
+                            ValorMetaS: ValorMetaS
+                        },
+                        success: (e) =>
+                        {
+                                $("#modalMeta").modal('hide');
+                                location.reload();
+                        }
+                    });                    
+                });
 
                 $(".btnSalvar").click(function ()
                 {
@@ -652,6 +693,10 @@
 
                 function mostrarModal() {
                     new bootstrap.Modal($("#modal"), {}).show();
+                }
+
+                function mostrarModalMeta() {
+                    new bootstrap.Modal($("#modalMeta"), {}).show();
                 }
 
                 function limparFormulario() {
