@@ -5,246 +5,318 @@
     ViewData["Title"] = "Meu Caixa";
 }
 
-    <main>
-        
-        <header class="plataforma-header">
-            <div class="logo-plataforma-area">
-                <img class="logo-plataforma" src="~/imagens/logo-horizontal.png" alt="">
+<main>
+
+    <header class="plataforma-header">
+        <div class="logo-plataforma-area">
+            <img class="logo-plataforma" src="~/imagens/logo-horizontal.png" alt="">
+        </div>
+        <div class="botoes-plataforma-area">
+
+            <button type="button" class="btn-plataforma btn-adiciona-lancamento novoLancamento">
+                <img class="icones" src="~/imagens/add-icon.png" alt="">
+            </button>
+
+
+            <button type="button" class="btn-plataforma btn-atualiza categoria">
+                <img class="icones" src="~/imagens/atualiza-icon.png" alt="">
+            </button>
+
+        </div>
+
+
+        <div class="meta-plataforma-area">
+            <p>Status da meta:</p>
+            <img class="meta-png" src="~/imagens/meta.png" alt="">
+        </div>
+
+        <div class="usuario-plataforma-area">
+
+            <input type="checkbox" id="checkbox-menu-plataforma">
+            <p>Olá, @ViewBag.Nome</p>
+
+            <label for="checkbox-menu-plataforma">
+                <a type="button" class="btn-limpo"><img class="icones" src="~/imagens/drop-down-icon.png" alt=""></a>
+            </label>
+
+            <nav class="menu-usuario-plataforma">
+                <ul class="menu-usuario-plataforma-lista">
+                    <li class="opcao-minha-conta">
+                        <a href=""><img class="icones-menu-usuario" src="~/imagens/usuario-icon.png" alt=""> <p>Minha Conta</p></a>
+                    </li>
+                    <li class="opcao-sair">
+                        <a href=""><img class="icones-menu-usuario" src="~/imagens/sair-icon.png" alt=""> <p>Sair</p></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="Area-Central">
+        <div class="Area-esquerda">
+            <div class="Datas-entradas-saidas-area">
+                <select class="btn-data-mes" name="mounth" id="mouth">
+                    <option value="01">Jan</option>
+                    <option value="02">Fev</option>
+                    <option value="03">Mar</option>
+                    <option value="04">Abr</option>
+                    <option value="05">Mai</option>
+                    <option value="06">Jun</option>
+                    <option value="07">Jul</option>
+                    <option value="08">Ago</option>
+                    <option value="09">Set</option>
+                    <option value="10">Out</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dez</option>
+                </select>
+
+                <select class="btn-data-mes" name="year" id="year">
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                </select>
+                <button class="btn-ok Ok">Ok</button>
             </div>
-            <div class="botoes-plataforma-area">
-                
-                <button type="button" class="btn-plataforma btn-adiciona-lancamento novoLancamento">
-                    <img class="icones" src="~/imagens/add-icon.png" alt="">
-                </button>
-                
-                
-                <button type="button" class="btn-plataforma btn-atualiza categoria">
-                    <img class="icones" src="~/imagens/atualiza-icon.png" alt="">
-                </button>
-
+            <div class="area-esquerda-titulos">
+                <h2>Entradas e Saídas</h2>
             </div>
+            <div class="entradas-saidas-area">
 
+                <div class="entradas-valores">
+                    <p class="saldos-titulos"> Total de entradas:</p><p>R$500,00</p>
+                </div>
+                <p class="underline-entradas-saidas"></p>
+                <div class="saidas-valores">
+                    <p class="saldos-titulos"> Total de Saídas:</p><p>R$0,00</p>
+                </div>
+                <p class="underline-entradas-saidas"></p>
+                <div class="saldo-total-area">
+                    <p class="saldos-titulos">Saldo total:</p>  <p> R$500,00</p>
+                </div>
 
-            <div class="meta-plataforma-area">
-                <p>Status da meta:</p>
-                <img class="meta-png" src="~/imagens/meta.png" alt="">
+                <div class="entradas-saidas-categorias-area">
+                    <p class="saldos-titulos categorias-titulo"> Valores por Categorias: </p>
+                    <div class="entradas-valores valores-categorias">
+                        <p class="saldos-titulos">Salário</p> <p>R$ 250,00</p>
+                    </div>
+                    <p class="underline-entradas-saidas"></p>
+
+                    <div class="entradas-valores valores-categorias">
+                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                    </div>
+
+                    <div class="entradas-valores valores-categorias">
+                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                    </div>
+                    <div class="entradas-valores valores-categorias">
+                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                    </div>
+                    <div class="entradas-valores valores-categorias">
+                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                    </div>
+                    <div class="entradas-valores valores-categorias">
+                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                    </div>
+                    <div class="entradas-valores valores-categorias">
+                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                    </div>
+                    <div class="entradas-valores valores-categorias">
+                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                    </div>
+
+                </div>
             </div>
-
-            <div class="usuario-plataforma-area">
-
-                <input type="checkbox" id="checkbox-menu-plataforma">
-                <p>Olá, @ViewBag.Nome</p>
-
-                <label for="checkbox-menu-plataforma">
-                    <a type="button" class="btn-limpo"><img class="icones" src="~/imagens/drop-down-icon.png" alt=""></a>
+            <div class="botoes-esquerda-areas">
+                <button class="btn-plataforma btn-area-esquerda btn-atualiza">Relatorios</button>
+                <input type="checkbox" id="checkbox-menu-meta">
+                <label class="botao-meta btn-plataforma btn-area-esquerda btn-atualiza botao-meta" for="checkbox-menu-meta">
+                    <a class="">Meta</a>
                 </label>
 
-                <nav class="menu-usuario-plataforma">
-                    <ul class="menu-usuario-plataforma-lista">
-                        <li class="opcao-minha-conta">
-                            <a href=""><img class="icones-menu-usuario" src="~/imagens/usuario-icon.png" alt=""> <p>Minha Conta</p></a>
-                        </li>
-                        <li class="opcao-sair">
-                            <a href=""><img class="icones-menu-usuario" src="~/imagens/sair-icon.png" alt=""> <p>Sair</p></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <div class="Area-Central">
-            <div class="Area-esquerda">
-                <div class="Datas-entradas-saidas-area">
-                    <select class="btn-data-mes" name="mounth" id="mouth">
-                        <option value="01">Jan</option>
-                        <option value="02">Fev</option>
-                        <option value="03">Mar</option>
-                        <option value="04">Abr</option>
-                        <option value="05">Mai</option>
-                        <option value="06">Jun</option>
-                        <option value="07">Jul</option>
-                        <option value="08">Ago</option>
-                        <option value="09">Set</option>
-                        <option value="10">Out</option>
-                        <option value="11">Nov</option>
-                        <option value="12">Dez</option>
-                    </select>
-
-                    <select class="btn-data-mes" name="year" id="year">
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                    </select>
-                    <button class="btn-ok Ok">Ok</button>
-                </div>
-                <div class="area-esquerda-titulos">
-                    <h2>Entradas e Saídas</h2>
-                </div>
-                <div class="entradas-saidas-area">
-
-                    <div class="entradas-valores">
-                        <p class="saldos-titulos"> Total de entradas:</p><p>R$500,00</p>
-                    </div>
-                    <p class="underline-entradas-saidas"></p>
-                    <div class="saidas-valores">
-                        <p class="saldos-titulos"> Total de Saídas:</p><p>R$0,00</p>
-                    </div>
-                    <p class="underline-entradas-saidas"></p>
-                    <div class="saldo-total-area">
-                        <p class="saldos-titulos">Saldo total:</p>  <p> R$500,00</p>
+                <div class="menu-meta">
+                    <div class="area-titulo-categorias">
+                        <h3>Inserir Meta</h3>
+                        <input type="checkbox" id="checkbox-menu-meta">
+                        <label for="checkbox-menu-meta">
+                            <a class="btn btn-danger botao-fechar-modal">X</a>
+                        </label>
                     </div>
 
-                    <div class="entradas-saidas-categorias-area">
-                        <p class="saldos-titulos categorias-titulo"> Valores por Categorias: </p>
-                        <div class="entradas-valores valores-categorias">
-                            <p class="saldos-titulos">Salário</p> <p>R$ 250,00</p>
-                        </div>
-                        <p class="underline-entradas-saidas"></p>
+                    <div class="menu-categoria-db">
 
-                        <div class="entradas-valores valores-categorias">
-                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                        </div>
-
-                        <div class="entradas-valores valores-categorias">
-                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                        </div>
-                        <div class="entradas-valores valores-categorias">
-                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                        </div>
-                        <div class="entradas-valores valores-categorias">
-                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                        </div>
-                        <div class="entradas-valores valores-categorias">
-                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                        </div>
-                        <div class="entradas-valores valores-categorias">
-                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                        </div>
-                        <div class="entradas-valores valores-categorias">
-                            <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                        </div>
+                        <p>Insira o valor da Meta:</p>
+                        <input class="formulario-lancamento-input" type="number" />
 
                     </div>
-                </div>
-                <div class="botoes-esquerda-areas">
-                    <button class="btn-plataforma btn-area-esquerda btn-atualiza">Relatorios</button>
-                    <button class="btn-plataforma btn-area-esquerda btn-atualiza">Meta</button>
+                    <div>
+                        <label for="checkbox-menu-meta">
+                            <a class="btn btn-success">Definir Meta</a>
+                        </label>
+                    </div>
+
+
                 </div>
             </div>
 
-            <div class="Area-direita">
-                <div class="cabecalho-filtro">
-                    <div class="filtros-area">
-                        <div class="lancamento-conciliado"><a href="">Conciliado</a></div>
-                        <div class="lancamento-data"><a href="">Data</a></div>
-                        <div class="lancamento-valor"><a href="">Valor</a></div>
-                        <div class="lancamento-categoria"><a href="">Categoria</a></div>
-                        <div class="lancamento-descricao"><a href="">Descrição</a></div>
-                        <div class="lancamento-tipo"><a href="">Tipo</a></div>
-                        <div class="lancamento-excluir"><a href="">Excluir</a></div>
-                        <div class="lancamento-alterar"><a href="">Alterar</a></div>
-                    </div>
 
-                </div>
-                <div class="area-lancamentos">
-                    @foreach (var item in Model)
-                    {
-                        <div class="lancamento-unitario">
-                            <div class="lancamento-conciliado">@Html.DisplayFor(modelItem => item.Conciliado)</div>
-                            <div class="lancamento-data"><p>@Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")</p></div>
-                            <div class="lancamento-valor"><p>@Html.DisplayFor(modelItem => item.Valor)</p></div>
-                            <div class="lancamento-categoria"><p>@Html.DisplayFor(modelItem => item.Cat.Nome)</p></div>
-                            <div class="lancamento-descricao"><p>@Html.DisplayFor(modelItem => item.Descricao)</p></div>
-                            <div class="lancamento-tipo"><p>@Html.DisplayFor(modelItem => item.Tipo)</p></div>
-                            <div class="lancamento-excluir"><a class="btn-limpo delete" data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
-                            <div class="lancamento-alterar"><a class="btn-limpo edit"   data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
-                        </div>
-                    }
-                </div>
-                @{
-                    if (Model.HasPreviousPage){ 
-                                        <a asp-action="Index" 
-                        asp-route-pageNumber="@(Model.PageIndex - 1)"
-                        type="button" class="btn btn-default">Anterior</a>
-                    }
-                    else {
-                                        <a asp-action="Index" 
-                        asp-route-pageNumber="@(Model.PageIndex - 1)"
-                        type="button" class="btn btn-default" hidden>Anterior</a>
-                    }
-                }
-                @{
-                    if (Model.HasNextPage){
-                                        <a asp-action="Index" 
-                        asp-route-pageNumber="@(Model.PageIndex + 1)"
-                        type="button" class="btn btn-default">Próximo</a>
-                    }
-                    else {
-                                        <a asp-action="Index" 
-                        asp-route-pageNumber="@(Model.PageIndex + 1)"
-                        type="button" class="btn btn-default" hidden>Próximo</a>
-                    }
-                }
-            </div>
-        </div> 
-      
-        <div class="modal fade" id=modal tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content modal-lancamento">
-                    <div class="modal-header">
-                        <h1 class="modal-title" id="staticBackdropLabel"></h1>
-                    </div>                    
-                    <div class="modal-body">
-                        <input type="hidden" class="form-control form-control-sm Id" />
-                        <input type="hidden" class="form-control form-control-sm Conciliado" />
-                        <div class="formulario-lancamento">   
-                                
-                            <div class="campos-insere-lan-row">
-
-                                <div class="">
-                                    <p>Data</p>                                            
-                                    <input type="date" class="formulario-lancamento-input form-control form-control-sm Data" />
-                                    <span class="text-danger1 erroData d-none"></span>                                            
-                                </div>
-                                <div>
-                                    <p>Categoria</p>                                            
-                                    @Html.DropDownList("Categ", String.Empty)
-                                    <span class="text-danger1 erroCatId d-none"></span> 
-                                </div>
-                            </div>
-
-                            <div class="campos-insere-lan-row">
-                                <div class="valor-area">
-                                    <p>Valor</p>
-                                    <input type="text" class="formulario-lancamento-input campo-valor form-control form-control-sm Valor" onInput="mascaraMoeda(event);" />
-                                    <span class="text-danger1 erroValor d-none"></span>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="campo-tipo">
-                                        <p>Tipo</p>
-                                        @Html.DropDownList("TipoLanId", String.Empty)
-                                        <span class="text-danger1 erroTipo d-none"></span>
-                                    </div>                                                                                        
-                                </div>
-                            </div>
-                            <div class="">
-                                <p>Descrição</p>
-                                <input type="text" class="formulario-lancamento-input form-control form-control-sm Descricao" />
-                                <span class="text-danger1 erroDescricao d-none"></span>
-                            </div>
-
-                            <div class="modal-footer">
-                                <input type="button" value="Cancelar" class="btn btn-danger" data-bs-dismiss="modal" />
-                                <input type="button" value="Inserir"   class="btn btn-success btnSalvar" />                                        
-                            </div>                                
-                        </div>                            
-                    </div>
-                </div> 
-            </div> 
         </div>
         
-        @section scripts 
+
+        <div class="Area-direita">
+            <div class="cabecalho-filtro">
+                <div class="filtros-area">
+                    <div class="lancamento-conciliado"><a href="">Conciliado</a></div>
+                    <div class="lancamento-data"><a href="">Data</a></div>
+                    <div class="lancamento-valor"><a href="">Valor</a></div>
+                    <div class="lancamento-categoria"><a href="">Categoria</a></div>
+                    <div class="lancamento-descricao"><a href="">Descrição</a></div>
+                    <div class="lancamento-tipo"><a href="">Tipo</a></div>
+                    <div class="lancamento-excluir"><a href="">Excluir</a></div>
+                    <div class="lancamento-alterar"><a href="">Alterar</a></div>
+                </div>
+
+            </div>
+            <div class="area-lancamentos">
+                @foreach (var item in Model)
+                {
+                    <div class="lancamento-unitario">
+                        <div class="lancamento-conciliado">@Html.DisplayFor(modelItem => item.Conciliado)</div>
+                        <div class="lancamento-data"><p>@Convert.ToDateTime(item.Data).ToString("dd/MM/yyyy")</p></div>
+                        <div class="lancamento-valor"><p>@Html.DisplayFor(modelItem => item.Valor)</p></div>
+                        <div class="lancamento-categoria"><p>@Html.DisplayFor(modelItem => item.Cat.Nome)</p></div>
+                        <div class="lancamento-descricao"><p>@Html.DisplayFor(modelItem => item.Descricao)</p></div>
+                        <div class="lancamento-tipo"><p>@Html.DisplayFor(modelItem => item.Tipo)</p></div>
+                        <div class="lancamento-excluir"><a class="btn-limpo delete" data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/delete-icon.png" alt=""></a></div>
+                        <div class="lancamento-alterar"><a class="btn-limpo edit" data-id="@item.Id"><img class="icone-lancamento-unitario" src="imagens/editar-icon.png" alt=""></a></div>
+                    </div>
+                }
+            </div>
+            @{
+                if (Model.HasPreviousPage)
+                {
+                    <a asp-action="Index"
+                       asp-route-pageNumber="@(Model.PageIndex - 1)"
+                       type="button" class="btn btn-default">Anterior</a>
+                }
+                else
+                {
+                    <a asp-action="Index"
+                       asp-route-pageNumber="@(Model.PageIndex - 1)"
+                       type="button" class="btn btn-default" hidden>Anterior</a>
+                }
+            }
+            @{
+                if (Model.HasNextPage)
+                {
+                    <a asp-action="Index"
+                       asp-route-pageNumber="@(Model.PageIndex + 1)"
+                       type="button" class="btn btn-default">Próximo</a>
+                }
+                else
+                {
+                    <a asp-action="Index"
+                       asp-route-pageNumber="@(Model.PageIndex + 1)"
+                       type="button" class="btn btn-default" hidden>Próximo</a>
+                }
+            }
+        </div>
+    </div>
+
+    <div class="modal fade" id=modal tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-lancamento">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="staticBackdropLabel"></h1>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" class="form-control form-control-sm Id" />
+                    <input type="hidden" class="form-control form-control-sm Conciliado" />
+                    <div class="formulario-lancamento">
+
+                        <div class="campos-insere-lan-row">
+
+                            <div class="">
+                                <p>Data</p>
+                                <input type="date" class="formulario-lancamento-input form-control form-control-sm Data" />
+                                <span class="text-danger1 erroData d-none"></span>
+                            </div>
+                            <div>
+                                <p>Categoria</p>
+                                @Html.DropDownList("Categ", String.Empty)
+                                <span class="text-danger1 erroCatId d-none"></span>
+                            </div>
+                        </div>
+
+                        <div class="campos-insere-lan-row">
+                            <div class="valor-area">
+                                <p>Valor</p>
+                                <input type="text" class="formulario-lancamento-input campo-valor form-control form-control-sm Valor" onInput="mascaraMoeda(event);" />
+                                <span class="text-danger1 erroValor d-none"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="campo-tipo">
+                                    <p>Tipo</p>
+                                    @Html.DropDownList("TipoLanId", String.Empty)
+                                    <span class="text-danger1 erroTipo d-none"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <p>Descrição</p>
+                            <input type="text" class="formulario-lancamento-input form-control form-control-sm Descricao" />
+                            <span class="text-danger1 erroDescricao d-none"></span>
+                        </div>
+
+                        <div class="modal-footer">
+                            <input type="checkbox" id="checkbox-menu-categorias">
+                            <label for="checkbox-menu-categorias">
+                                <a class="btn btn-primary" style="margin-right: ;">Categorias</a>
+                            </label>
+                            <div class="menu-categorias">
+                                <div class="area-titulo-categorias">
+                                    <h3>Inserir Categoria</h3>
+                                    <input type="checkbox" id="checkbox-menu-categorias">
+                                    <label for="checkbox-menu-categorias">
+                                        <a class="btn btn-danger botao-fechar-modal">X</a>
+                                    </label>
+                                </div>
+
+                                <div class="menu-categoria-db">
+
+                                    <p>Título</p>
+                                    <input class="formulario-lancamento-input" type="text" />
+                                    <p>Tipo</p>
+                                    <select>
+                                        <option>
+                                            Crédito
+                                        </option>
+                                        <option>
+                                            Débito
+                                        </option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="checkbox-menu-categorias">
+                                        <a class="btn btn-success">Inserir Categoria</a>
+                                    </label>
+                                </div>
+
+                            </div>
+
+
+
+                            <input type="button" value="Cancelar" class="btn btn-danger" data-bs-dismiss="modal" />
+                            <input type="button" value="Inserir" class="btn btn-success btnSalvar" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @section scripts
         {
         <script>
 
@@ -252,10 +324,10 @@
                 {
                     document.getElementById("mouth").value = @ViewBag.mesConsulta;
                     document.getElementById("year").value = @ViewBag.anoConsulta;
-                    
+
                 });
 
-                $(".Ok").click(function () 
+                $(".Ok").click(function ()
                 {
                     var IDMes = 0;
                     var selMes = document.getElementById('mouth');
@@ -270,12 +342,12 @@
                     {
                         var comboAno = document.getElementById("year");
                         IDAno = comboAno.options[comboAno.selectedIndex].value;
-                    };                                         
+                    };
                     atualizarFiltro(IDMes, IDAno);
                 });
 
-                                            
-                $(".novoLancamento").click(function () 
+
+                $(".novoLancamento").click(function ()
                 {
                     escolherTituloModal("Adicionar um Lançamento");
                     mostrarModal();
@@ -284,26 +356,26 @@
                     $('.Conciliado').val(false);
                 });
 
-                $(".categoria").click(function () 
+                $(".categoria").click(function ()
                 {
                     window.location.replace('categorias/index');
                 });
 
-                $(".delete").click(function () 
+                $(".delete").click(function ()
                 {
                         var LId = $(this).attr("data-id");
                         excluirLancamento(LId);
                 });
 
-                $(".edit").click(function () 
+                $(".edit").click(function ()
                 {
                         var LId = $(this).attr("data-id");
                         pegarLancamento(LId);
                 });
 
 
-                
-                $(".btnSalvar").click(function () 
+
+                $(".btnSalvar").click(function ()
                 {
                     var IDCat = "";
                     var sel = document.getElementById('Categ');
@@ -330,17 +402,17 @@
                         Username: "",
                         CatId: IDCat
                     };
-                    if (validarFormulario(lancamento)) 
-                    {                        
-                        if (parseInt(lancamento.Id) > 0) 
-                        {                          
+                    if (validarFormulario(lancamento))
+                    {
+                        if (parseInt(lancamento.Id) > 0)
+                        {
                             atualizarLancamento(lancamento)
-                        };                      
+                        };
                         criarLancamento(lancamento)
                     };
                 });
-                
-                function criarLancamento(lancamento) 
+
+                function criarLancamento(lancamento)
                 {
                     $.ajax(
                         {
@@ -351,7 +423,7 @@
                             data: {
                                 lancamento: lancamento
                             },
-                            success: (e) => 
+                            success: (e) =>
                             {
                                     $("#modal").modal('hide');
                                     limparFormulario();
@@ -359,7 +431,7 @@
                             }
                         });
                 }
-                
+
                 function pegarLancamento(lancamentoId) {
                     $.ajax({
                         dataType: "json",
@@ -368,12 +440,12 @@
                         data: {
                             lancamentoId: lancamentoId
                         },
-                        success: function (lanc) 
+                        success: function (lanc)
                         {
                             let data = new Date(lanc.data);
                             let diaA = '' + data.getDate();
                             let diaB = diaA.padStart(2, '0');
-                            let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + diaB);                           
+                            let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + diaB);
                             var valor = lanc.valor;
                             var valorFormatado = valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                             mostrarModal();
@@ -385,28 +457,28 @@
                             $(".Conciliado").val(lanc.conciliado);
                             document.getElementById("Categ").value = lanc.catId;
                             document.getElementById("TipoLanId").value = lanc.tipo;
-                            
+
                         }
                     })
                 }
-                
+
                 function atualizarFiltro(IDMes, IDAno) {
                     const vData = [IDMes, IDAno];
-                    $.ajax({   
-                        url: "Lancamentos/AtualizarFiltroMes",                                               
+                    $.ajax({
+                        url: "Lancamentos/AtualizarFiltroMes",
                         method: 'POST',
                         data: {
                             IDMes: IDMes
                         },
-                        success: (e) => 
+                        success: (e) =>
                         {
-                            $.ajax({   
-                                url: "Lancamentos/AtualizarFiltroAno",                                               
+                            $.ajax({
+                                url: "Lancamentos/AtualizarFiltroAno",
                                 method: 'POST',
                                 data: {
                                     IDAno: IDAno
                                 },
-                                success: (e) => 
+                                success: (e) =>
                                 {
                                     location.reload();
                                 }
@@ -424,7 +496,7 @@
                         data: {
                             lancamento: lancamento
                         },
-                        success: (e) => 
+                        success: (e) =>
                         {
                                 $("#modal").modal('hide');
                                 limparFormulario();
@@ -432,7 +504,7 @@
                         }
                     });
                 }
-                
+
                 function excluirLancamento(lancamentoId) {
                     $.ajax({
                         url: "Lancamentos/ExcluirLancamento",
@@ -449,7 +521,7 @@
                         }
                     });
                 }
-                
+
                 function validarFormulario(lancamento) {
                     let DataValida = validarData(lancamento.Data);
                     let CatIdValida = validarCatId(lancamento.CatId);
@@ -480,19 +552,19 @@
                     return DataValida;
                 }
 
-                function validarCatId(catid) 
+                function validarCatId(catid)
                 {
-                    
+
                     let CatIdValida = true;
 
-                    if (catid.trim() == '' || catid == undefined) 
+                    if (catid.trim() == '' || catid == undefined)
                     {
                         $(".CatId").addClass('is-invalid');
                         $(".erroCatId").text("Informe a Categoria");
                         $(".erroCatId").removeClass("d-none");
                         CatIdValida = false;
                     }
-                    else 
+                    else
                     {
                         $(".CatId").removeClass('is-invalid');
                         $(".CatId").addClass('is-valid');
@@ -599,5 +671,5 @@
                     $(".modal-title").text(texto);
                 }
         </script>
-        }
-    </main>
+    }
+</main>
