@@ -42,7 +42,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-001| O sistema permite agrupar valores por seções (categorias)  | ALTA | 
 |RF-002| O sistema permite o lançamento de débitos  | ALTA |
 |RF-003| O sistema permite o lançamento de crédito | ALTA |
-|RF-004| O sistema permite datar (exemplo: pagamentos ou recebimentos futuros)  | ALTA |
+|RF-004| O sistema permite datar lançamentos (exemplo: pagamentos ou recebimentos futuros)  | ALTA |
 |RF-005| O sistema permite a visualização de entradas e saídas por mês | ALTA |
 |RF-006| O sistema permite a definição de meta  | ALTA |
 |RF-007| O sistema terá tela de Login e Senha  | ALTA | 
