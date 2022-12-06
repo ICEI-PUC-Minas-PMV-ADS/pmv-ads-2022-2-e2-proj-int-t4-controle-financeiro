@@ -16,15 +16,9 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ![Projeto da base de dados](img/Projeto_Logico_Banco_de_Dados.png)
 
-## Tecnologias Utilizadas
-
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
-
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+A hospedagem da aplicação é mantida em um servidor privado. 
 
 > **Links Úteis**:
 >
