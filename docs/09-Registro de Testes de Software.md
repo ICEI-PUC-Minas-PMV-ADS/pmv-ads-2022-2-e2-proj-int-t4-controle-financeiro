@@ -14,14 +14,18 @@
 
 ***Caso de Teste - 03 - Fazer lançamentos, visualizar lançamentos por mês (entradas e saída por mês)***
 
-![Registro de teste Lancamento](img/registroLancamento.png)
+![Registro de teste Lancamento](img/resgitroLancamento.png)
 
-![Registro de teste Lancamento View](img/registroLancamentoview.png)
+![Registro de teste Lancamento View](img/resgitroLancamentoview.png)
 
+
+***Caso de Teste - 04 -  Definir meta e visualizar alterações no status da meta***
+
+![Registro de teste Meta](img/registroMeta.png)
+
+![Registro de teste Meta View](img/registroMetaview.png)
 
 ## Avaliação
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
+Os resultados dos Casos de Testes acima atenderam os requisitos dentro das funcionalidades propostas na aplicação. É possível identificar a correspondência do sistema com o mundo real através dos ícones dos botões. Em futuras versões espera-se que sejam aplicadas melhorias nas funcionalidades já existentes, por exemplo, o status da meta descrever a porcetagem do progresso. 
 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
