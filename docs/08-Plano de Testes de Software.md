@@ -27,9 +27,9 @@
 ||3 - Informar o Usuário e Senha |
 ||4 - Clicar no botão "Entrar" |
 ||5 - Clicar no botão " + " |
-||6 - Clicar no botão "Criar categoria" |
-||7 - Clicar na categoria desejada |
-||8 - Clicar no botão para selecionar categoria |
+||6 - Clicar no botão "Categorias" |
+||7 - Informar o título da categoria e o tipo (débito ou crédito)|
+||8 - Clicar no botão "Inserir categoria"  |
 |`Critério de Êxito` | As categorias foram criadas. |
 |`Avaliação` | As categorias "Casas, Uber Driver, Contas mensais, Lanches, Qualidade de vida" foram criadas. |
 
@@ -45,7 +45,7 @@
 ||3 - Informar o Usuário e Senha | 
 ||4 - Clicar no botão "Entrar" |
 ||5 - Clicar no botão " + " |
-||6 - Clicar na categoria desejada |
+||6 - Preencher os campos obrigatórios |
 ||7 - Clicar no botão "Inserir" | 
 ||8 - Selecionar na lista o mês e ano desejado para filtrar |
 ||9 - Clicar no botão "Ok" |
