@@ -56,7 +56,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RNF-003| O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge)  |  ALTA | 
 |RNF-004| O site será modelado usando UML 2.3  |  ALTA |
 |RNF-005| O site deve ter interface gráfica amigável  |  ALTA |
-|RNF-006| O sistema deve ter tela inicial (home) |ALTA|
+|RNF-006| O sistema deve ter tela inicial |ALTA|
 |RNF-007| A plataforma interativa deve permitir o acesso apenas de usuários cadastrados |ALTA|
 
 ### Regras de negócio
