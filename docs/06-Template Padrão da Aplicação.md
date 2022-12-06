@@ -26,19 +26,11 @@ Selecionamos a iconografia grátis disponibilizada pelo site http://www.gonzodes
 
 ![Iconografia](img/iconografia.png)
 
-### Páginas institucionais (Página Inicial, Sobre e Educação Financeira)
-
-O template padrão da aplicação interativa e páginas institucionais (onde se navega sem a necessidade de login) terão arquiteturas diferentes de desgin, uma vez que as páginas institucionais possuem cabeçalho e rodapé padrões entre si, se diferenciando da aplicação. 
-
-As páginas institucionais seguirão o esquema padrão abaixo quanto ao conteúdo apresentado, com cabeçalho, conteúdo e rodapé.
-
-![Template de paginas institucionais](img/template.png)
-
 ### Páginas relacionadas ao login e cadastro (Página de Login, Cadastro e Recuperação de senha)
 
-As páginas de login cadastro e recuperação de senha não possuirão cabeçalho e rodapé, sendo exclusivas para os formulários nelas presentes.
+As páginas de login cadastro e recuperação de senha são exclusivas para os formulários nelas presentes.
 
-![Template de paginas institucionais](img/template-logins.png)
+![Template da pagina de Login, Cadastro e Recuperação de Senha](img/Wire-Login.png)
 
 ### Página da aplicação interativa
 
