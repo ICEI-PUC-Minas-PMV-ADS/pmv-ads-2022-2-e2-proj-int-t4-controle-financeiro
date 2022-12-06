@@ -46,4 +46,4 @@ Na barra lateral esquerda, terá campos que exibem os saldos e categorias de aco
 
 No campo central se encontra a GRID de lançamentos com seus respectivos títulos.
 
-![Página Plataforma Interativa](img/Wire-Plataforma.png)
+![Página Plataforma Interativa](img/Wire-Plataforma(1).png)
