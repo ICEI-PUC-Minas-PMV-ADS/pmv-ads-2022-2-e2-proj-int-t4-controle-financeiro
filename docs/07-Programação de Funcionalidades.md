@@ -8,21 +8,19 @@ Por exemplo: a tabela a seguir deverá ser preenchida considerando os artefatos 
 
 |ID    | Descrição do Requisito  | Artefato(s) produzido(s) |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | tarefas.shtml / tarefas.cs / controllertarefas.cs | 
-|RF-002| Emitir um relatório de tarefas no mês   | relatorio.shtml |
+|RF-001| O sistema permite agrupar valores por seções (categorias)  | CategoriasController.cs | 
+|RF-002| O sistema permite o lançamento de débitos  | LancamentosController.cs |
+|RF-003| O sistema permite o lançamento de crédito | LancamentosController.cs |
+|RF-004| O sistema permite datar (exemplo: pagamentos ou recebimentos futuros)  | LancamentosController.cs  |
+|RF-005| O sistema permite a visualização de entradas e saídas por mês | Index.cshtml |
+|RF-006| O sistema permite a definição de meta  | Indes.cshtml |
 
 # Instruções de acesso
 
-Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
+A aplicação pode acessada através do link https://localhost:44331/Usuarios/Login.
 
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
+# Usuário teste
 
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
+**Usuário:** admin
 
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+**Senha:** 123456
