@@ -45,6 +45,7 @@ O escopo funcional do projeto é definido por meio dos requisitos funcionais que
 |RF-004| O sistema permite datar (exemplo: pagamentos ou recebimentos futuros)  | ALTA |
 |RF-005| O sistema permite a visualização de entradas e saídas por mês | ALTA |
 |RF-006| O sistema permite a definição de meta  | ALTA |
+|RF-007| O sistema terá tela de Login e Senha  | ALTA | 
 
 ### Requisitos não Funcionais
 
