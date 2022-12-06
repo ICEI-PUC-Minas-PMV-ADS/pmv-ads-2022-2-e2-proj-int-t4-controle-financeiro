@@ -1,6 +1,6 @@
 ## Plano de Testes de Software
 
-| Casos de Teste | CT-01 - Criar usuário e senha |
+| Casos de Teste | CT-01 - Acessar tela de login e cadastro de usuário |
 |--------------------|------------------------------------|
 |`Requisitos Associados` | RF-007 - O sistema terá tela de Login e senha // RNF-007 - A plataforma interativa deve permitir o acesso apenas de usuários cadastrados |
 |`Objetivo do teste` | Testar o acesso a tela de login, criar um usário e senha e testar a redefinição de senha |
