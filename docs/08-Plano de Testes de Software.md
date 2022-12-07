@@ -1,6 +1,6 @@
 ## Plano de Testes de Software
 
-| Casos de Teste | CT-01 - Criar usuário e senha |
+| Casos de Teste | CT-01 - Acessar tela de login e cadastro de usuário |
 |--------------------|------------------------------------|
 |`Requisitos Associados` | RF-007 - O sistema terá tela de Login e senha // RNF-007 - A plataforma interativa deve permitir o acesso apenas de usuários cadastrados |
 |`Objetivo do teste` | Testar o acesso a tela de login, criar um usário e senha e testar a redefinição de senha |
@@ -27,9 +27,9 @@
 ||3 - Informar o Usuário e Senha |
 ||4 - Clicar no botão "Entrar" |
 ||5 - Clicar no botão " + " |
-||6 - Clicar no botão "Criar categoria" |
-||7 - Clicar na categoria desejada |
-||8 - Clicar no botão para selecionar categoria |
+||6 - Clicar no botão "Categorias" |
+||7 - Informar o título da categoria e o tipo (débito ou crédito)|
+||8 - Clicar no botão "Inserir categoria"  |
 |`Critério de Êxito` | As categorias foram criadas. |
 |`Avaliação` | As categorias "Casas, Uber Driver, Contas mensais, Lanches, Qualidade de vida" foram criadas. |
 
@@ -45,7 +45,7 @@
 ||3 - Informar o Usuário e Senha | 
 ||4 - Clicar no botão "Entrar" |
 ||5 - Clicar no botão " + " |
-||6 - Clicar na categoria desejada |
+||6 - Preencher os campos obrigatórios |
 ||7 - Clicar no botão "Inserir" | 
 ||8 - Selecionar na lista o mês e ano desejado para filtrar |
 ||9 - Clicar no botão "Ok" |
@@ -55,7 +55,7 @@
 
 | Casos de Teste | CT-04- Definir meta e visualizar alterações no status da meta|
 |--------------------|------------------------------------|
-|`Requisitos Associados` | RF-006 - O sistema permite a definição de meta |
+|`Requisitos Associados` | RF-006 - O sistema permite a definição de meta e visualização do progresso de atingimento |
 |`Objetivo do teste` | Definir meta |
 |`Dados de entrada` | Usuário: admin Senha: 123456 |
 |`Passos` | 
@@ -64,6 +64,7 @@
 ||3 - Informar o Usuário e Senha |
 ||4 - Clicar no botão "Entrar" |
 ||5 - Clicar no botão "Meta" |
-||6 - Definir uma meta |
-|`Critério de Êxito` | Meta cadastrada. |
-|`Avaliação` | ***??????*** |
+||6 - Informar o valor da meta |
+||7 - Clicar o botão "Inserir" | 
+|`Critério de Êxito` | Meta cadastrada |
+|`Avaliação` | A meta foi cadastrada e foi visualizado seu progresso de atingimento com base nos lançamentos da conta |
