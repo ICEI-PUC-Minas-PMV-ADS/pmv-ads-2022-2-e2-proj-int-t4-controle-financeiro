@@ -40,7 +40,9 @@ namespace ZCaixaV5.Models
         public Categoria Cat { get; set; }
 
         [NotMapped]
-        public List<Lancamento> ListaLancamentos { get; set; }
+        public List<Lancamento> ListaLancamentosE { get; set; }
+        [NotMapped]
+        public List<Lancamento> ListaLancamentosS { get; set; }
     }
     
     

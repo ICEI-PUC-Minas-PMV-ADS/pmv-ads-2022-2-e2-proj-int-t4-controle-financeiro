@@ -3,6 +3,9 @@
 
 @{
     ViewData["Title"] = "Meu Caixa";
+    List<CategoriaEntradaValor> listaEnt = (List<CategoriaEntradaValor>)ViewBag.Entradas;
+    List<CategoriaSaidaValor> listaSai = (List<CategoriaSaidaValor>)ViewBag.Saidas;
+}
 }
 
 <main>
@@ -98,38 +101,28 @@
                     <p class="saldos-titulos">Saldo Total:</p>
                     <output name="totSaldo" id="totSaldo" />
                 </div>
-
+                
                 <div class="entradas-saidas-categorias-area">
-                    <p class="saldos-titulos categorias-titulo"> Valores por Categorias: </p>
-                    <div class="entradas-valores valores-categorias">
-                        <p class="saldos-titulos">Salário</p> <p>R$ 250,00</p>
-                    </div>
-                    <p class="underline-entradas-saidas"></p>
-
-                    <div class="entradas-valores valores-categorias">
-                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                    </div>
-
-                    <div class="entradas-valores valores-categorias">
-                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                    </div>
-                    <div class="entradas-valores valores-categorias">
-                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                    </div>
-                    <div class="entradas-valores valores-categorias">
-                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                    </div>
-                    <div class="entradas-valores valores-categorias">
-                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                    </div>
-                    <div class="entradas-valores valores-categorias">
-                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
-                    </div>
-                    <div class="entradas-valores valores-categorias">
-                        <p class="saldos-titulos">Cartão</p> <p>R$ 250,00</p>
+                    <p class="saldos-titulos categorias-titulo"> Valores por Categorias: </p>                  
+                    <div id="lista-entradas">
+                        @foreach (var itemE in listaEnt)
+                        {
+                            <div class="entradas-valores valores-categorias">
+                                <p class="saldos-titulos">@itemE.Categoria</p> <p>@itemE.ValorF</p>
+                            </div>
+                        }
                     </div>
 
-                </div>
+                    <p class="underline-entradas-saidas"></p>                   
+                    <div id="lista-saidas">
+                        @foreach (var itemS in listaSai)
+                        {
+                            <div class="entradas-valores valores-categorias">
+                                <p class="saldos-titulos">@itemS.Categoria</p> <p>@itemS.ValorF</p>
+                            </div>
+                        }
+                    </div>
+                </div> 
             </div>
             <div class="botoes-esquerda-areas">
                 <button class="btn-plataforma btn-area-esquerda btn-atualiza">Relatorios</button>
@@ -198,13 +191,13 @@
             @{
                 if (Model.HasPreviousPage)
                 {
-                                                                            <a asp-action="Index"
+                                                                               <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex - 1)"
                        type="button" class="btn btn-default">Anterior</a>
                 }
                 else
                 {
-                                                                            <a asp-action="Index"
+                                                                               <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex - 1)"
                        type="button" class="btn btn-default" hidden>Anterior</a>
                 }
@@ -212,13 +205,13 @@
             @{
                 if (Model.HasNextPage)
                 {
-                                                                            <a asp-action="Index"
+                                                                               <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex + 1)"
                        type="button" class="btn btn-default">Próximo</a>
                 }
                 else
                 {
-                                                                            <a asp-action="Index"
+                                                                               <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex + 1)"
                        type="button" class="btn btn-default" hidden>Próximo</a>
                 }
@@ -308,7 +301,7 @@
 
                             </div>
                             <input type="button" value="Cancelar" class="btn btn-danger" data-bs-dismiss="modal" />
-                            <input type="button" value="Inserir" class="btn btn-success btnSalvar" />
+                            <input type="button" value="Confirmar" class="btn btn-success btnSalvar" />
                         </div>
                     </div>
                 </div>
@@ -490,7 +483,7 @@
                             var valor = lanc.valor;
                             var valorFormatado = valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                             mostrarModal();
-                            escolherTituloModal(`Atualizar Lançamento`);
+                            escolherTituloModal("Atualizar Lançamento");
                             $(".Id").val(lanc.id);
                             $(".Data").val(dataFormatada);
                             $(".Descricao").val(lanc.descricao);
@@ -712,9 +705,10 @@
                     $(".Descricao").removeClass('is-valid');
                 }
 
-                function escolherTituloModal(texto) {
+                function escolherTituloModal(texto) 
+                {
                     $(".modal-title").text(texto);
                 }
         </script>
-    }
+        }
 </main>

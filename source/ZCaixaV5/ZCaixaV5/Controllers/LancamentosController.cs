@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Schema;
 using Composite.Core.Linq;
@@ -114,12 +117,44 @@ namespace ZCaixaV5.Controllers
                     lancamento = lancamento.Where(s => s.Data.Month == usuario.MesConsulta);
                 }
                 lancamento = lancamento.OrderByDescending(s => s.Id).OrderByDescending(s => s.Data);
-                                
-                List<SelectListItem> grp = new List<SelectListItem>();
+
+                var cultureInfo = Thread.CurrentThread.CurrentCulture;
+                var numberFormatInfo = (NumberFormatInfo)cultureInfo.NumberFormat.Clone();
+                var vlrF = "";
+                List<CategoriaEntradaValor> ListaE = new List<CategoriaEntradaValor>();
+                List<CategoriaSaidaValor> ListaS = new List<CategoriaSaidaValor>();
                 foreach (Lancamento lanP in lancamento)
                 {
                     if (lanP.Cat.Tipo == "R")
                     {
+                        CategoriaEntradaValor existeE = ListaE.FirstOrDefault(e => e.Categoria == lanP.Cat.Nome);
+                        if (existeE != null)
+                        {
+                            if (lanP.Tipo == "C")
+                            {
+                                existeE.Valor = existeE.Valor + lanP.Valor; 
+                            }
+                            else if (lanP.Tipo == "D")
+                            {
+                                existeE.Valor = existeE.Valor - lanP.Valor;
+                            }
+                            existeE.ValorF = string.Format(numberFormatInfo, "{0:C}", existeE.Valor);
+                        }
+                        else
+                        {
+                            if (lanP.Tipo == "C")
+                            {
+                                vlrF = string.Format(numberFormatInfo, "{0:C}", lanP.Valor);
+                                ListaE.Add(new CategoriaEntradaValor { Categoria = lanP.Cat.Nome, Valor = lanP.Valor, ValorF = vlrF });
+                            }
+                            else if (lanP.Tipo == "D")
+                            {
+                
+                                vlrF = string.Format(numberFormatInfo, "{0:C}", lanP.Valor * -1);
+                                ListaE.Add(new CategoriaEntradaValor { Categoria = lanP.Cat.Nome, Valor = lanP.Valor * -1, ValorF = vlrF });
+                            }
+                        }
+                            
                         if (lanP.Tipo == "C")
                         {
                             totalReceitaP = totalReceitaP + lanP.Valor;
@@ -131,6 +166,32 @@ namespace ZCaixaV5.Controllers
                     }
                     else if (lanP.Cat.Tipo == "D")
                     {
+                        CategoriaSaidaValor existeS = ListaS.FirstOrDefault(s => s.Categoria == lanP.Cat.Nome);
+                        if (existeS != null)
+                        {
+                            if (lanP.Tipo == "D")
+                            {
+                                existeS.Valor = existeS.Valor + lanP.Valor;
+                            }
+                            else if (lanP.Tipo == "C")
+                            {
+                                existeS.Valor = existeS.Valor - lanP.Valor;
+                            }
+                            existeS.ValorF = string.Format(numberFormatInfo, "{0:C}", existeS.Valor);
+                        }
+                        else
+                        {
+                            if (lanP.Tipo == "D")
+                            {
+                                vlrF = string.Format(numberFormatInfo, "{0:C}", lanP.Valor);
+                                ListaS.Add(new CategoriaSaidaValor { Categoria = lanP.Cat.Nome, Valor = lanP.Valor, ValorF = vlrF });
+                            }
+                            else if (lanP.Tipo == "C")
+                            {
+                                vlrF = string.Format(numberFormatInfo, "{0:C}", lanP.Valor * -1);
+                                ListaS.Add(new CategoriaSaidaValor { Categoria = lanP.Cat.Nome, Valor = lanP.Valor * -1, ValorF = vlrF });
+                            }
+                        }
                         if (lanP.Tipo == "D")
                         {
                             totalDespesaP = totalDespesaP + lanP.Valor;
@@ -140,8 +201,6 @@ namespace ZCaixaV5.Controllers
                             totalDespesaP = totalDespesaP - lanP.Valor;
                         }
                     }
-
-                    //itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
                 }
                 totalSaldoG = totalReceitaG - totalDespesaG;
                 totalMeta = usuario.Meta;
@@ -163,7 +222,10 @@ namespace ZCaixaV5.Controllers
                 ViewBag.Saldo = totalSaldoP;
                 ViewBag.ValorMeta = totalMeta;
                 ViewBag.PercMeta = percMeta;
-
+                List<CategoriaEntradaValor> ListaESort = ListaE.OrderBy(x => x.Categoria).ToList();
+                List<CategoriaSaidaValor> ListaSSort = ListaS.OrderBy(x => x.Categoria).ToList();
+                ViewBag.Entradas = ListaESort;
+                ViewBag.Saidas = ListaSSort;       
                 return View(await PaginaList<Lancamento>.CreateAsync(lancamento.AsNoTracking(), pageNumber ?? 1, pageSize));           
             }
         }
