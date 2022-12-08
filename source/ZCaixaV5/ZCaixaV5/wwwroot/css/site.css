@@ -175,6 +175,7 @@ main {
         border-radius: 5px;
         border: solid 1px #959595;
         font-family: 'Noto Sans KR';
+        font-size: 0.9rem;
     }
 
 
@@ -943,5 +944,13 @@ input[type=number] {
     border-radius: 4px;
     padding: 1vh;
     border: none;
-    font-size: 2.2vh;
+    font-size: 1.9vh;
+}
+
+.saida-output {
+    color: #f33131;
+}
+
+.entrada-output {
+    color: #42c142;
 }

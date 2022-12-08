@@ -522,7 +522,6 @@ C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeir
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Erro.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Index.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Cadastro.cshtml.g.cs
-C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index - Cópia.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Home\RecuperaSenha.cshtml.g.cs
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Index.cshtml.g.cs
@@ -545,8 +544,6 @@ C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeir
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\ZCaixaV5.dll
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\ZCaixaV5.pdb
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\ZCaixaV5.genruntimeconfig.cache
-C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\Lista.cshtml.g.cs
-C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Lancamentos\ListaTeste.cshtml.g.cs
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\ZCaixaV5.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\AdvancedStringBuilder.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Antlr3.Runtime.dll

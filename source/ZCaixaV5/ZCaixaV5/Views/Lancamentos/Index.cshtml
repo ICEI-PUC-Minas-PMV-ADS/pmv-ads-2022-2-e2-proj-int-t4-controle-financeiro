@@ -6,7 +6,7 @@
     List<CategoriaEntradaValor> listaEnt = (List<CategoriaEntradaValor>)ViewBag.Entradas;
     List<CategoriaSaidaValor> listaSai = (List<CategoriaSaidaValor>)ViewBag.Saidas;
 }
-}
+
 
 <main>
 
@@ -108,7 +108,7 @@
                         @foreach (var itemE in listaEnt)
                         {
                             <div class="entradas-valores valores-categorias">
-                                <p class="saldos-titulos">@itemE.Categoria</p> <p>@itemE.ValorF</p>
+                                <p class="saldos-titulos">@itemE.Categoria</p> <p class="entrada-output">@itemE.ValorF</p>
                             </div>
                         }
                     </div>
@@ -118,7 +118,7 @@
                         @foreach (var itemS in listaSai)
                         {
                             <div class="entradas-valores valores-categorias">
-                                <p class="saldos-titulos">@itemS.Categoria</p> <p>@itemS.ValorF</p>
+                                <p class="saldos-titulos">@itemS.Categoria</p> <p class="saida-output">- @itemS.ValorF</p>
                             </div>
                         }
                     </div>
