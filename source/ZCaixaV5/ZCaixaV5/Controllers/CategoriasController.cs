@@ -110,7 +110,7 @@ namespace ZCaixaV5.Controllers
                 }
                 _context.Add(categoria);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Create", "Lancamentos");
+                return RedirectToAction("Create", "Categorias");
             }
             return View(categoria);
         }

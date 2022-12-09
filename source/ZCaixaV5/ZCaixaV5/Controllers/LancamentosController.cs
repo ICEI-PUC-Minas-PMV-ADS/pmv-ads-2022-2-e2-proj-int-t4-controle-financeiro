@@ -71,6 +71,11 @@ namespace ZCaixaV5.Controllers
                          "NomeLan"
                      );
                 int pageSize = 13;
+                if (TempData["Pagina"] != null)
+                {
+                    pageNumber = 1;
+                    TempData["Pagina"] = null;                    
+                };
                 var lancamento = from s in _context.Lancamentos.Include(s => s.Cat)
                                  select s;
                 lancamento = lancamento.Where(s => s.Username.Contains(HttpContext.User.Identity.Name));
@@ -217,9 +222,12 @@ namespace ZCaixaV5.Controllers
                     percMeta = (int)(totalSaldoG / totalMeta * 100);
                 }
                 totalSaldoP = totalReceitaP - totalDespesaP;
-                ViewBag.Receita = totalReceitaP;
-                ViewBag.Despesa = totalDespesaP; 
-                ViewBag.Saldo = totalSaldoP;
+                vlrF = string.Format(numberFormatInfo, "{0:C}", totalReceitaP);
+                ViewBag.Receita = vlrF;
+                vlrF = string.Format(numberFormatInfo, "{0:C}", totalDespesaP);
+                ViewBag.Despesa = vlrF;
+                vlrF = string.Format(numberFormatInfo, "{0:C}", totalSaldoP);
+                ViewBag.Saldo = vlrF;
                 ViewBag.ValorMeta = totalMeta;
                 ViewBag.PercMeta = percMeta;
                 List<CategoriaEntradaValor> ListaESort = ListaE.OrderBy(x => x.Categoria).ToList();
@@ -311,6 +319,14 @@ namespace ZCaixaV5.Controllers
 
             return Json(ModelState);
         }
+
+        [HttpPost]
+        public JsonResult IniciarPagina(int IDAno)
+        {
+            TempData["Pagina"] = "IniciarPagina";
+            return Json(IDAno);
+        }
+
 
         [HttpPost]
         public async Task<JsonResult> AtualizarLancamento(Lancamento lancamento)

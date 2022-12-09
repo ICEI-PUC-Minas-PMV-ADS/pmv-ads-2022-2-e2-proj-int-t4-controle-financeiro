@@ -60,15 +60,15 @@
         <div class="Area-esquerda">
             <div class="Datas-entradas-saidas-area">
                 <select class="btn-data-mes" name="mounth" id="mouth">
-                    <option value="01">Jan</option>
-                    <option value="02">Fev</option>
-                    <option value="03">Mar</option>
-                    <option value="04">Abr</option>
-                    <option value="05">Mai</option>
-                    <option value="06">Jun</option>
-                    <option value="07">Jul</option>
-                    <option value="08">Ago</option>
-                    <option value="09">Set</option>
+                    <option value="1">Jan</option>
+                    <option value="2">Fev</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Abr</option>
+                    <option value="5">Mai</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Ago</option>
+                    <option value="9">Set</option>
                     <option value="10">Out</option>
                     <option value="11">Nov</option>
                     <option value="12">Dez</option>
@@ -89,17 +89,17 @@
 
                 <div class="entradas-valores">
                     <p class="saldos-titulos"> Total de Receitas:</p>
-                    <output name="totReceita" id="totReceita" />
+                    <p>@ViewBag.Receita</p>
                 </div>
                 <p class="underline-entradas-saidas"></p>
                 <div class="saidas-valores">
                     <p class="saldos-titulos"> Total de Despesas:</p>
-                    <output name="totDespesa" id="totDespesa" />
+                    <p>@ViewBag.Despesa</p>
                 </div>
                 <p class="underline-entradas-saidas"></p>
                 <div class="saldo-total-area">
                     <p class="saldos-titulos">Saldo Total:</p>
-                    <output name="totSaldo" id="totSaldo" />
+                    <p>@ViewBag.Saldo</p>
                 </div>
                 
                 <div class="entradas-saidas-categorias-area">
@@ -191,13 +191,13 @@
             @{
                 if (Model.HasPreviousPage)
                 {
-                                                                               <a asp-action="Index"
+                                                                                               <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex - 1)"
                        type="button" class="btn btn-default">Anterior</a>
                 }
                 else
                 {
-                                                                               <a asp-action="Index"
+                                                                                               <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex - 1)"
                        type="button" class="btn btn-default" hidden>Anterior</a>
                 }
@@ -205,13 +205,13 @@
             @{
                 if (Model.HasNextPage)
                 {
-                                                                               <a asp-action="Index"
+                                                                                               <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex + 1)"
                        type="button" class="btn btn-default">Próximo</a>
                 }
                 else
                 {
-                                                                               <a asp-action="Index"
+                                                                                               <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex + 1)"
                        type="button" class="btn btn-default" hidden>Próximo</a>
                 }
@@ -317,16 +317,7 @@
                 $(document).ready(function()
                 {
                     document.getElementById("mouth").value = @ViewBag.mesConsulta;
-                    document.getElementById("year").value = @ViewBag.anoConsulta; 
-                    atual = @ViewBag.Receita;
-                    var receita = atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-                    atual = @ViewBag.Despesa;
-                    var despesa = atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-                    atual = @ViewBag.Saldo;
-                    var saldo = atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-                    document.getElementById("totReceita").value = receita;
-                    document.getElementById("totDespesa").value = despesa;
-                    document.getElementById("totSaldo").value = saldo;
+                    document.getElementById("year").value = @ViewBag.anoConsulta;
                 });
 
                 $(".Ok").click(function ()
@@ -514,8 +505,18 @@
                                 },
                                 success: (e) =>
                                 {
-                                    location.reload();
-                                }
+                                    $.ajax({
+                                        url: "Lancamentos/IniciarPagina",
+                                        method: 'POST',
+                                        data: {
+                                            IDAno: IDAno
+                                        },
+                                        success: (e) => 
+                                        {
+                                            location.reload();
+                                        }
+                                    })
+                                }                                
                             })
                         }
                     });
