@@ -2,6 +2,9 @@
 
 Escolhemos o questionário de System Usability Scale (SUS), desenvolvido por John Brooke. O SUS é composto por dez afirmações em escala de 5 pontos para que os participantes avaliem seu nível de concordância com o sistema. Metade das declarações é redigida de forma positiva e a outra de forma negativa.
 
+Ao final das 10 questões originais do SUS, foram adicionadas mais 5 questões para avaliar a satisfação com a interface do sistema retirada do Questionnaire for User Interface Satisfaction (QUIS).
+
+
 O Henrique foi nosso usuário teste e rspondeu ao questionamento conforme a tabela abaixo:
 
 ## **Questionário de avaliação de usabilidade (SUS)**
@@ -23,5 +26,3 @@ O Henrique foi nosso usuário teste e rspondeu ao questionamento conforme a tabe
 | 13 - Eu gostei de usar a interface do sistema |  |  |  |  | X |
 | 14 - A interface do sistema é agradável |  |  |  |  | X |
 | 15 - A organização de informações na tela do sistema é clara |  |  |  |  | X |
-
-Ao final das 10 questões originais do SUS, foram adicionadas mais 5 questões para avaliar a satisfação com a interface do sistema retirada do Questionnaire for User Interface Satisfaction (QUIS).
