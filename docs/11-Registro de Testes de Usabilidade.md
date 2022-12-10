@@ -5,7 +5,7 @@ Escolhemos o questionário de System Usability Scale (SUS), desenvolvido por Joh
 Ao final das 10 questões originais do SUS, foram adicionadas mais 5 questões para avaliar a satisfação com a interface do sistema retirada do Questionnaire for User Interface Satisfaction (QUIS).
 
 
-O Henrique foi nosso usuário teste e rspondeu ao questionamento conforme a tabela abaixo:
+O Henrique foi nosso usuário teste e respondeu ao questionamento conforme a tabela abaixo:
 
 ## **Questionário de avaliação de usabilidade (SUS)**
 
