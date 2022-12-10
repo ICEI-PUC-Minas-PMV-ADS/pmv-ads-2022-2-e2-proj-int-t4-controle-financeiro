@@ -10,7 +10,7 @@ O Henrique foi nosso usuário teste e respondeu ao questionamento conforme a tab
 ## **Questionário de avaliação de usabilidade (SUS)**
 
 | Pergunta | Discordo totalmente (1) | Discordo (2) | Neutro (3) | Concordo (4) | Concordo totalmente (5) |
-|:---------|:------------------------|--------------|:-----------|:-------------|:------------------------|
+|:---------|:------------------------:|--------------:|:-----------:|:-------------:|:------------------------:|
 | 1 - Acho que gostaria de usar este sistema com freqüência |  |  |  | X |  |
 | 2 - Achei o sistema desnecessariamente complexo |  |  | X |  |  |
 | 3 - Achei o sistema fácil de usar |  |  |  | X |  |
