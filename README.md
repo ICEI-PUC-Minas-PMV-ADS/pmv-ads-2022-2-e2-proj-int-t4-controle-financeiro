@@ -46,7 +46,7 @@ Senha do usuário: PUC@2022
 
 # Código
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+<li><a href="source"> Código Fonte</a></li>
 
 # Apresentação
 
