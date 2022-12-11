@@ -19,4 +19,5 @@ Definição de como o software é estruturado em termos dos componentes que faze
 ## Hospedagem
 
 A hospedagem da aplicação é mantida no Azure.
+
 A hospedagem do banco de dados é mantida em um servidor privado. 
