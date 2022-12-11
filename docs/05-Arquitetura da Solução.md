@@ -6,23 +6,16 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Diagrama de Classes
 
-![Diagrama de Classes](img/DiagramaClasse.png)
+![Diagrama de Classes](img/DiagramaClasse2.png)
 
 ## Modelo ER (Projeto Conceitual)
 
-![Modelo ER](img/MER.png)
+![Modelo ER](img/DER.png)
 
 ## Projeto da Base de Dados
 
-![Projeto da base de dados](img/Projeto_Logico_Banco_de_Dados.png)
+![Projeto da base de dados](img/Projeto_LogicoBancodeDados.png)
 
 ## Hospedagem
 
 A hospedagem da aplicação é mantida em um servidor privado. 
-
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
