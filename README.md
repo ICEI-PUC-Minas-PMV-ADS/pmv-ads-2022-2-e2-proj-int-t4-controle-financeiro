@@ -6,8 +6,6 @@
 
 `2º SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
-
 ## Integrantes
 
 * Gabriel de Souza Ferreira 
