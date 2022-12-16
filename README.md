@@ -20,7 +20,7 @@
 
 ## Instruções de utilização
 
-Link da aplicação disponível para acesso: https://zcaixav520221210014518.azurewebsites.net/ 
+Link da aplicação disponível para acesso: https://zcaixav520221216170204.azurewebsites.net
 
 Usuário de teste: Henrique
 
