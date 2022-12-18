@@ -1,12 +1,10 @@
-# CONTROLE FINANCEIRO PARA JOVENS ENTRE 18 E 25 ANOS
+# CONTROLE FINANCEIRO PARA JOVENS ENTRE 16 E 25 ANOS
 
 `CURSO - ANALISE E DESENVOLVIMENTO DE SISTEMAS`
 
 `Projeto: Desenvolvimento de uma Aplicação Interativa`
 
 `2º SEMESTRE`
-
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
 ## Integrantes
 
@@ -22,13 +20,11 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Link da aplicação disponível para acesso: https://zcaixav520221216170204.azurewebsites.net
 
-Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
+Usuário de teste: Henrique
 
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
-
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
+Senha do usuário: PUC@2022
 
 # Documentação
 
@@ -50,7 +46,7 @@ O link e o usuário/senha descritos acima são apenas exemplos de como tais info
 
 # Código
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+<li><a href="source"> Código Fonte</a></li>
 
 # Apresentação
 
@@ -58,4 +54,4 @@ O link e o usuário/senha descritos acima são apenas exemplos de como tais info
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro/files/9541624/Grupo.Controle.Financeiro.-.ORIGINAL.pdf
 
 ## Vídeo:
-https://user-images.githubusercontent.com/100804876/189508117-ceb51179-94e7-464d-a818-213e9d27dfef.mp4
+https://user-images.githubusercontent.com/103547399/206881605-7685021e-590d-413c-a70f-675137bef7ef.mp4

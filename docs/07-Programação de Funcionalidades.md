@@ -17,10 +17,10 @@ Por exemplo: a tabela a seguir deverá ser preenchida considerando os artefatos 
 
 # Instruções de acesso
 
-A aplicação pode acessada através do link https://localhost:44331/Usuarios/Login.
+A aplicação pode acessada através do link https://zcaixav520221210014518.azurewebsites.net/
 
 # Usuário teste
 
-**Usuário:** admin
+**Usuário:** Henrique
 
-**Senha:** 123456
+**Senha:** PUC@2022
