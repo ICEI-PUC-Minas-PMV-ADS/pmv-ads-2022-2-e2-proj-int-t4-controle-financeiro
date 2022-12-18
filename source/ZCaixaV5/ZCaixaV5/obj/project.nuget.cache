@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/XFatQzk6DJeYlw/i8NRObMEPXvl+c8otbcQ9maBzNDWA9JccX20o26IeTvgH/JNJpCGkjQ9HxJdXMt3ixlLQA==",
+  "dgSpecHash": "NVxqGi6peAXulA7YnNSv01lI3DmGDSiHQfVc7oBnUtHK50/n47DotuRHmBIERPdqYyhQidcFPXs/T+HL52w2mg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ricardo\\Documents\\GitHub\\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\\source\\ZCaixaV5\\ZCaixaV5\\ZCaixaV5.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ricardo\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\antlr\\3.4.1.9004\\antlr.3.4.1.9004.nupkg.sha512",
-    "C:\\Users\\Ricardo\\.nuget\\packages\\bcrypt.net-next\\3.5.0\\bcrypt.net-next.3.5.0.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\compositec1.core\\4.2.1\\compositec1.core.4.2.1.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\compositec1.security\\0.9.3\\compositec1.security.0.9.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\compositec1contrib.core\\0.8.3\\compositec1contrib.core.0.8.3.nupkg.sha512",
@@ -21,6 +21,7 @@
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.web.optimization\\1.1.3\\microsoft.aspnet.web.optimization.1.1.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.web.optimization.pt-br\\1.1.3\\microsoft.aspnet.web.optimization.pt-br.1.1.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.3\\microsoft.aspnet.webpages.3.2.3.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnet.webpages.data\\3.2.9\\microsoft.aspnet.webpages.data.3.2.9.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.30\\microsoft.aspnetcore.cryptography.internal.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.30\\microsoft.aspnetcore.cryptography.keyderivation.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -47,15 +48,13 @@
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\3.3.1\\microsoft.codeanalysis.csharp.workspaces.3.3.1.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.codeanalysis.razor\\3.1.0\\microsoft.codeanalysis.razor.3.1.0.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\3.3.1\\microsoft.codeanalysis.workspaces.common.3.3.1.nupkg.sha512",
-    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.data.sqlclient\\1.1.3\\microsoft.data.sqlclient.1.1.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.30\\microsoft.entityframeworkcore.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.30\\microsoft.entityframeworkcore.abstractions.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.30\\microsoft.entityframeworkcore.analyzers.3.1.30.nupkg.sha512",
-    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.30\\microsoft.entityframeworkcore.design.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.30\\microsoft.entityframeworkcore.relational.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.30\\microsoft.entityframeworkcore.sqlserver.3.1.30.nupkg.sha512",
-    "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.30\\microsoft.entityframeworkcore.tools.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.30\\microsoft.extensions.caching.abstractions.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.30\\microsoft.extensions.caching.memory.3.1.30.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.30\\microsoft.extensions.configuration.3.1.30.nupkg.sha512",
@@ -118,7 +117,9 @@
     "C:\\Users\\Ricardo\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\sendgrid\\9.28.1\\sendgrid.9.28.1.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\sharpziplib\\0.86.0\\sharpziplib.0.86.0.nupkg.sha512",
+    "C:\\Users\\Ricardo\\.nuget\\packages\\starkbank-ecdsa\\1.3.3\\starkbank-ecdsa.1.3.3.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\Ricardo\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
@@ -295,6 +296,16 @@
       "warningLevel": 1,
       "message": "O pacote 'Microsoft.AspNet.WebPages 3.2.3' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.AspNet.WebPages",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Microsoft.AspNet.WebPages.Data 3.2.9' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Microsoft.AspNet.WebPages.Data",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
       ]

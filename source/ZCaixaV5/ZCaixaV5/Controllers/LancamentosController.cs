@@ -49,8 +49,8 @@ namespace ZCaixaV5.Controllers
             {
                 Usuario usuario = await _contextusr.Usuarios.FindAsync(HttpContext.User.Identity.Name);
                 ViewBag.mesConsulta = usuario.MesConsulta;
-                ViewBag.anoConsulta = usuario.AnoConsulta;                
-                ViewBag.Nome = HttpContext.User.Identity.Name;
+                ViewBag.anoConsulta = usuario.AnoConsulta;
+                ViewBag.Nome = usuario.Nome;
                 var categoria = from c in _contextcat.Categorias
                                 select c;
                 categoria = categoria.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
@@ -252,6 +252,35 @@ namespace ZCaixaV5.Controllers
             }
             return Json(ModelState);
         }
+        [HttpPost]
+        public async Task<JsonResult> NovoLancamentoCategoria(Categoria categoria)
+        {
+            categoria.Username = HttpContext.User.Identity.Name;
+
+            if (ModelState.IsValid)
+            {
+                _context.Add(categoria);
+                await _context.SaveChangesAsync();
+                var categ = from c in _context.Categorias
+                            select c;
+                categ = categ.Where(c => c.Username.Contains(HttpContext.User.Identity.Name));
+                categ = categ.OrderBy(c => c.Nome);
+
+                List<SelectListItem> itens = new List<SelectListItem>();
+                foreach (Categoria w in categ)
+                {
+                    itens.Add(new SelectListItem { Text = w.Nome, Value = w.Id.ToString() });
+                }
+
+                ViewBag.Categ = itens;
+                return Json(categoria);
+            }
+            return Json(ModelState);
+        }
+
+
+
+
 
         [HttpGet]
         public async Task<IActionResult> SairSistema()

@@ -185,7 +185,6 @@ C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-finance
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -616,3 +615,8 @@ C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeir
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\bimbo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\ZCaixaV5.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\SendGrid.dll
+C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
+C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\bin\Debug\netcoreapp3.1\WebMatrix.Data.dll
+C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\AlteraSenha.cshtml.g.cs
+C:\Users\Ricardo\Documents\GitHub\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\source\ZCaixaV5\ZCaixaV5\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\DigitaCodigo.cshtml.g.cs

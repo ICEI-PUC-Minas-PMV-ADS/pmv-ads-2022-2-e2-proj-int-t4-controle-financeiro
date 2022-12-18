@@ -12,14 +12,10 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\Ricardo\.nuget\packages\" />
   </ItemGroup>
-  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design\3.1.30\build\netcoreapp2.0\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design\3.1.30\build\netcoreapp2.0\Microsoft.EntityFrameworkCore.Design.props')" />
-  </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgWebGrease Condition=" '$(PkgWebGrease)' == '' ">C:\Users\Ricardo\.nuget\packages\webgrease\1.5.2</PkgWebGrease>
     <PkgMSBuild_Microsoft_VisualStudio_Web_WebApplication_Targets Condition=" '$(PkgMSBuild_Microsoft_VisualStudio_Web_WebApplication_Targets)' == '' ">C:\Users\Ricardo\.nuget\packages\msbuild.microsoft.visualstudio.web_webapplication.targets\12.0.2</PkgMSBuild_Microsoft_VisualStudio_Web_WebApplication_Targets>
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\Ricardo\.nuget\packages\microsoft.codeanalysis.analyzers\2.9.4</PkgMicrosoft_CodeAnalysis_Analyzers>
-    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\Ricardo\.nuget\packages\microsoft.entityframeworkcore.tools\3.1.30</PkgMicrosoft_EntityFrameworkCore_Tools>
     <PkgMicrosoft_ClearScript_V8_Native_win-x86 Condition=" '$(PkgMicrosoft_ClearScript_V8_Native_win-x86)' == '' ">C:\Users\Ricardo\.nuget\packages\microsoft.clearscript.v8.native.win-x86\7.3.1</PkgMicrosoft_ClearScript_V8_Native_win-x86>
     <PkgMicrosoft_ClearScript_V8_Native_win-x64 Condition=" '$(PkgMicrosoft_ClearScript_V8_Native_win-x64)' == '' ">C:\Users\Ricardo\.nuget\packages\microsoft.clearscript.v8.native.win-x64\7.3.1</PkgMicrosoft_ClearScript_V8_Native_win-x64>
     <PkgMicrosoft_ClearScript_V8_Native_win-arm64 Condition=" '$(PkgMicrosoft_ClearScript_V8_Native_win-arm64)' == '' ">C:\Users\Ricardo\.nuget\packages\microsoft.clearscript.v8.native.win-arm64\7.3.1</PkgMicrosoft_ClearScript_V8_Native_win-arm64>

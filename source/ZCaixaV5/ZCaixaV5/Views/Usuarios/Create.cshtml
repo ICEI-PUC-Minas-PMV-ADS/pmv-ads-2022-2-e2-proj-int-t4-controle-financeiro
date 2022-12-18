@@ -24,30 +24,34 @@
                     <div asp-for="Nome">
                         <p>Nome*</p>
                         <input asp-for="Nome">
-                        <span asp-validation-for="Nome" class="text-danger"></span>
                     </div>
                     <div asp-for="UltimoNome">
                         <p>Último Nome</p>
                         <input asp-for="UltimoNome">
-                        <span asp-validation-for="UltimoNome" class="text-danger"></span>
                     </div>
                 </div>
-                <div asp-for="Username">
-                    <p>Username*</p>
-                    <input asp-for="Username">
-                    <h3 class="text-danger">@ViewBag.Mensage</h3>
-                    <span asp-validation-for="Username" class="text-danger"></span>
+                <div>
+                    <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
-                <div asp-for="Email">
-                    <p>E-mail*</p>
-                    <input asp-for="Email" type="email">
-                    <h3 class="text-danger">@ViewBag.Mensage2</h3>
-                    <span asp-validation-for="Email" class="text-danger"></span>
+                <div class="campos-em-row">
+                    <div asp-for="Username">
+                        <p>Username*</p>
+                        <input asp-for="Username">
+                        <h3 class="text-danger">@ViewBag.Mensage</h3>
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div asp-for="Email">
+                        <p>E-mail*</p>
+                        <input asp-for="Email" type="email">
+                        <h3 class="text-danger">@ViewBag.Mensage2</h3>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
                 </div>
                 <div class="campos-em-row">
                     <div asp-for="DataNascimento">
                         <p>Data de nascimento*</p>
                         <input asp-for="DataNascimento" type="date">
+                        <h3 class="text-danger">@ViewBag.Mensage5</h3>
                         <span asp-validation-for="DataNascimento" class="text-danger"></span>
                     </div>
                     <div asp-for="Telefone">
@@ -56,17 +60,22 @@
                         <span asp-validation-for="Telefone" class="text-danger"></span>
                     </div>
                 </div>
-                <div asp-for="Senha">
-                    <p>Crie uma Senha*</p>
-                    <input asp-for="Senha" type="password">
-                    <span asp-validation-for="Senha" class="text-danger"></span>
-                </div>
-                <div>
-                    <p>Confirme sua senha*</p>
-                    <input type="password">
+                <div class="campos-em-row">
+                    <div asp-for="Senha">
+                        <p>Crie uma Senha*</p>
+                        <input asp-for="Senha" type="password">
+                        <h3 class="text-danger">@ViewBag.Mensage3</h3>
+                        <span asp-validation-for="Senha" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <p>Confirme sua senha*</p>
+                        @Html.Password("Senha2")
+                    </div>
                 </div>
                 <div class="cadastro-termos-area">
-                    <input id="check" type="checkbox"><label for="check">Concordo com os termos*</label>
+                    @Html.CheckBox("Check")
+                    <label for="check">Concordo com os termos*</label>
+                    <h3 class="text-danger">@ViewBag.Mensage4</h3>
                 </div>
                 <div class="btn-cadastro-area">
                     <input type="submit" value="Criar" class="btn btn-primary" />

@@ -31,18 +31,21 @@
     ".NETCoreApp,Version=v3.1": {
       "ZCaixaV5/1.0.0": {
         "dependencies": {
-          "BCrypt.Net-Next": "3.5.0",
+          "BCrypt.Net-Next": "4.0.3",
           "CompositeC1.Security": "0.9.3",
           "EfCore3.SqlServer2008Query": "1.0.0",
           "LigerShark.WebOptimizer.Sass": "3.0.91",
           "MSBuild.Microsoft.VisualStudio.Web_WebApplication.Targets": "12.0.2",
           "Microsoft.AspNet.Web.Optimization": "1.1.3",
           "Microsoft.AspNet.Web.Optimization.pt-br": "1.1.3",
+          "Microsoft.AspNet.WebPages.Data": "3.2.9",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.30",
+          "Microsoft.EntityFrameworkCore": "3.1.30",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.30",
-          "Microsoft.EntityFrameworkCore.Tools": "3.1.30",
+          "Microsoft.Extensions.Identity.Core": "3.1.30",
           "Microsoft.Owin.Security.Authorization.Mvc": "1.2.2.4",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
+          "SendGrid": "9.28.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -332,11 +335,11 @@
           "lib/Antlr3.Runtime.dll": {}
         }
       },
-      "BCrypt.Net-Next/3.5.0": {
+      "BCrypt.Net-Next/4.0.3": {
         "runtime": {
           "lib/netstandard2.1/BCrypt.Net-Next.dll": {
-            "assemblyVersion": "3.5.0.0",
-            "fileVersion": "3.5.0.0"
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.0.3.0"
           }
         },
         "compile": {
@@ -606,6 +609,17 @@
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
           "lib/net45/System.Web.WebPages.Razor.dll": {},
           "lib/net45/System.Web.WebPages.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages.Data/3.2.9": {
+        "runtime": {
+          "lib/net45/WebMatrix.Data.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61129.10"
+          }
+        },
+        "compile": {
+          "lib/net45/WebMatrix.Data.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.30": {
@@ -1056,7 +1070,7 @@
           "lib/netstandard2.0/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
-      "Microsoft.CSharp/4.7.0": {},
+      "Microsoft.CSharp/4.5.0": {},
       "Microsoft.Data.SqlClient/1.1.3": {
         "dependencies": {
           "Microsoft.Identity.Client": "3.0.8",
@@ -1128,18 +1142,6 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/3.1.30": {},
-      "Microsoft.EntityFrameworkCore.Design/3.1.30": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.EntityFrameworkCore.Relational": "3.1.30"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "3.1.30.0",
-            "fileVersion": "3.100.3022.47610"
-          }
-        }
-      },
       "Microsoft.EntityFrameworkCore.Relational/3.1.30": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.30"
@@ -1167,11 +1169,6 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Tools/3.1.30": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "3.1.30"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/3.1.30": {
@@ -1360,7 +1357,7 @@
       },
       "Microsoft.Identity.Client/3.0.8": {
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
+          "Microsoft.CSharp": "4.5.0",
           "System.ComponentModel.TypeConverter": "4.3.0",
           "System.Net.NameResolution": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
@@ -1851,6 +1848,21 @@
           }
         }
       },
+      "SendGrid/9.28.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "starkbank-ecdsa": "1.3.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "assemblyVersion": "9.28.1.0",
+            "fileVersion": "9.28.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        }
+      },
       "SharpZipLib/0.86.0": {
         "runtime": {
           "lib/20/ICSharpCode.SharpZipLib.dll": {
@@ -1860,6 +1872,17 @@
         },
         "compile": {
           "lib/20/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "starkbank-ecdsa/1.3.3": {
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -4467,12 +4490,12 @@
       "path": "antlr/3.4.1.9004",
       "hashPath": "antlr.3.4.1.9004.nupkg.sha512"
     },
-    "BCrypt.Net-Next/3.5.0": {
+    "BCrypt.Net-Next/4.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6DaFW42NhDA1/QDR6/8nyv04QBswBXEaCh0AXtm0kfbTTRFeMh7ROmlniqrVjP0Mpx4raGE+oWsy1f6IC/jWAQ==",
-      "path": "bcrypt.net-next/3.5.0",
-      "hashPath": "bcrypt.net-next.3.5.0.nupkg.sha512"
+      "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "path": "bcrypt.net-next/4.0.3",
+      "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
     },
     "CompositeC1.Core/4.2.1": {
       "type": "package",
@@ -4571,6 +4594,13 @@
       "sha512": "sha512-zbtxBERla5RE/mhftwbrXOzc0r6lh8WcnjpGW7QQe+PvSDDx1BgsTUGzfCXO/vJznHNpY5oCSYLt8Q5vUu7F0g==",
       "path": "microsoft.aspnet.webpages/3.2.3",
       "hashPath": "microsoft.aspnet.webpages.3.2.3.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebPages.Data/3.2.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D6QnqWJ+d8Xr+M957eEECnY7gUPJmR+FLfn+L0hoCWrXQjNNmMnxGt8IVqXQAPlWJaJjrq6Kwh+9Eu3NvtxZMA==",
+      "path": "microsoft.aspnet.webpages.data/3.2.9",
+      "hashPath": "microsoft.aspnet.webpages.data.3.2.9.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.30": {
       "type": "package",
@@ -4754,12 +4784,12 @@
       "path": "microsoft.codeanalysis.workspaces.common/3.3.1",
       "hashPath": "microsoft.codeanalysis.workspaces.common.3.3.1.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.7.0": {
+    "Microsoft.CSharp/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "path": "microsoft.csharp/4.5.0",
+      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/1.1.3": {
       "type": "package",
@@ -4789,13 +4819,6 @@
       "path": "microsoft.entityframeworkcore.analyzers/3.1.30",
       "hashPath": "microsoft.entityframeworkcore.analyzers.3.1.30.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/3.1.30": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UcfdL+FiflqEEpy/m9IJI/0WvoX+P2SwjU31ZT8uE0OOJlNd8F6x47rdZhNtVo2So0O19M+950lghaHTAinDaQ==",
-      "path": "microsoft.entityframeworkcore.design/3.1.30",
-      "hashPath": "microsoft.entityframeworkcore.design.3.1.30.nupkg.sha512"
-    },
     "Microsoft.EntityFrameworkCore.Relational/3.1.30": {
       "type": "package",
       "serviceable": true,
@@ -4809,13 +4832,6 @@
       "sha512": "sha512-ylH8ha+qNDxPY5swU700ChdvrkC4CDnSif7GW8we9MNwKULsqnC0C/ufOHtIvIUHF+fFdM4GQM32HwxvBzVbLw==",
       "path": "microsoft.entityframeworkcore.sqlserver/3.1.30",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.3.1.30.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.Tools/3.1.30": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-8rLsh7pjMhthwRDnwrwmwSMALhLSi+tOcCxSCdPH0CpoJLijb3GhZJQMpkjaUnjjUf64DDPW9COhRfzzfHutEw==",
-      "path": "microsoft.entityframeworkcore.tools/3.1.30",
-      "hashPath": "microsoft.entityframeworkcore.tools.3.1.30.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/3.1.30": {
       "type": "package",
@@ -5251,12 +5267,26 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
+    "SendGrid/9.28.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LyIkgjd+svXuQxpqe5pvyOccyUdKcDqwnBNDPjyCngkKeVpXAOTAr3U1DBLWqHEbFHvu2UBFki3SJzDwxvJdfA==",
+      "path": "sendgrid/9.28.1",
+      "hashPath": "sendgrid.9.28.1.nupkg.sha512"
+    },
     "SharpZipLib/0.86.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-5DbS1SlKLMi+WG00Cm0ueYf2oyXJrowETQk8nx96rmdjTuHsA3laPykGV7Sxi0R5Xxfx0Kh/EfacAZ1f6M7y/g==",
       "path": "sharpziplib/0.86.0",
       "hashPath": "sharpziplib.0.86.0.nupkg.sha512"
+    },
+    "starkbank-ecdsa/1.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
+      "path": "starkbank-ecdsa/1.3.3",
+      "hashPath": "starkbank-ecdsa.1.3.3.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

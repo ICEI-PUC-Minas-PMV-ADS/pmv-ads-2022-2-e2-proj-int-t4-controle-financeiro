@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ZCaixaV520221216170204" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Ricardo\\Documents\\GitHub\\pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro\\source\\ZCaixaV5\\ZCaixaV5\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

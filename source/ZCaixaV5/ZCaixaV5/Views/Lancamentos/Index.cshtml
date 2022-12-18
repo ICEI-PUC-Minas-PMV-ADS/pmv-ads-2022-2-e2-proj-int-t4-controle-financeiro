@@ -31,7 +31,6 @@
         <div class="meta-plataforma-area">
             <p>Status da meta:</p>
             <progress value=@ViewBag.PercMeta max="100" />
-            @*<img class="meta-png" src="~/imagens/meta.png" alt="">*@
         </div>
 
         <div class="usuario-plataforma-area">
@@ -45,9 +44,6 @@
 
             <nav class="menu-usuario-plataforma">
                 <ul class="menu-usuario-plataforma-lista">
-                    <li class="opcao-minha-conta">
-                        <a href=""><img class="icones-menu-usuario" src="~/imagens/usuario-icon.png" alt=""> <p>Minha Conta</p></a>
-                    </li>
                     <li class="opcao-sair">
                         <a asp-action="SairSistema"><img class="icones-menu-usuario" src="~/imagens/sair-icon.png" alt=""> <p>Sair</p></a>                
                     </li>
@@ -125,10 +121,9 @@
                 </div> 
             </div>
             <div class="botoes-esquerda-areas">
-                <button class="btn-plataforma btn-area-esquerda btn-atualiza">Relatorios</button>
                 <input type="checkbox" id="checkbox-menu-meta">
                 
-                <label class="botao-meta btn-plataforma btn-area-esquerda btn-atualiza botao-meta novameta" @*for="checkbox-menu-meta"*@>
+                <label class="botao-meta btn-plataforma btn-area-esquerda btn-atualiza botao-meta novameta">
                     <a class="">Meta</a>
                 </label>
                 <div class="menu-meta">
@@ -191,13 +186,13 @@
             @{
                 if (Model.HasPreviousPage)
                 {
-                                                                                               <a asp-action="Index"
+                                                                                                                                                                           <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex - 1)"
                        type="button" class="btn btn-default">Anterior</a>
                 }
                 else
                 {
-                                                                                               <a asp-action="Index"
+                                                                                                                                                                           <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex - 1)"
                        type="button" class="btn btn-default" hidden>Anterior</a>
                 }
@@ -205,13 +200,13 @@
             @{
                 if (Model.HasNextPage)
                 {
-                                                                                               <a asp-action="Index"
+                                                                                                                                                                           <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex + 1)"
                        type="button" class="btn btn-default">Próximo</a>
                 }
                 else
                 {
-                                                                                               <a asp-action="Index"
+                                                                                                                                                                           <a asp-action="Index"
                        asp-route-pageNumber="@(Model.PageIndex + 1)"
                        type="button" class="btn btn-default" hidden>Próximo</a>
                 }
@@ -268,38 +263,8 @@
                         <div class="modal-footer">
                             <input type="checkbox" id="checkbox-menu-categorias">
                             <label for="checkbox-menu-categorias">
-                                <a class="btn btn-primary" style="margin-right: ;">Categorias</a>
+                                <input type="button" value="Categorias" class="btn btn-primary novaCategoria" style="margin-right: ;" />
                             </label>
-                            <div class="menu-categorias">
-                                <div class="area-titulo-categorias">
-                                    <h3>Inserir Categoria</h3>
-                                    <input type="checkbox" id="checkbox-menu-categorias">
-                                    <label for="checkbox-menu-categorias">
-                                        <a class="btn btn-danger botao-fechar-modal">X</a>
-                                    </label>
-                                </div>
-
-                                <div class="menu-categoria-db">
-
-                                    <p>Título</p>
-                                    <input class="formulario-lancamento-input" type="text" />
-                                    <p>Tipo</p>
-                                    <select>
-                                        <option>
-                                            Crédito
-                                        </option>
-                                        <option>
-                                            Débito
-                                        </option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="checkbox-menu-categorias">
-                                        <a class="btn btn-success">Inserir Categoria</a>
-                                    </label>
-                                </div>
-
-                            </div>
                             <input type="button" value="Cancelar" class="btn btn-danger" data-bs-dismiss="modal" />
                             <input type="button" value="Confirmar" class="btn btn-success btnSalvar" />
                         </div>
@@ -309,6 +274,37 @@
         </div>
     </div>
 
+    <div class="modal fade" id=modalCategoria tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-lancamento">
+                <div class="modal-body">
+                        <div class="area-titulo-categorias">
+                            <h3>Inserir Categoria</h3>
+                            
+                            <label for="checkbox-menu-categorias">
+                                <a class="btn btn-danger botaoFechar">X</a>
+                            </label>
+                        </div>
+                        <div class="menu-categoria-db formulario-lancamento">
+
+                            <p>Nome da Categoria</p>
+                            <input class="formulario-lancamento-input nomeCategoria" type="text" />
+                            <span class="text-danger1 erroNomeCategoria d-none"></span>
+                            <p>Tipo</p>
+                            <div class="campos-insere-lan-row">
+                                <select class="formulario-lancamento-input" name=" tipoCategoria" id="tipoCategoria">
+                                    <option value=""></option>
+                                    <option value="D">Despesa</option>
+                                    <option value="R">Receita</option>
+                                </select>
+                                <input type="button" value="Inserir Categoria" class="btn btn-success btn-cadastro-categoria btnSalvarCategoria"/>
+                            </div>
+                            <span class="text-danger1 erroTipoCategoria d-none"></span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     @section scripts
         {
@@ -364,10 +360,24 @@
                     $('.Conciliado').val(false);
                 });
 
+                $(".novaCategoria").click(function ()
+                {
+                    mostrarModalCategoria();
+                    limparFormularioCategoria();
+                });
+
+                 $(".botaoFechar").click(function ()
+                {
+                    $("#modalCategoria").modal('hide');
+                    limparFormularioCategoria();
+                });
+
+                @*
                 $(".categoria").click(function ()
                 {
                     window.location.replace('categorias/index');
                 });
+                *@
 
                 $(".delete").click(function ()
                 {
@@ -437,6 +447,29 @@
                     };
                 });
 
+                $(".btnSalvarCategoria").click(function ()
+                {
+                    var TipoCat = "";
+                    var selec = document.getElementById("tipoCategoria");
+                    
+                    if (!selec.value == '')
+                    {
+                        var comboTipo = document.getElementById("tipoCategoria");
+                        TipoCat = comboTipo.options[comboTipo.selectedIndex].value;
+                    };
+                    
+                    var categoria = {
+                        Id: 0,
+                        Nome: $('.nomeCategoria').val(),
+                        Tipo: TipoCat,
+                        Username: ""
+                    };
+                    if (validarFormularioCategoria(categoria))
+                    {
+                        criarLancamentoCategoria(categoria)
+                    };
+                });
+
                 function criarLancamento(lancamento)
                 {
                     $.ajax(
@@ -452,6 +485,26 @@
                             {
                                     $("#modal").modal('hide');
                                     limparFormulario();
+                                    location.reload();
+                            }
+                        });
+                }
+
+                function criarLancamentoCategoria(categoria)
+                {
+                    $.ajax(
+                        {
+                            url: '@Url.Action("NovoLancamentoCategoria", "Lancamentos")/',
+                            type: 'POST',
+                            dataType: 'json',
+                            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                            data: {
+                                categoria: categoria
+                            },
+                            success: (e) =>
+                            {
+                                    $("#modalCategoria").modal('hide');
+                                    limparFormularioCategoria();
                                     location.reload();
                             }
                         });
@@ -569,6 +622,15 @@
                     return false;
                 }
 
+                function validarFormularioCategoria(categoria) {
+                    let NomeGValido = validarNomeG(categoria.Nome);
+                    let TipoGValido = validarTipoG(categoria.Tipo);                    
+                    if (NomeGValido == true && TipoGValido == true)
+                        return true;
+
+                    return false;
+                }
+
                 function validarData(data) {
                     let DataValida = true;
 
@@ -645,6 +707,24 @@
                     return TipoValido;
                 }
 
+                function validarTipoG(tipo) {
+                    let TipoGValido = true;
+
+                    if (tipo.trim() == '' || tipo == undefined) {
+                        $(".tipoCategoria").addClass('is-invalid');
+                        $(".erroTipoCategoria").text("Informe Receita ou Despesa");
+                        $(".erroTipoCategoria").removeClass("d-none");
+                        TipoGValido = false;
+                    }
+                    else {
+                        $(".tipoCategoria").removeClass('is-invalid');
+                        $(".tipoCategoria").addClass('is-valid');
+                        $(".erroTipoCategoria").addClass("d-none");
+                        TipoGValido = true;
+                    }
+                    return TipoGValido;
+                }
+
 
                 function validarDescricao(descricao) {
                     let DescricaoValida = true;
@@ -671,6 +751,52 @@
                     return DescricaoValida;
                 }
 
+                function validarNomeG(nome) {
+                    let NomeGValido = true;
+
+                    if (nome.trim() == '' || nome == undefined) {
+                        $(".nomeCategoria").addClass('is-invalid');
+                        $(".erroNomeCategoria").text("Preencha o nome da categoria");
+                        $(".erroNomeCategoria").removeClass("d-none");
+                        NomeGValido = false;
+                    }
+                    else if (nome.length > 15) {
+                        $(".nomeCategoria").addClass('is-invalid');
+                        $(".erroNomeCategoria").text("Use menos caracteres (até 15)");
+                        $(".erroNomeCategoria").removeClass("d-none");
+                        NomeGValido = false;
+                    }
+                    else {
+                        var comboCategoria = document.getElementById("Categ");
+                        var verifica = "";
+                        var achei = false;
+                        for (i = 0; i < comboCategoria.length; i = i + 1) 
+                        {
+                            verifica = comboCategoria.options[i].text;
+                            if (verifica == nome)
+                            {
+                                achei = true;
+                                i = 99;
+                            }
+                        }
+                        if (achei) 
+                        {
+                            $(".nomeCategoria").addClass('is-invalid');
+                            $(".erroNomeCategoria").text("Nome de catgoria já existe...");
+                            $(".erroNomeCategoria").removeClass("d-none");
+                            NomeGValido = false;
+                        }
+                        else {
+                            $(".nomeCategoria").removeClass('is-invalid');
+                            $(".nomeCategoria").addClass('is-valid');
+                            $(".erroNomeCategoria").addClass("d-none");
+                            NomeGValido = true;
+                        }
+                    }
+
+                    return NomeGValido;
+                }
+
                 function mascaraMoeda(event) {
                     const onlyDigits = event.target.value
                         .split("")
@@ -693,6 +819,10 @@
                     new bootstrap.Modal($("#modalMeta"), {}).show();
                 }
 
+                function mostrarModalCategoria() {
+                    new bootstrap.Modal($("#modalCategoria"), {}).show();
+                }
+
                 function limparFormulario() {
                     $(".Data").val('');
                     $(".Data").removeClass('is-valid');
@@ -704,6 +834,13 @@
                     $(".Tipo").removeClass('is-valid');
                     $(".Descricao").val('');
                     $(".Descricao").removeClass('is-valid');
+                }
+
+                function limparFormularioCategoria() {
+                    $(".nomeCategoria").val('');
+                    $(".nomeCategoria").removeClass('is-valid');
+                    $(".tipoCategoria").val('');
+                    $(".tipoCategoria").removeClass('is-valid');
                 }
 
                 function escolherTituloModal(texto) 
