@@ -345,7 +345,8 @@ namespace Aspnet_AuthCookies1.Controllers
                 
                 var callbackUrl = Url.Action("RedefinirSenha", "Conta", new { id = user.Username }, protocol: Request.Scheme);
           
-                string apiKey = "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";
+                //Não posso deixar a chave exposta no GitHub... O SendGrid Reclama... Mole não
+                string apiKey = "CHAVE_SENDGRID";
                 var client = new SendGridClient(apiKey);
                 var from = new EmailAddress("ricardo.teixeira@criadoresdesoftware.com.br", "ZCaixa - Não responder esse Email");
                 var subject = "Código de segurança ZCaixa";
