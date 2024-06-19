@@ -1,0 +1,24 @@
+message: Please cite this software using these metadata.
+title: CONTROLE FINANCEIRO PARA JOVENS ENTRE 16 E 25 ANOS
+authors:
+  - family-names: de Souza Ferreira
+    given-names:  Gabriel
+  - family-names: Vinicius Pinheiro Soares
+    given-names: Marcellus
+  - family-names: Patrick Teixeira da Silva
+    given-names: Nicolas 
+  - family-names: José Teixeira da Silva Junior
+    given-names: Ricardo 
+  - family-names: de Souza Ferreira
+    given-names: Pedro 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Alberto Marques Pietrobon
+    given-names: Carlos 
+keywords:
+  - Gestão
+  - Financeiro
+  - Jovens
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e2-proj-int-t4-controle-financeiro
+version: 1.0.0
+date-released: 2022-12-18
